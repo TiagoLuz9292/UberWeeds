@@ -63,20 +63,21 @@ public class Controls implements KeyboardHandler {
         Picture charPicture = character.getPicture();
         GameObject[] gameObjects = activeScenery.getGameObjects();
 
+        if(keyboardEvent.getKey() == KeyboardEvent.KEY_F) {
+            if(character.checkColision(gameObjects)){
+                System.out.println("teste");
+                gameObjects[0].activate();
+
+                character.getPicture().delete();
+                character.getPicture().load("Resources/catia2.PNG");
+                character.getPicture().draw();
+                return;
+            }
+
+        }
+
         switch(keyboardEvent.getKey()) {
 
-            case KeyboardEvent.KEY_F :
-
-
-                if(ColisionDetector.checkColision(charPicture, gameObjects)){
-                    System.out.println("teste");
-                    gameObjects[0].activate();
-
-                    character.getPicture().delete();
-                    character.getPicture().load("Resources/catia2.PNG");
-                    character.getPicture().draw();
-                }
-                break;
             case KeyboardEvent.KEY_D :
                 //crossHair.moveRight();
                 character.moveRight(gameObjects[0]);

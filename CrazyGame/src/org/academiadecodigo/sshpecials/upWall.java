@@ -1,6 +1,9 @@
 package org.academiadecodigo.sshpecials;
 
 
+/**
+ * Wall that will block Upper limit of walking area
+ */
 public class upWall extends GameObject{
 
     private static int LEFT_LIMIT_X = 0;

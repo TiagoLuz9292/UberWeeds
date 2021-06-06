@@ -2,6 +2,10 @@ package org.academiadecodigo.sshpecials;
 
 public enum VaseStateType {
 
+    /**
+     * Each state of Vase has its diferent model (empty vase, vase with seeds, with plant grown, etc), and their own coordinates
+     * to show on the screen at the correct place.
+     */
     NO_VASE(600, 350, "Resources/vasoSlot.PNG"),
     EMPTY_VASE(600, 300,  "Resources/vaso.PNG");
     //VASE_READY_FOR_SEEDS(600, 300, "Resources/catiadistrit.PNG");

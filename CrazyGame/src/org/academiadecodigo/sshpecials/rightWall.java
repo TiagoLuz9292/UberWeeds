@@ -1,5 +1,9 @@
 package org.academiadecodigo.sshpecials;
 
+
+/**
+ * Wall that will block Right limit of walking area
+ */
 public class rightWall extends GameObject{
 
     private static int LEFT_LIMIT_X = 720;

@@ -13,8 +13,11 @@ public abstract class GameObject {
     private int upLimitY;
     private int downLimitY;
 
-    private Picture picture;
+    private Picture picture; //Model of this gameobject on the screen
 
+    /**
+     *Constructer for gameobjects that are visible on the screen, that draw a picture in the screen.
+     */
     public GameObject(int limitLeftX, int limitRightX, int limitUpY, int limitDownY, int x, int y, String picturePath) {
         this.leftLimitX = limitLeftX;
         this.rightLimitX = limitRightX;
@@ -24,7 +27,10 @@ public abstract class GameObject {
         picture = new Picture (x, y, picturePath);
         picture.draw();
     }
-
+    /**
+     *Constructer for gameobjects that are visible on the screen, but may have colision limits to block character in certan ways
+     * (For example, not going out of the map)
+     */
     public GameObject(int limitLeftX, int limitRightX, int limitUpY, int limitDownY) {
         this.leftLimitX = limitLeftX;
         this.rightLimitX = limitRightX;
@@ -46,6 +52,10 @@ public abstract class GameObject {
     public int getDownLimitY() {
         return downLimitY;
     }
+
+    /**
+     *Change the model of the vase when he goes to a diferent state
+     */
     public void changePicture(VaseStateType vaseStateType) {
 
         System.out.println("changing pic of Vasee!");

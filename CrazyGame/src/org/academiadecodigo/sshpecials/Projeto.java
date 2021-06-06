@@ -1,3 +1,5 @@
+package org.academiadecodigo.sshpecials;
+
 public class Projeto {
     /*
     Vaso limite esquerdo: 485
@@ -10,11 +12,11 @@ public class Projeto {
 __________________________________
 
 -----------------
-    Scenery
+    org.academiadecodigo.sshpecials.Scenery
 
 //Propriedades
             Picture
-            GameObject[]
+            org.academiadecodigo.sshpecials.GameObject[]
             boolean available
 
 
@@ -39,7 +41,7 @@ __________________________________
     Inventory
 
             final capacity (number oj diferent objects)
-            GameObject[capacity]
+            org.academiadecodigo.sshpecials.GameObject[capacity]
 
       getGameObject
       removeFromInventory
@@ -51,7 +53,7 @@ __________________________________
      */
 
     /*
-      public void addToInventory(GameObject gameOjb, int quantity) {
+      public void addToInventory(org.academiadecodigo.sshpecials.GameObject gameOjb, int quantity) {
 
 
 
@@ -72,8 +74,8 @@ __________________________________
 
 
 -----------------
-    GameObject
-            Vase,
+    org.academiadecodigo.sshpecials.GameObject
+            org.academiadecodigo.sshpecials.Vase,
             Regador,
             Sementes,
             sacos,
@@ -87,13 +89,13 @@ __________________________________
             playerChar,
             aiChar,
 -----------------
-    Scenery
+    org.academiadecodigo.sshpecials.Scenery
 
-            GameObject[],
+            org.academiadecodigo.sshpecials.GameObject[],
             Picture,
     String name,
 -----------------
-    GameObject
+    org.academiadecodigo.sshpecials.GameObject
 
             Picture,
             visible,
@@ -102,7 +104,7 @@ __________________________________
     Quantity,
     Interactable,
             ----------------
-    Character
+    org.academiadecodigo.sshpecials.Character
 
             Picture,
     boolean/status

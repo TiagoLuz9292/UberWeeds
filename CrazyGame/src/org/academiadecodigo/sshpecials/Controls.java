@@ -1,3 +1,5 @@
+package org.academiadecodigo.sshpecials;
+
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -10,12 +12,20 @@ public class Controls implements KeyboardHandler {
     private Character character;
     private Scenery activeScenery;
 
+    private ColisionDetector colisionDetector;
 
+    public Controls(ColisionDetector colisionDetector, Character character, Scenery scenery) {
+        this.colisionDetector = colisionDetector;
+        this.character = character;
+        this.activeScenery = scenery;
+        colisionDetector.setGameObjects(activeScenery.getGameObjects());
 
-    private Vaso vaso;
+    }
+
 
     public void init(){
 
+        colisionDetector.setGameObjects(activeScenery.getGameObjects());
         this.keyboard = new Keyboard(this);
 
         KeyboardEvent pressUp = new KeyboardEvent();
@@ -43,15 +53,8 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(pressInteract);
 
     }
-    public void setVaso(Vaso vaso) {
-        this.vaso = vaso;
-    }
-    public void setCharacter(Character character) {
-        this.character = character;
-    }
-    public Vaso getVaso() {
-        return vaso;
-    }
+
+
     public Character getChar() {
         return character;
     }
@@ -66,7 +69,7 @@ public class Controls implements KeyboardHandler {
         if(keyboardEvent.getKey() == KeyboardEvent.KEY_F) {
             if(character.checkColision(gameObjects)){
                 System.out.println("teste");
-                gameObjects[0].activate();
+                gameObjects[0].changeState();
 
                 character.getPicture().delete();
                 character.getPicture().load("Resources/catia2.PNG");
@@ -80,22 +83,19 @@ public class Controls implements KeyboardHandler {
 
             case KeyboardEvent.KEY_D :
                 //crossHair.moveRight();
-                character.moveRight(gameObjects[0]);
+                character.moveRight();
                 break;
             case KeyboardEvent.KEY_A :
                 //crossHair.moveLeft();
-                character.moveLeft(gameObjects[0]);
+                character.moveLeft();
                 break;
             case KeyboardEvent.KEY_W :
-                if(character.getPicture().getY() - 10 <= 100) {
-                    return;
-                }
                 //crossHair.moveUp();
-                character.moveUp(gameObjects[0]);
+                character.moveUp();
                 break;
             case KeyboardEvent.KEY_S :
                 //crossHair.moveDown();
-                character.moveDown(gameObjects[0]);
+                character.moveDown();
                 break;
         }
         //character.checkColision(vaso);
@@ -110,11 +110,10 @@ public class Controls implements KeyboardHandler {
             charPicture.draw();
 
 
-        }
 
-    }
-    public void setActiveScenery(Scenery scenery) {
-        activeScenery = scenery;
+        }
+        System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
+
     }
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {

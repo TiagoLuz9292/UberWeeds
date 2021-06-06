@@ -1,4 +1,7 @@
+package org.academiadecodigo.sshpecials;
+
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.sshpecials.GameObject;
 
 public class Scenery {
 

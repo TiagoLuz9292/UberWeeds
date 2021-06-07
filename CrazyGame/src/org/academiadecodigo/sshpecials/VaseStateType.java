@@ -7,11 +7,11 @@ public enum VaseStateType {
      * to show on the screen at the correct place.
      */
     NO_VASE(600, 350, "Resources/vasoSlot.PNG"),
-    EMPTY_VASE(600, 300,  "Resources/vaso.PNG");
-    //VASE_READY_FOR_SEEDS(600, 300, "Resources/catiadistrit.PNG");
-    //VASE_HAS_SEEDS,
-    //VASE_HAS_WATER,
-    //VASE_IS_COLLECTABLE;
+    EMPTY_VASE(600, 301,  "Resources/EmptyVase.PNG"),
+    VASE_READY_FOR_SEEDS(600, 280, "Resources/VaseReadyForSeeds.PNG"),
+    VASE_HAS_SEEDS(600, 280, "Resources/VaseHasSeeds.png"),
+    VASE_HAS_WATER(600, 247, "Resources/VaseHasWater.png"),
+    VASE_IS_COLLECTABLE(600, 245, "Resources/VaseIsCollectable.png");
 
     public int x;
     public int y;

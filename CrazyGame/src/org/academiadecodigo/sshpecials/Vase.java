@@ -25,10 +25,30 @@ public class Vase extends GameObject {
      * jump to the next state and change its model on the screen. When it reaches the last fase and we collect the weed, it will go back to state 2, where
      * the vase is ready to plant again.
      */
-    public void changeState() {
+    public void changeState() {  
         switch(vaseState) {
             case  NO_VASE:
                 vaseState = VaseStateType.EMPTY_VASE;
+                super.changePicture(vaseState);
+                break;
+            case EMPTY_VASE:
+                vaseState = VaseStateType.VASE_READY_FOR_SEEDS;
+                super.changePicture(vaseState);
+                break;
+            case VASE_READY_FOR_SEEDS:
+                vaseState = VaseStateType.VASE_HAS_SEEDS;
+                super.changePicture(vaseState);
+                break;
+            case VASE_HAS_SEEDS:
+                vaseState = VaseStateType.VASE_HAS_WATER;
+                super.changePicture(vaseState);
+                break;
+            case VASE_HAS_WATER:
+                vaseState = VaseStateType.VASE_IS_COLLECTABLE;
+                super.changePicture(vaseState);
+                break;
+            default:
+                vaseState = VaseStateType.NO_VASE;
                 super.changePicture(vaseState);
                 break;
         }

@@ -2,6 +2,7 @@
   <library name="simple-graphics">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../classRepo/class_repo/libs/simple-graphics.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../RepoTurma/class_repo/libs/simple-graphics.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

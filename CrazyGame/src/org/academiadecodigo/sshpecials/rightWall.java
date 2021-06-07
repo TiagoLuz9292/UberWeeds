@@ -18,4 +18,8 @@ public class rightWall extends GameObject{
     public void changeState(){
 
     }
+    @Override
+    public String toString() {
+        return "IM RIGHT WALL";
+    }
 }

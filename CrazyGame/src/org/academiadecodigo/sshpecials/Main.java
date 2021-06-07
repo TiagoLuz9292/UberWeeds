@@ -4,10 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         ColisionDetector colisionDetector = new ColisionDetector();
-        Basement basement = new Basement();
+
+        Scenery [] sceneries = {new Basement(), new SceneryTeste()};
         Character character = new Character(colisionDetector);
-        Controls controls = new Controls(colisionDetector, character, basement);
+        Controls controls = new Controls(colisionDetector, character, sceneries);
         controls.init();
 
 

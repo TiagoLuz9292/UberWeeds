@@ -10,8 +10,21 @@ public class ColisionDetector {
 
     public ColisionDetector() {
     }
-
-    public boolean checkColision(Picture picture, GameObject[] gameObjects) {
+    public GameObject getObjectInRange(Picture picture) {
+        for (GameObject gameObject : gameObjects) {
+            if(gameObject instanceof upWall) {
+                continue;
+            }
+            if (picture.getX() >= gameObject.getLeftLimitX() - INTERACTION_HIT_BOX && picture.getX() <= gameObject.getRightLimitX() + INTERACTION_HIT_BOX &&
+                    picture.getY() >= gameObject.getUpLimitY() - INTERACTION_HIT_BOX && picture.getY() <= gameObject.getDownLimitY() + INTERACTION_HIT_BOX) {
+                System.out.println(gameObject);
+                System.out.println("im inside an object!");
+                return gameObject;
+            }
+        }
+        return null;
+    }
+    public boolean checkColision(Picture picture) {
 
         for (GameObject gameObject : gameObjects) {
             if (picture.getX() >= gameObject.getLeftLimitX() - INTERACTION_HIT_BOX && picture.getX() <= gameObject.getRightLimitX() + INTERACTION_HIT_BOX &&

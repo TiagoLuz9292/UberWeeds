@@ -16,23 +16,33 @@ public class Controls implements KeyboardHandler {
     private Keyboard keyboard;
     private Character character;
     private Scenery activeScenery;
-    //private Scenery[] sceneries;
+    private Scenery[] sceneries;
 
     private ColisionDetector colisionDetector;
 
 
-    public Controls(ColisionDetector colisionDetector, Character character, Scenery scenery) {
+    public Controls(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
         this.colisionDetector = colisionDetector;
         this.character = character;
-        this.activeScenery = scenery;
+        this.sceneries = sceneries;
+        activeScenery = sceneries[0];
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
-
     }
 
 
     public void init(){
-
+        activeScenery.showPicture();
+        System.out.println(activeScenery);
         colisionDetector.setGameObjects(activeScenery.getGameObjects()); //Setting the inicial Scenery GameObject array
+
+        GameObject[] gameObjects = activeScenery.getGameObjects();
+
+        for(int i = 0; i < gameObjects.length; i++) {
+            gameObjects[i].showPicture();
+        }
+
+        character.showPicture();
+
         this.keyboard = new Keyboard(this);
 
         /**
@@ -87,10 +97,19 @@ public class Controls implements KeyboardHandler {
          * In progress!
          */
         if(keyboardEvent.getKey() == KeyboardEvent.KEY_F) {
-            if(character.checkInRangeWithObject(gameObjects)){
-                System.out.println("teste");
-                gameObjects[0].changeState();
 
+
+            if(character.checkInRangeWithObject(gameObjects)){
+                GameObject gameObject = colisionDetector.getObjectInRange(character.getPicture());
+                if(gameObject instanceof  Vase) {
+                    gameObjects[0].changeState();
+                    return;
+                }
+                if(gameObject instanceof Door) {
+                    System.out.println("Test, im a door!");
+                    setActiveScenery(1);
+                    return;
+                }
                 character.getPicture().delete();
                 character.getPicture().load("Resources/catia2.PNG");
                 character.getPicture().draw();
@@ -138,6 +157,20 @@ public class Controls implements KeyboardHandler {
 
         }
         System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
+
+    }
+    public void setActiveScenery(int sceneryIndex) {
+
+        for(GameObject gameObject : activeScenery.getGameObjects()) {
+            gameObject.hidePicture();
+        }
+
+        activeScenery.hidePicture();
+        activeScenery = sceneries[sceneryIndex];
+        activeScenery.hidePicture();
+        activeScenery.showPicture();
+        character.showPicture();
+        colisionDetector.setGameObjects(activeScenery.getGameObjects());
 
     }
     @Override

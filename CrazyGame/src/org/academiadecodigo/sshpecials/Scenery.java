@@ -15,7 +15,6 @@ public class Scenery {
      */
     public Scenery(String picPath, GameObject[] gameObjects) {
         picture = new Picture(0, 0, picPath);
-        picture.draw();
         available = true;
         this.gameObjects = gameObjects;
 
@@ -26,5 +25,16 @@ public class Scenery {
 
     public GameObject[] getGameObjects() {
         return gameObjects;
+    }
+    public void showPicture() {
+
+        picture.draw();
+    }
+    public void hidePicture() {
+        picture.delete();
+    }
+    @Override
+    public String toString() {
+        return "IM SCENERY";
     }
 }

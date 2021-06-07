@@ -25,7 +25,6 @@ public abstract class GameObject {
         this.downLimitY = limitDownY;
 
         picture = new Picture (x, y, picturePath);
-        picture.draw();
     }
     /**
      *Constructer for gameobjects that are visible on the screen, but may have colision limits to block character in certan ways
@@ -67,7 +66,15 @@ public abstract class GameObject {
     public Picture getPicture() {
         return picture;
     }
-
+    public void showPicture() {
+        picture.delete();
+        picture.draw();
+    }
+    public void hidePicture() {
+        picture.delete();
+    }
     public abstract void changeState();
-
+    public String toString() {
+        return "Im an object";
+    }
 }

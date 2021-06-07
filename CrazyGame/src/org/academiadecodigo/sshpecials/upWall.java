@@ -6,7 +6,7 @@ package org.academiadecodigo.sshpecials;
  */
 public class upWall extends GameObject{
 
-    private static int LEFT_LIMIT_X = 0;
+    private static int LEFT_LIMIT_X = -90;
     private static int RIGHT_LIMIT_X = 740;
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 115;
@@ -18,5 +18,9 @@ public class upWall extends GameObject{
 
     public void changeState(){
 
+    }
+    @Override
+    public String toString() {
+        return "IM UP WALL";
     }
 }

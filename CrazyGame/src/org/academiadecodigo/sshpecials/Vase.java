@@ -33,4 +33,9 @@ public class Vase extends GameObject {
                 break;
         }
     }
+
+    @Override
+    public String toString() {
+        return "IM A VASE!";
+    }
 }

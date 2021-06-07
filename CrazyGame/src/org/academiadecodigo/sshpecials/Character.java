@@ -22,7 +22,6 @@ public class Character {
     public Character(ColisionDetector colisionDetector) {
         this.colisionDetector = colisionDetector;
         picture = new Picture(STARTING_X, STARTING_Y, "Resources/catia2.PNG"); //Create Character model on the screen
-        picture.draw();
     }
 
     /**
@@ -80,7 +79,11 @@ public class Character {
      *Checks if this character is in range of interacting with some object using F key.
      */
     public boolean checkInRangeWithObject(GameObject[] gameObjects){
-        return colisionDetector.checkColision(picture, gameObjects);
+        return colisionDetector.checkColision(picture);
+    }
+    public void showPicture() {
+        picture.delete();
+        picture.draw();
     }
     public Picture getPicture() {
         return picture;

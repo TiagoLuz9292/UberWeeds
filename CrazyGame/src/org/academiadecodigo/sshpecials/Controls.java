@@ -152,20 +152,26 @@ public class Controls implements KeyboardHandler {
          * This for now is our solution to make character apear behind an object if it is on t he other side, but in front
          * of that same object if the charect is in front of it
          */
-        if(charPicture.getY() < gameObjects[0].getUpLimitY() && charPicture.getX() > gameObjects[0].getLeftLimitX() &&
-                charPicture.getX() < gameObjects[0].getRightLimitX()) {
-            gameObjects[0].getPicture().delete();
-            gameObjects[0].getPicture().draw();
+        for(GameObject gameObject : activeScenery.getGameObjects()) {
+
+            if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
+                    charPicture.getX() < gameObject.getRightLimitX()) {
+                System.out.println("Player em cima");
+                gameObject.getPicture().delete();
+                gameObject.getPicture().draw();
+                return;
+            }
+            if (charPicture.getY() > gameObject.getDownLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
+                    charPicture.getX() < gameObject.getRightLimitX()) {
+
+                System.out.println("Player em baixo");
+                charPicture.delete();
+                charPicture.draw();
+                return;
+
+            }
+            System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
         }
-        if(charPicture.getY() > gameObjects[0].getUpLimitY() && charPicture.getX() > gameObjects[0].getLeftLimitX() &&
-                charPicture.getX() < gameObjects[0].getRightLimitX()) {
-            charPicture.delete();
-            charPicture.draw();
-
-
-
-        }
-        System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
 
     }
     public void setActiveScenery(int sceneryIndex) {

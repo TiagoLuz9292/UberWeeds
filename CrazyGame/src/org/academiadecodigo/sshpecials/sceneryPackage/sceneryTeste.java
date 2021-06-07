@@ -1,6 +1,9 @@
-package org.academiadecodigo.sshpecials;
+package org.academiadecodigo.sshpecials.sceneryPackage;
 
-public class sceneryTeste extends Scenery{
+import org.academiadecodigo.sshpecials.GameObject;
+import org.academiadecodigo.sshpecials.Scenery;
+
+public class sceneryTeste extends Scenery {
     private static String PICTURE = "Resources/gameBackGroundHouse.PNG";                   //Picture path for Basement Background
     private static GameObject[] gameobjects = {}; //Array of objects that can colide with character in this scenery
     //We are missing 2 walls XD

@@ -1,4 +1,4 @@
-package org.academiadecodigo.sshpecials;
+package org.academiadecodigo.sshpecials.gameObjectsPackage.status;
 
 public enum VaseStateType {
 

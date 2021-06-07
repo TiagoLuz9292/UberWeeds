@@ -74,7 +74,7 @@ public class Controls implements KeyboardHandler {
 
     /**
      *This method is called everytime one of our keys is pressed, and tell us what key has been pressed
-     * So we can use a switch case, and chose diferent consequences for diferent key pressed.
+     * So we can use a switch case, and chose different consequences for different key pressed.
      */
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {

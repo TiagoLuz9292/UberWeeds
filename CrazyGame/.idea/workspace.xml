@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="240592f9-01e2-42fa-a0b1-ce9c7008266d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/AlleyWay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/Basement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/java.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/simple_graphics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrazyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CrazyGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/AlleyWay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Basement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Controls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/DownWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/DownWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Vase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Vase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/VaseStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/status/VaseStateType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/rightWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/RightWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/sceneryTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/upWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/UpWall.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1tbsgyW0SDBxd2kaRHI0ommQXOn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="240592f9-01e2-42fa-a0b1-ce9c7008266d" name="Default Changelist" comment="" />
+      <created>1623049241256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623049241256</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,7 +1,7 @@
 package org.academiadecodigo.sshpecials;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-import org.academiadecodigo.sshpecials.VaseStateType;
+import org.academiadecodigo.sshpecials.gameObjectsPackage.status.VaseStateType;
 
 public abstract class GameObject {
 
@@ -16,7 +16,7 @@ public abstract class GameObject {
     private Picture picture; //Model of this gameobject on the screen
 
     /**
-     *Constructer for gameobjects that are visible on the screen, that draw a picture in the screen.
+     *Constructor for gameobjects that are visible on the screen, that draw a picture in the screen.
      */
     public GameObject(int limitLeftX, int limitRightX, int limitUpY, int limitDownY, int x, int y, String picturePath) {
         this.leftLimitX = limitLeftX;

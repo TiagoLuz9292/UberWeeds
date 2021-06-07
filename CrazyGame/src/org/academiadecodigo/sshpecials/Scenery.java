@@ -13,8 +13,8 @@ public class Scenery {
      *
      * Scenery receives the list of objects in that scenery for check colision with character in the future, and a path for its model on screen
      */
-    public Scenery(String picPath, GameObject[] gameObjects) {
-        picture = new Picture(0, 0, picPath);
+    public Scenery(String picturePath, GameObject[] gameObjects) {
+        picture = new Picture(0, 0, picturePath);
         available = true;
         this.gameObjects = gameObjects;
 

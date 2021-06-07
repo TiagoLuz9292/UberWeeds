@@ -41,7 +41,7 @@ public class VaseTwo extends Vase{
                 super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
                 break;
             default:
-                vaseState = VaseTwoStateType.NO_VASE;
+                vaseState = VaseTwoStateType.EMPTY_VASE;
                 super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
                 break;
         }

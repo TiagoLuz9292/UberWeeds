@@ -6,7 +6,7 @@ public class Character {
 
 
     /**
-     * For now, character will have inicial position (x and y) and we can change them at starting x and y.
+     * For now, character will have initial position (x and y) and we can change them at starting x and y.
      */
     private static int STARTING_X = 400;      // Picture initial X
     private static int STARTING_Y = 230;      // Picture inicial Y

@@ -42,7 +42,7 @@ public class VaseOne extends Vase{
                 super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
                 break;
             default:
-                vaseState = VaseOneStateType.NO_VASE;
+                vaseState = VaseOneStateType.EMPTY_VASE;
                 super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
                 break;
         }

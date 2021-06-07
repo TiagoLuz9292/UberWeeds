@@ -124,7 +124,6 @@ public class Controls implements KeyboardHandler {
                 character.getPicture().draw();
                 return;
             }
-
         }
 
         switch(keyboardEvent.getKey()) {

@@ -5,7 +5,7 @@ import org.academiadecodigo.sshpecials.GameObject;
 
 public class ColisionDetector {
 
-    private static int INTERACTION_HIT_BOX = 30;
+    private static int INTERACTION_HIT_BOX = 24;
     private GameObject[] gameObjects;
 
     public ColisionDetector() {

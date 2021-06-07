@@ -39,6 +39,7 @@ public class Controls implements KeyboardHandler {
 
         for(int i = 0; i < gameObjects.length; i++) {
             gameObjects[i].showPicture();
+            System.out.println(gameObjects[i]);
         }
 
         character.showPicture();
@@ -101,12 +102,20 @@ public class Controls implements KeyboardHandler {
 
             if(character.checkInRangeWithObject(gameObjects)){
                 GameObject gameObject = colisionDetector.getObjectInRange(character.getPicture());
-                if(gameObject instanceof  Vase) {
+                if(gameObject instanceof  VaseOne) {
                     gameObjects[0].changeState();
+                    return;
+                }
+                if(gameObject instanceof  VaseTwo) {
+                    gameObjects[1].changeState();
                     return;
                 }
                 if(gameObject instanceof Door) {
                     System.out.println("Test, im a door!");
+                    if(activeScenery.toString().equals(sceneries[1].toString())) {
+                        setActiveScenery(0);
+                        return;
+                    }
                     setActiveScenery(1);
                     return;
                 }
@@ -169,6 +178,10 @@ public class Controls implements KeyboardHandler {
         activeScenery = sceneries[sceneryIndex];
         activeScenery.hidePicture();
         activeScenery.showPicture();
+        for (GameObject gameObject : activeScenery.getGameObjects()) {
+            gameObject.hidePicture();
+            gameObject.showPicture();
+        }
         character.showPicture();
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
 

@@ -1,6 +1,6 @@
 package org.academiadecodigo.sshpecials;
 
-public enum VaseStateType {
+public enum VaseOneStateType {
 
     /**
      * Each state of Vase has its diferent model (empty vase, vase with seeds, with plant grown, etc), and their own coordinates
@@ -18,7 +18,7 @@ public enum VaseStateType {
 
     public String picturePath;
 
-    VaseStateType(int x, int y, String picturePath) {
+    VaseOneStateType(int x, int y, String picturePath) {
         this.x = x;
         this.y = y;
         this.picturePath = picturePath;

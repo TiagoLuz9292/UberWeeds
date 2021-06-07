@@ -1,7 +1,6 @@
 package org.academiadecodigo.sshpecials;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-import org.academiadecodigo.sshpecials.VaseStateType;
 
 public abstract class GameObject {
 
@@ -55,12 +54,12 @@ public abstract class GameObject {
     /**
      *Change the model of the vase when he goes to a diferent state
      */
-    public void changePicture(VaseStateType vaseStateType) {
+    public void changePicture(int x, int y, String picturePath) {
 
         System.out.println("changing pic of Vasee!");
 
         picture.delete();
-        picture = new Picture(vaseStateType.x, vaseStateType.y, vaseStateType.picturePath);
+        picture = new Picture(x, y, picturePath);
         picture.draw();
     }
     public Picture getPicture() {
@@ -74,6 +73,7 @@ public abstract class GameObject {
         picture.delete();
     }
     public abstract void changeState();
+
     public String toString() {
         return "Im an object";
     }

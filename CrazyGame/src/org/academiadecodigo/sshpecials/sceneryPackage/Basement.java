@@ -4,6 +4,7 @@ package org.academiadecodigo.sshpecials.sceneryPackage;
 import org.academiadecodigo.sshpecials.*;
 import org.academiadecodigo.sshpecials.gameObjectsPackage.RightWall;
 import org.academiadecodigo.sshpecials.gameObjectsPackage.UpWall;
+import org.academiadecodigo.sshpecials.gameObjectsPackage.Vase;
 
 /**
  * Basement scenery (Place for planting and growing the Weed :D)

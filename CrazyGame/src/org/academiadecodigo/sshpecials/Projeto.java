@@ -75,7 +75,7 @@ __________________________________
 
 -----------------
     org.academiadecodigo.sshpecials.GameObject
-            org.academiadecodigo.sshpecials.Vase,
+            org.academiadecodigo.sshpecials.gameObjectsPackage.Vase,
             Regador,
             Sementes,
             sacos,

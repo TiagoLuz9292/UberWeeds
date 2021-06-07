@@ -1,5 +1,6 @@
-package org.academiadecodigo.sshpecials;
+package org.academiadecodigo.sshpecials.gameObjectsPackage;
 
+import org.academiadecodigo.sshpecials.GameObject;
 import org.academiadecodigo.sshpecials.gameObjectsPackage.status.VaseStateType;
 
 public class Vase extends GameObject {

@@ -2,25 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="240592f9-01e2-42fa-a0b1-ce9c7008266d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/AlleyWay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/Basement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/java.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/simple_graphics.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CrazyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CrazyGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/AlleyWay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Basement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Controls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/DownWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/DownWall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Vase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Vase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/VaseStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/status/VaseStateType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/rightWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/RightWall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/sceneryTeste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/upWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/UpWall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/AlleyWay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Basement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/ColisionDetector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/ColisionDetector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Controls.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Controls.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/DownWall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Projeto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Projeto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Scenery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Scenery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Vase$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Vase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/VaseStateType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/rightWall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/upWall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Projeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Projeto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/Vase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjectsPackage/Vase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/Basement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/sceneryPackage/Basement.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,31 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../class_repo/libs/simple-graphics.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.sshpecials.Main" />
+      <module name="CrazyGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.academiadecodigo.sshpecials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,5 +87,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -44,7 +44,7 @@ public class Controls implements KeyboardHandler {
 
         GameObject[] gameObjects = activeScenery.getGameObjects();
 
-        for(int i = 0; i < gameObjects.length; i++) {
+       for(int i = 0; i < gameObjects.length; i++) {
             gameObjects[i].showPicture();
             System.out.println(gameObjects[i]);
         }

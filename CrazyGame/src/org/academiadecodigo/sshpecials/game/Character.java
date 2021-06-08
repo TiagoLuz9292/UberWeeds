@@ -2,6 +2,8 @@ package org.academiadecodigo.sshpecials.game;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.testing.Inventory;
+import org.academiadecodigo.sshpecials.testing.ItemType;
 
 public class Character {
 
@@ -13,6 +15,7 @@ public class Character {
     private static int STARTING_Y = 230;      // Picture inicial Y
     private static int DISTANCE_PER_STEP = 20; // Character movement speed (how many pixels will change each time the key is pressed)
 
+    private Inventory inventory;
     private Picture picture;                  // Character model on the screen
     private ColisionDetector colisionDetector;// Character uses colisionDetector to check colision with scenery objects
 
@@ -21,6 +24,7 @@ public class Character {
      * Character receives a new colision detector in constructor
      */
     public Character(ColisionDetector colisionDetector) {
+        inventory = new Inventory();
         this.colisionDetector = colisionDetector;
         picture = new Picture(STARTING_X, STARTING_Y, "Resources/catia2.PNG"); //Create Character model on the screen
     }
@@ -79,6 +83,16 @@ public class Character {
     /**
      *Checks if this character is in range of interacting with some object using F key.
      */
+
+    public void addToInventory(ItemType key, int value) {
+        inventory.add(key, value);
+    }
+    public void removeFromInventory(ItemType key, int value) {
+        inventory.remove(key, value);
+    }
+    public int countItem(ItemType key) {
+        return inventory.keyCount(key);
+    }
     public boolean checkInRangeWithObject(GameObject[] gameObjects){
         return colisionDetector.checkColision(picture);
     }

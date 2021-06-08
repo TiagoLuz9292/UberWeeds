@@ -1,5 +1,6 @@
 package org.academiadecodigo.sshpecials.game;
 
+import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -31,6 +32,8 @@ public class Controls implements KeyboardHandler {
     public Controls(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
         this.colisionDetector = colisionDetector;
         this.character = character;
+        //character.addToInventory(VASE, 1);
+        System.out.println(character.countItem(VASE));
         this.sceneries = sceneries;
         activeScenery = sceneries[0];
         colisionDetector.setGameObjects(activeScenery.getGameObjects());

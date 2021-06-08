@@ -103,4 +103,7 @@ public class Character {
     public Picture getPicture() {
         return picture;
     }
+    public Inventory getInventory() {
+        return inventory;
+    }
 }

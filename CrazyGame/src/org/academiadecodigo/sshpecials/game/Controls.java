@@ -120,12 +120,12 @@ public class Controls implements KeyboardHandler {
                     gameObjects[0].changeState();
                     character.removeFromInventory(VASE, 1);
                     userInterface.update();
-                    System.out.println(character.countItem(VASE));
-
                     return;
                 }
-                if(gameObject instanceof VaseTwo) {
+                if(gameObject instanceof VaseTwo && character.countItem(VASE) > 0) {
                     gameObjects[1].changeState();
+                    character.removeFromInventory(VASE, 1);
+                    userInterface.update();
                     return;
                 }
                 if(gameObject instanceof Door) {

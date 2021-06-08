@@ -1,8 +1,6 @@
 package org.academiadecodigo.sshpecials.testing;
-
 import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.Multiset;
-
 import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 
 public class Inventory {
@@ -29,7 +27,7 @@ public class Inventory {
 
     public void init() {
 
-        add(VASE,  2 );
+        add(VASE,  1 );
         add(WATER_CAN,  0);
         add(SHOVEL, 0);
         add(SCISSORS, 0);

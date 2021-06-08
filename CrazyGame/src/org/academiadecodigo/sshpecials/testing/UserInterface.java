@@ -1,5 +1,4 @@
 package org.academiadecodigo.sshpecials.testing;
-
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 
@@ -22,14 +21,11 @@ public class UserInterface {
         vaseCounter.grow(15, 8);
         vaseCounter.draw();
 
-
     }
-
     public void update() {
         vaseCounter.delete();
         vaseCounter = new Text(840, 20, "Vase x " + inventory.keyCount(VASE));
+        vaseCounter.grow(15, 8);
         vaseCounter.draw();
     }
-
-
 }

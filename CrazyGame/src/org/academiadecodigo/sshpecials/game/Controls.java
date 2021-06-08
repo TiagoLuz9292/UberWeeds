@@ -14,6 +14,7 @@ import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.gameObjects.VaseTwo;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 import org.academiadecodigo.sshpecials.testing.UserInterface;
+import org.academiadecodigo.sshpecials.testing.Vase;
 
 /**
  * This class will be our "game" class, with game logic, and also the responsability of listening to Keyboard key pressing
@@ -32,15 +33,29 @@ public class Controls implements KeyboardHandler {
     private ColisionDetector colisionDetector;
 
 
+
+
+
+
+
+
     public Controls(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
         this.colisionDetector = colisionDetector;
         this.character = character;
         //character.addToInventory(VASE, 1);
-        System.out.println(character.countItem(VASE));
+        //System.out.println(character.countItem(VASE));
         this.sceneries = sceneries;
+
+
         activeScenery = sceneries[0];
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
     }
+
+
+
+
+
+
 
 
     public void init(){
@@ -116,16 +131,13 @@ public class Controls implements KeyboardHandler {
 
             if(character.checkInRangeWithObject(gameObjects)){
                 GameObject gameObject = colisionDetector.getObjectInRange(character.getPicture());
-                if(gameObject instanceof VaseOne && character.countItem(VASE) > 0) {
-                    gameObjects[0].changeState();
+
+                if(gameObject instanceof Vase && character.countItem(VASE) > 0) {
+
+                    gameObject.changeState();
                     character.removeFromInventory(VASE, 1);
                     userInterface.update();
                     System.out.println(character.countItem(VASE));
-
-                    return;
-                }
-                if(gameObject instanceof VaseTwo) {
-                    gameObjects[1].changeState();
                     return;
                 }
                 if(gameObject instanceof Door) {
@@ -206,6 +218,7 @@ public class Controls implements KeyboardHandler {
             gameObject.showPicture();
         }
         character.showPicture();
+        userInterface.update();
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
 
     }

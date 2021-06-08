@@ -23,6 +23,9 @@ public class VaseOne extends Vase {
      */
     @Override
     public void changeState() {
+
+
+
         switch(vaseState) {
             case  NO_VASE:
                 vaseState = VaseOneStateType.EMPTY_VASE;

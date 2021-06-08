@@ -78,12 +78,16 @@ public class ColisionDetector {
         System.out.println("going right!");
 
         for(GameObject gameObject : gameObjects){
-            System.out.println(gameObject.getLeftLimitX());
-            if(picture.getX() + newStepPosition +1 >= gameObject.getLeftLimitX() && picture.getX() + newStepPosition +1 <= gameObject.getRightLimitX() &&
+
+            if(picture.getX() + newStepPosition + 1 >= gameObject.getLeftLimitX() && picture.getX() + newStepPosition +1 <= gameObject.getRightLimitX() &&
                     picture.getY() <=  gameObject.getDownLimitY() && picture.getY() >= gameObject.getUpLimitY()) {
+
                 return true;
+
             }
+
         }
+
         return false;
     }
 

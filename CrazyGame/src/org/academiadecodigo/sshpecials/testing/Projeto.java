@@ -121,8 +121,17 @@ __________________________________
             PlantStatusType
     CharStatusType
 
+----------------------------------------------------
+
+UserInterface
+
+texto começa no X = 650;
+
+
      */
 }
+
+
 
 
 

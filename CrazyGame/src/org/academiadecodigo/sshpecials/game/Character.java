@@ -2,8 +2,12 @@ package org.academiadecodigo.sshpecials.game;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
+import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
+
+import static org.academiadecodigo.sshpecials.testing.DirectionType.*;
 
 public class Character {
 
@@ -11,9 +15,14 @@ public class Character {
     /**
      * For now, character will have initial position (x and y) and we can change them at starting x and y.
      */
+
     private static int STARTING_X = 400;      // Picture initial X
     private static int STARTING_Y = 230;      // Picture inicial Y
-    private static int DISTANCE_PER_STEP = 20; // Character movement speed (how many pixels will change each time the key is pressed)
+    private static int DISTANCE_PER_STEP = 2; // Character movement speed (how many pixels will change each time the key is pressed)
+
+    private boolean interactable;
+
+    private DirectionType direction;
 
     private Inventory inventory;
     private Picture picture;                  // Character model on the screen
@@ -24,6 +33,8 @@ public class Character {
      * Character receives a new colision detector in constructor
      */
     public Character(ColisionDetector colisionDetector) {
+        interactable = false;
+        direction = NONE;
         inventory = new Inventory();
         this.colisionDetector = colisionDetector;
         picture = new Picture(STARTING_X, STARTING_Y, "Resources/catia2.PNG"); //Create Character model on the screen
@@ -33,6 +44,33 @@ public class Character {
      *Checks all the path, if there is a colision in the middle, character will stop close to it
      * Each direction has its method
      */
+
+    public void interact(GameObject gameObject) {
+        interactable = false;
+        gameObject.changeState();
+
+    }
+
+    public void move() {
+
+        switch(direction) {
+            case LEFT:
+                moveLeft();
+                break;
+            case RIGHT:
+                moveRight();
+                break;
+            case UP:
+                moveUp();
+                break;
+            case DOWN:
+                moveDown();
+                break;
+            case NONE:
+                break;
+        }
+
+    }
     public void moveRight() {
         int distance = 0;
         for(int j = 0; j <= DISTANCE_PER_STEP; j++) {
@@ -93,12 +131,18 @@ public class Character {
     public int countItem(ItemType key) {
         return inventory.keyCount(key);
     }
-    public boolean checkInRangeWithObject(GameObject[] gameObjects){
+    public boolean checkInRangeWithObject(){
         return colisionDetector.checkColision(picture);
+    }
+    public GameObject getObjectInRange() {
+        return colisionDetector.getObjectInRange(picture);
     }
     public void showPicture() {
         picture.delete();
         picture.draw();
+    }
+    public void setDirection(DirectionType direction) {
+        this.direction = direction;
     }
     public Picture getPicture() {
         return picture;
@@ -106,4 +150,11 @@ public class Character {
     public Inventory getInventory() {
         return inventory;
     }
+    public void setInteractable() {
+        interactable = true;
+    }
+    public boolean isInteractable() {
+        return interactable;
+    }
+
 }

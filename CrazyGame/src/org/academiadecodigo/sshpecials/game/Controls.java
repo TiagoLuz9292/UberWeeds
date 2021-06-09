@@ -1,20 +1,11 @@
 package org.academiadecodigo.sshpecials.game;
 
-import static org.academiadecodigo.sshpecials.testing.ItemType.*;
+import static org.academiadecodigo.sshpecials.testing.DirectionType.*;
+
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
-import org.academiadecodigo.sshpecials.game.Character;
-import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.Door;
-import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.gameObjects.VaseTwo;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.testing.UserInterface;
-import org.academiadecodigo.sshpecials.testing.Vase;
 
 /**
  * This class will be our "game" class, with game logic, and also the responsability of listening to Keyboard key pressing
@@ -25,53 +16,16 @@ public class Controls implements KeyboardHandler {
 
     private Keyboard keyboard;
     private Character character;
-    private Scenery activeScenery;
-    private Scenery[] sceneries;
-
-    private UserInterface userInterface;
-
-    private ColisionDetector colisionDetector;
 
 
 
+    public Controls(Character character) {
 
-
-
-
-
-    public Controls(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
-        this.colisionDetector = colisionDetector;
         this.character = character;
-        //character.addToInventory(VASE, 1);
-        //System.out.println(character.countItem(VASE));
-        this.sceneries = sceneries;
 
-
-        activeScenery = sceneries[0];
-        colisionDetector.setGameObjects(activeScenery.getGameObjects());
     }
 
-
-
-
-
-
-
-
     public void init(){
-        activeScenery.showPicture();
-        System.out.println(activeScenery);
-        colisionDetector.setGameObjects(activeScenery.getGameObjects()); //Setting the inicial Scenery GameObject array
-
-        GameObject[] gameObjects = activeScenery.getGameObjects();
-
-        for(int i = 0; i < gameObjects.length; i++) {
-            gameObjects[i].showPicture();
-            System.out.println(gameObjects[i]);
-        }
-
-        character.showPicture();
-        userInterface = new UserInterface(character.getInventory());
 
         this.keyboard = new Keyboard(this);
 
@@ -83,15 +37,26 @@ public class Controls implements KeyboardHandler {
         KeyboardEvent pressRight = new KeyboardEvent();
         KeyboardEvent pressLeft = new KeyboardEvent();
         KeyboardEvent pressInteract = new KeyboardEvent();
+        KeyboardEvent realeaseUp = new KeyboardEvent();
+        KeyboardEvent realeaseDown = new KeyboardEvent();
+        KeyboardEvent realeaseRight = new KeyboardEvent();
+        KeyboardEvent realeaseLeft = new KeyboardEvent();
+        KeyboardEvent realeaseInteract = new KeyboardEvent();
 
         /**
          * Here we set the keys for each of our KeyboardEvents created
          */
+
         pressUp.setKey(KeyboardEvent.KEY_W);
         pressLeft.setKey(KeyboardEvent.KEY_A);
         pressDown.setKey(KeyboardEvent.KEY_S);
         pressRight.setKey(KeyboardEvent.KEY_D);
         pressInteract.setKey(KeyboardEvent.KEY_F);
+        realeaseUp.setKey(KeyboardEvent.KEY_W);
+        realeaseLeft.setKey(KeyboardEvent.KEY_A);
+        realeaseDown.setKey(KeyboardEvent.KEY_S);
+        realeaseRight.setKey(KeyboardEvent.KEY_D);
+        realeaseInteract.setKey(KeyboardEvent.KEY_F);
         /**
         * Here we set the type of Event we want to wait for (if pressed or released, in our case we will only use Press.)
         */
@@ -100,6 +65,11 @@ public class Controls implements KeyboardHandler {
         pressDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressInteract.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        realeaseRight.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        realeaseLeft.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        realeaseDown.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        realeaseUp.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        realeaseInteract.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
 
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
@@ -109,6 +79,11 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(pressDown);
         keyboard.addEventListener(pressUp);
         keyboard.addEventListener(pressInteract);
+        keyboard.addEventListener(realeaseRight);
+        keyboard.addEventListener(realeaseLeft);
+        keyboard.addEventListener(realeaseDown);
+        keyboard.addEventListener(realeaseUp);
+        keyboard.addEventListener(realeaseInteract);
 
     }
 
@@ -119,69 +94,58 @@ public class Controls implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
-        Picture charPicture = character.getPicture();
-        GameObject[] gameObjects = activeScenery.getGameObjects();
+        switch (keyboardEvent.getKey()) {
 
-        /**
-         * This part is about telling the program what to do when someone press the F key , which is out Interack key.
-         * In progress!
-         */
-        if(keyboardEvent.getKey() == KeyboardEvent.KEY_F) {
+            case KeyboardEvent.KEY_F:
+                character.setInteractable();
+                break;
 
+            case KeyboardEvent.KEY_D:
+                //crossHair.moveRight();
+                character.setDirection(RIGHT);
+                break;
+            case KeyboardEvent.KEY_A:
+                //crossHair.moveLeft();
+                character.setDirection(LEFT);
+                break;
+            case KeyboardEvent.KEY_W:
+                //crossHair.moveUp();
+                character.setDirection(UP);
+                break;
+            case KeyboardEvent.KEY_S:
+                //crossHair.moveDown();
+                character.setDirection(DOWN);
+                break;
+        }
+    }
+        @Override
+        public void keyReleased (KeyboardEvent keyboardEvent){
+            switch (keyboardEvent.getKey()) {
 
-            if(character.checkInRangeWithObject(gameObjects)){
-                GameObject gameObject = colisionDetector.getObjectInRange(character.getPicture());
-
-                if(gameObject instanceof Vase && character.countItem(VASE) > 0) {
-
-                    gameObject.changeState();
-                    character.removeFromInventory(VASE, 1);
-                    userInterface.update();
-                    System.out.println(character.countItem(VASE));
-                    return;
-                }
-                if(gameObject instanceof Door) {
-                    System.out.println("Test, im a door!");
-                    if(activeScenery.toString().equals(sceneries[1].toString())) {
-                        setActiveScenery(0);
-                        return;
-                    }
-                    setActiveScenery(1);
-                    return;
-                }
-                character.getPicture().delete();
-                character.getPicture().load("Resources/catia2.PNG");
-                character.getPicture().draw();
-                return;
+                case KeyboardEvent.KEY_D:
+                    //crossHair.moveRight();
+                    character.setDirection(NONE);
+                    break;
+                case KeyboardEvent.KEY_A:
+                    //crossHair.moveLeft();
+                    character.setDirection(NONE);
+                    break;
+                case KeyboardEvent.KEY_W:
+                    //crossHair.moveUp();
+                    character.setDirection(NONE);
+                    break;
+                case KeyboardEvent.KEY_S:
+                    //crossHair.moveDown();
+                    character.setDirection(NONE);
+                    break;
             }
         }
-
-        switch(keyboardEvent.getKey()) {
-
-            case KeyboardEvent.KEY_D :
-                //crossHair.moveRight();
-                character.moveRight();
-                break;
-            case KeyboardEvent.KEY_A :
-                //crossHair.moveLeft();
-                character.moveLeft();
-                break;
-            case KeyboardEvent.KEY_W :
-                //crossHair.moveUp();
-                character.moveUp();
-                break;
-            case KeyboardEvent.KEY_S :
-                //crossHair.moveDown();
-                character.moveDown();
-                break;
-        }
-        //character.checkColision(vaso);
 
         /**
          * This for now is our solution to make character apear behind an object if it is on t he other side, but in front
          * of that same object if the charect is in front of it
          */
-        for(GameObject gameObject : activeScenery.getGameObjects()) {
+        /*for(GameObject gameObject : activeScenery.getGameObjects()) {
 
             if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
                     charPicture.getX() < gameObject.getRightLimitX()) {
@@ -200,30 +164,6 @@ public class Controls implements KeyboardHandler {
 
             }
             System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
-        }
+        }*/
 
-    }
-    public void setActiveScenery(int sceneryIndex) {
-
-        for(GameObject gameObject : activeScenery.getGameObjects()) {
-            gameObject.hidePicture();
-        }
-
-        activeScenery.hidePicture();
-        activeScenery = sceneries[sceneryIndex];
-        activeScenery.hidePicture();
-        activeScenery.showPicture();
-        for (GameObject gameObject : activeScenery.getGameObjects()) {
-            gameObject.hidePicture();
-            gameObject.showPicture();
-        }
-        character.showPicture();
-        userInterface.update();
-        colisionDetector.setGameObjects(activeScenery.getGameObjects());
-
-    }
-    @Override
-    public void keyReleased(KeyboardEvent keyboardEvent) {
-
-    }
 }

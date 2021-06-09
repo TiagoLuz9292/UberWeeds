@@ -2,7 +2,7 @@ package org.academiadecodigo.sshpecials.gameObjects;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public abstract class GameObject {
+public abstract class GameObject{
 
     /**
      * Limits af the specific area of this object picture in the screen, used on colision check in person movement.
@@ -11,6 +11,8 @@ public abstract class GameObject {
     private int rightLimitX;
     private int upLimitY;
     private int downLimitY;
+
+
 
     private Picture picture; //Model of this gameobject on the screen
 
@@ -37,6 +39,9 @@ public abstract class GameObject {
 
         picture = new Picture ();
     }
+    public  GameObject() {
+
+    }
 
     public int getLeftLimitX() {
         return leftLimitX;
@@ -50,6 +55,7 @@ public abstract class GameObject {
     public int getDownLimitY() {
         return downLimitY;
     }
+
 
     /**
      *Change the model of the vase when he goes to a diferent state
@@ -65,13 +71,15 @@ public abstract class GameObject {
     public Picture getPicture() {
         return picture;
     }
-    public void showPicture() {
-        picture.delete();
+    public void show() {
+        //picture.delete();
         picture.draw();
     }
-    public void hidePicture() {
+    public void hide() {
         picture.delete();
     }
+
+
     public abstract void changeState();
 
     public String toString() {

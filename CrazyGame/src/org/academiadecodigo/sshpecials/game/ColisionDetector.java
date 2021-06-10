@@ -2,7 +2,7 @@ package org.academiadecodigo.sshpecials.game;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.gameObjects.upWall;
+import org.academiadecodigo.sshpecials.gameObjects.Wall.UpWall;
 
 public class ColisionDetector {
 
@@ -18,7 +18,7 @@ public class ColisionDetector {
      */
     public GameObject getObjectInRange(Picture picture) {
         for (GameObject gameObject : gameObjects) {
-            if(gameObject instanceof upWall) {
+            if(gameObject instanceof UpWall) {
                 continue;
             }
             if (picture.getX() >= gameObject.getLeftLimitX() - INTERACTION_HIT_BOX && picture.getX() <= gameObject.getRightLimitX() + INTERACTION_HIT_BOX &&
@@ -75,7 +75,7 @@ public class ColisionDetector {
     }
     public boolean checkColisionRight(Picture picture, int newStepPosition) {
 
-        System.out.println("going right!");
+        //System.out.println("going right!");
 
         for(GameObject gameObject : gameObjects){
 

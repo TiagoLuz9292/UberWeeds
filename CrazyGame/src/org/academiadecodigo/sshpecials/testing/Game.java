@@ -2,8 +2,7 @@ package org.academiadecodigo.sshpecials.testing;
 
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.gameObjects.basementDoor;
+import org.academiadecodigo.sshpecials.gameObjects.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 
@@ -45,8 +44,8 @@ public class Game {
         while(true) {
             if(character.isInteractable() && character.checkInRangeWithObject()) {
                 GameObject gameObject = character.getObjectInRange();
-                if(gameObject instanceof basementDoor) {
-                    setActiveScenery(((basementDoor) gameObject).getNextSceneryIndex());
+                if(gameObject instanceof BasementDoorStreet) {
+                    setActiveScenery(((BasementDoorStreet) gameObject).getNextSceneryIndex());
                 }
                 if(gameObject instanceof Vase) {
                     System.out.println("im near vaseOne!");

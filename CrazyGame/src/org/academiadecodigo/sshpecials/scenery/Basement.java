@@ -9,8 +9,8 @@ import org.academiadecodigo.sshpecials.gameObjects.*;
 public class Basement extends Scenery {
 
 
-    private static String PICTURE = "Resources/gameBackGroundHouse.PNG";                   //Picture path for Basement Background
-    private static GameObject[] gameobjects = {new VaseOne(), new VaseTwo(), new upWall(), new rightWall(), new basementDoor()}; //Array of objects that can colide with character in this scenery
+    private static String PICTURE = "Resources/basement4.PNG";                   //Picture path for Basement Background
+    private static GameObject[] gameobjects = {new rightWallBasement()}; //Array of objects that can colide with character in this scenery
                                                                                            //We are missing 2 walls XD
 
     public Basement() {

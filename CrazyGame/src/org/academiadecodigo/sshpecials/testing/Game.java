@@ -1,5 +1,6 @@
 package org.academiadecodigo.sshpecials.testing;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
@@ -29,14 +30,10 @@ public class Game {
     }
 
     public void init() {
-        activeScenery.show();
 
         colisionDetector.setGameObjects(activeScenery.getGameObjects()); //Setting the inicial Scenery GameObject array
-        GameObject[] gameObjects = activeScenery.getGameObjects();
-        for (int i = 0; i < gameObjects.length; i++) {
-            gameObjects[i].show();
-            System.out.println(gameObjects[i]);
-        }
+        activeScenery.show();
+
         character.showPicture();
         userInterface = new UserInterface(character.getInventory());
         start();
@@ -54,6 +51,8 @@ public class Game {
                     character.interact(gameObject);
                     }
                 }
+            character.setInteractable(false);
+            updatePlacementsAfterMovement();
             character.move();
             try{
                 Thread.sleep(5);
@@ -62,7 +61,29 @@ public class Game {
             }
         }
     }
+    public void updatePlacementsAfterMovement() {
+        Picture charPicture = character.getPicture();
+        for (GameObject gameObject : activeScenery.getGameObjects()) {
 
+            if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
+                    charPicture.getX() < gameObject.getRightLimitX()) {
+                System.out.println("Player em cima");
+                gameObject.getPicture().delete();
+                gameObject.getPicture().draw();
+                return;
+            }
+            if (charPicture.getY() > gameObject.getDownLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
+                    charPicture.getX() < gameObject.getRightLimitX()) {
+
+                System.out.println("Player em baixo");
+                charPicture.delete();
+                charPicture.draw();
+                return;
+
+            }
+            System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
+        }
+    }
     public void setActiveScenery(int sceneryIndex) {
 
         activeScenery.hide();

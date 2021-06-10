@@ -150,8 +150,11 @@ public class Character {
     public Inventory getInventory() {
         return inventory;
     }
+    public void setInteractable(boolean interactable) {
+        this.interactable = interactable;
+    }
     public void setInteractable() {
-        interactable = true;
+        this.interactable = true;
     }
     public boolean isInteractable() {
         return interactable;

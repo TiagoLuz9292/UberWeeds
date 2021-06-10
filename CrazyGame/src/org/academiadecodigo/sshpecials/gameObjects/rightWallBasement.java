@@ -6,14 +6,15 @@ import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 /**
  * Wall that will block Right limit of walking area
  */
-public class rightWall extends GameObject {
+public class rightWallBasement extends GameObject {
 
-    private static int LEFT_LIMIT_X = 720;
-    private static int RIGHT_LIMIT_X = 1000;
-    private static int UP_LIMIT_Y = 0;
-    private static int DOWN_LIMIT_Y = 1000;
+    private static int LEFT_LIMIT_X = 850;
+    private static int RIGHT_LIMIT_X =1000 ;
+    private static int UP_LIMIT_Y = -130;
+    private static int DOWN_LIMIT_Y = 270;
 
-    public rightWall(){
+
+    public rightWallBasement(){
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y);
     }
 

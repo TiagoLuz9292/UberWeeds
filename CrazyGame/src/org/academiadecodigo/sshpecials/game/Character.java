@@ -16,8 +16,8 @@ public class Character {
      * For now, character will have initial position (x and y) and we can change them at starting x and y.
      */
 
-    private static int STARTING_X = 400;      // Picture initial X
-    private static int STARTING_Y = 230;      // Picture inicial Y
+    private static int STARTING_X = 849;      // Picture initial X
+    private static int STARTING_Y = 200;      // Picture inicial Y
     private static int DISTANCE_PER_STEP = 2; // Character movement speed (how many pixels will change each time the key is pressed)
 
     private boolean interactable;
@@ -81,9 +81,14 @@ public class Character {
                 distance++;
             }
         }
+        //at the end it will move character by the same amount of pixels
+        //as the pixelCounter(distance) in the asked direction.
+        picture.translate(distance, 0);
 
-        picture.translate(distance, 0); //at the end it will move character by the same amount of pixels
-    }                                       //as the pixelCounter(distance) in the asked direction.
+        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
+
+    }
+
     public void moveLeft() {
         int distance = 0;
         for(int j = 1; j <= DISTANCE_PER_STEP; j++) {
@@ -94,7 +99,10 @@ public class Character {
             }
         }
         picture.translate(-distance, 0);
+
+        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
     }
+
     public void moveDown() {
         int distance = 0;
         for(int j = 1; j <= DISTANCE_PER_STEP; j++) {
@@ -105,6 +113,8 @@ public class Character {
             }
         }
         picture.translate(0 , distance);
+
+        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
     }
     public void moveUp() {
         int distance = 0;
@@ -116,6 +126,8 @@ public class Character {
             }
         }
         picture.translate(0, -distance);
+
+        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
     }
 
     /**

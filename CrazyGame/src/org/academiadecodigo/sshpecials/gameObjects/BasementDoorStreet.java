@@ -1,6 +1,6 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
-public class basementDoor extends GameObject {
+public class BasementDoorStreet extends GameObject {
 
 
     private static int LEFT_LIMIT_X = 63;
@@ -9,7 +9,7 @@ public class basementDoor extends GameObject {
     private static int DOWN_LIMIT_Y = 130;
 
 
-    public basementDoor() {
+    public BasementDoorStreet() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y);
     }
 

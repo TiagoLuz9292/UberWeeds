@@ -32,6 +32,7 @@ public abstract class GameObject{
      * (For example, not going out of the map)
      */
     public GameObject(int limitLeftX, int limitRightX, int limitUpY, int limitDownY) {
+
         this.leftLimitX = limitLeftX;
         this.rightLimitX = limitRightX;
         this.upLimitY = limitUpY;
@@ -39,6 +40,7 @@ public abstract class GameObject{
 
         picture = new Picture ();
     }
+
     public  GameObject() {
 
     }

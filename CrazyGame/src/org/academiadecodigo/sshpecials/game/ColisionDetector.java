@@ -2,12 +2,12 @@ package org.academiadecodigo.sshpecials.game;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.gameObjects.Wall.UpWall;
+import org.academiadecodigo.sshpecials.gameObjects.Wall.Wall;
 
 public class ColisionDetector {
 
 
-    private static int INTERACTION_HIT_BOX = 24; //this variable defines the outside "bubble" range  inside which the player can interact with an object
+    private static int INTERACTION_HIT_BOX = 5; //this variable defines the outside "bubble" range  inside which the player can interact with an object
     private GameObject[] gameObjects;
 
     public ColisionDetector() {
@@ -18,7 +18,8 @@ public class ColisionDetector {
      */
     public GameObject getObjectInRange(Picture picture) {
         for (GameObject gameObject : gameObjects) {
-            if(gameObject instanceof UpWall) {
+            if(gameObject instanceof Wall) {
+                System.out.println("wall");
                 continue;
             }
             if (picture.getX() >= gameObject.getLeftLimitX() - INTERACTION_HIT_BOX && picture.getX() <= gameObject.getRightLimitX() + INTERACTION_HIT_BOX &&

@@ -5,6 +5,7 @@ import org.academiadecodigo.sshpecials.game.ColisionDetector;
 import org.academiadecodigo.sshpecials.game.Controls;
 import org.academiadecodigo.sshpecials.scenery.Basement;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
+import org.academiadecodigo.sshpecials.scenery.StreetStore;
 import org.academiadecodigo.sshpecials.testing.Game;
 
 
@@ -15,7 +16,7 @@ public class Main {
 
         ColisionDetector colisionDetector = new ColisionDetector();
 
-        Scenery[] sceneries = {new Basement()};
+        Scenery[] sceneries = {new Basement(),new StreetStore()};
         Character character = new Character(colisionDetector);
         Controls controls = new Controls(character);
         controls.init();

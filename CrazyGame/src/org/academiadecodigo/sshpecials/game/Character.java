@@ -16,9 +16,9 @@ public class Character {
      * For now, character will have initial position (x and y) and we can change them at starting x and y.
      */
 
-    private static int STARTING_X = 849;      // Picture initial X
-    private static int STARTING_Y = 200;      // Picture inicial Y
-    private static int DISTANCE_PER_STEP = 2; // Character movement speed (how many pixels will change each time the key is pressed)
+    private static int STARTING_X = 400;      // Picture initial X
+    private static int STARTING_Y = 320;      // Picture inicial Y
+    private static int DISTANCE_PER_STEP = 1; // Character movement speed (how many pixels will change each time the key is pressed)
 
     private boolean interactable;
 
@@ -37,7 +37,7 @@ public class Character {
         direction = NONE;
         inventory = new Inventory();
         this.colisionDetector = colisionDetector;
-        picture = new Picture(STARTING_X, STARTING_Y, "Resources/catia2.PNG"); //Create Character model on the screen
+        picture = new Picture(STARTING_X, STARTING_Y, "Resources/catiaStreetStore.PNG"); //Create Character model on the screen
     }
 
     /**

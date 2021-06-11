@@ -83,6 +83,7 @@ public class Controls implements KeyboardHandler {
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
          */
+        keyboard.addEventListener(showInventory);
         keyboard.addEventListener(pressRight);
         keyboard.addEventListener(pressLeft);
         keyboard.addEventListener(pressDown);

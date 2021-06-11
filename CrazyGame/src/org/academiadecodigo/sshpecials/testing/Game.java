@@ -18,7 +18,7 @@ public class Game {
     private ColisionDetector colisionDetector;
 
     public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
-        this.inventoryVisible = false;
+        this.inventoryVisible = true;
         this.colisionDetector = colisionDetector;
         this.character = character;
         this.sceneries = sceneries;
@@ -40,8 +40,10 @@ public class Game {
     }
     public void start() {
         while(true) {
-            if(inventoryVisible) {
-                userInterface.update();
+            if(!inventoryVisible && userInterface.isVisible()) {
+                userInterface.hideInventoryInterface();
+            } else if(inventoryVisible && !userInterface.isVisible()){
+                userInterface.showInventoryInterface();
             }
             character.showPicture();
             if(character.isInteractable() && character.checkInRangeWithObject()) {
@@ -56,13 +58,13 @@ public class Game {
             }
 
             character.setInteractable(false);
-            //updatePlacementsAfterMovement();
             character.move();
             try{
-                Thread.sleep(5);
+                Thread.sleep(20);
             }catch(Exception e) {
                 System.out.println(e);
             }
+            //userInterface.update();
         }
     }
     public void updatePlacementsAfterMovement() {
@@ -100,6 +102,8 @@ public class Game {
 
     }
     public void showInventory() {
-        inventoryVisible = !inventoryVisible;
+       inventoryVisible = !inventoryVisible;
+        System.out.println("Visible is " + inventoryVisible);
+
     }
 }

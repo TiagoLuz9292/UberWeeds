@@ -10,6 +10,9 @@ public class UserInterface {
     public static int GROW_X = 15;
     public static int GROW_Y = 3;
 
+
+    private boolean visible = false;
+
     private Inventory inventory;
     private Text[] itemsCounter;
 
@@ -26,11 +29,13 @@ public class UserInterface {
     public UserInterface(Inventory inventory) {
         this.inventory = inventory;
         itemsCounter = new Text[ItemType.values().length];
+        this.counters = new Text[6];
 
         init();
     }
     public void init() {
-        counters = new Text[6];
+
+        createCounters();
         counters[0] = vaseCounter;
         counters[1] = waterCanCounter;
         counters[2] = shovelCounter;
@@ -38,106 +43,88 @@ public class UserInterface {
         counters[4] = weedSeedsCounter;
         counters[5] = weedBagsCounter;
 
-        update();
-        hideInventoryInterface();
+        for(int i = 0; i < counters.length; i++) {
+            counters[i].setColor(Color.WHITE);
+            counters[i].grow(15, GROW_Y);
+        }
+        //showInventoryInterface();
 
     }
     public void createVaseCounter() {
-        if(vaseCounter != null) {
-            vaseCounter.delete();
-        }
 
         vaseCounter = new Text(TEXT_X, 20, "Vase x " + inventory.keyCount(VASE));
-        vaseCounter.delete();
-        vaseCounter.grow(15, GROW_Y);
-        vaseCounter.setColor(Color.WHITE);
-        vaseCounter.draw();
+
     }
     public void createWaterCanCounter() {
-        if(waterCanCounter != null) {
-            waterCanCounter.delete();
-        }
+
         waterCanCounter = new Text(TEXT_X, 40, "Water x " + inventory.keyCount(WATER_CAN));
-        waterCanCounter.delete();
-        waterCanCounter.grow(15, GROW_Y);
-        waterCanCounter.setColor(Color.WHITE);
-        waterCanCounter.draw();
 
     }
     public void createShovelCounter() {
-        if(shovelCounter != null) {
-            shovelCounter.delete();
-        }
+
         shovelCounter = new Text(TEXT_X, 60, "Shovel x " + inventory.keyCount(SHOVEL));
-        shovelCounter.delete();
-        shovelCounter.grow(15, GROW_Y);
-        shovelCounter.setColor(Color.WHITE);
-        shovelCounter.draw();
+
     }
     public void createScissorsCounter() {
-        if(scissorsCounter != null) {
-            scissorsCounter.delete();
-        }
 
         scissorsCounter = new Text(TEXT_X, 80, "Scissors x " + inventory.keyCount(SCISSORS));
-        scissorsCounter.delete();
-        scissorsCounter.grow(15, GROW_Y);
-        scissorsCounter.setColor(Color.WHITE);
-        scissorsCounter.draw();
+
     }
     public void createWeedSeedsCounter() {
-        if(weedSeedsCounter != null) {
-            weedSeedsCounter.delete();
-        }
+
         weedSeedsCounter = new Text(TEXT_X, 100, "Weed Seeds x " + inventory.keyCount(WEED_SEEDS));
-        weedSeedsCounter.delete();
-        weedSeedsCounter.grow(15, GROW_Y);
-        weedSeedsCounter.setColor(Color.WHITE);
-        weedSeedsCounter.draw();
+
     }
     public void createWeedBagsCounter() {
-        if(weedBagsCounter != null) {
-            weedBagsCounter.delete();
-        }
 
         weedBagsCounter = new Text(TEXT_X, 120, "Weed Bags x " + inventory.keyCount(WEED_BAGS));
-        weedBagsCounter.delete();
-        weedBagsCounter.grow(15, GROW_Y);
-        weedBagsCounter.setColor(Color.WHITE);
-        weedBagsCounter.draw();
+
     }
 
     public void hideInventoryInterface() {
 
-        for(Text text : counters) {
-            text.delete();
+        for(int i = 0; i < counters.length; i++) {
+            if(counters[i] != null) {
+                counters[i].delete();
+            }
+
         }
+        visible = false;
     }
     public void showInventoryInterface() {
-        shovelCounter = new Text(TEXT_X, 60, "Shovel x " + inventory.keyCount(SHOVEL));
 
-        for(Text text : counters) {
+        for(int i = 0; i < counters.length; i++) {
+            System.out.println("teste, a pintar texto do inv ANTES DO IF");
+            if(counters[i] != null) {
+                System.out.println("teste, a pintar texto do inv");
 
-            text.grow(15, GROW_Y);
-            text.setColor(Color.WHITE);
-            text.draw();
+                counters[i].draw();
+
+            }
         }
-        vaseCounter.draw();
-        shovelCounter.draw();
-        waterCanCounter.draw();
-        scissorsCounter.draw();
-        weedSeedsCounter.draw();
-        weedBagsCounter.draw();
-    }
+        visible = true;
 
-    public void update() {
+    }
+    public void createCounters() {
         createVaseCounter();
         createWaterCanCounter();
         createShovelCounter();
         createScissorsCounter();
         createWeedSeedsCounter();
         createWeedBagsCounter();
-    }
 
+    }
+    public void update() {
+       vaseCounter.setText("Vase x " + inventory.keyCount(VASE));
+       shovelCounter.setText("Shovel x " + inventory.keyCount(SHOVEL));
+       waterCanCounter.setText("Water x " + inventory.keyCount(WATER_CAN));
+       scissorsCounter.setText("Scissors x " + inventory.keyCount(SCISSORS));
+       weedSeedsCounter.setText("Weed Seeds x " + inventory.keyCount(WEED_SEEDS));
+       weedBagsCounter.setText("Weed Bags x " + inventory.keyCount(WEED_BAGS));
+
+    }
+    public boolean isVisible() {
+        return visible;
+    }
 
 }

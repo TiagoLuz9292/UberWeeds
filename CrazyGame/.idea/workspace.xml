@@ -2,14 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214b2dc3-e39c-4e37-8b85-e0115d7f8664" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/google_collections_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/java.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/simple_graphics.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/simple_graphics1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrazyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CrazyGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/game/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/game/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/game/Controls.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/game/Controls.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/BasementDoorStreet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/BasementDoorStreet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/GameObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/GameObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseOne$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseOne$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseTwo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseTwo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/VaseTwo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/DownWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/DownWall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/LeftWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/LeftWall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/UpWall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/UpWall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Wall/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseOneStateType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseOneStateType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/Basement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/Basement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Vase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/Vase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/game/Controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/game/Controls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +43,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -73,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623399504474</updated>
-      <workItem from="1623399506197" duration="29000" />
+      <workItem from="1623399506197" duration="3520000" />
     </task>
     <servers />
   </component>

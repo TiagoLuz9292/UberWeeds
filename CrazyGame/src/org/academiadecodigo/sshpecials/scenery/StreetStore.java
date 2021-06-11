@@ -1,15 +1,13 @@
 package org.academiadecodigo.sshpecials.scenery;
 
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.gameObjects.Wall.StreetStoreDownWall;
-import org.academiadecodigo.sshpecials.gameObjects.Wall.StreetStoreLeftWall;
-import org.academiadecodigo.sshpecials.gameObjects.Wall.StreetStoreRightWall;
-import org.academiadecodigo.sshpecials.gameObjects.Wall.StreetStoreUpWall;
+import org.academiadecodigo.sshpecials.gameObjects.Wall.*;
 
 public class StreetStore extends Scenery{
 
     private static String PICTURE = "Resources/streetStore.PNG";                   //Picture path for Basement Background
-    private static GameObject[] gameobjects = { new StreetStoreUpWall()};
+    private static GameObject[] gameobjects = { new StreetStoreDownWall(), new StreetStoreUpWall(),
+            new StreetStoreLeftWall(), new StreetStoreRightWall()};
     //Array of objects that can colide with character in this scenery
 
 

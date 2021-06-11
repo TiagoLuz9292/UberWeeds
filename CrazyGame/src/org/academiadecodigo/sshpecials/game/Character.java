@@ -16,8 +16,8 @@ public class Character {
      * For now, character will have initial position (x and y) and we can change them at starting x and y.
      */
 
-    private static int STARTING_X = 400;      // Picture initial X
-    private static int STARTING_Y = 320;      // Picture inicial Y
+    private static int STARTING_X = 100;      // Picture initial X
+    private static int STARTING_Y = 370;      // Picture inicial Y
     private static int DISTANCE_PER_STEP = 1; // Character movement speed (how many pixels will change each time the key is pressed)
 
     private boolean interactable;

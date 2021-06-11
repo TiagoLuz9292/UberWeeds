@@ -1,6 +1,7 @@
 package org.academiadecodigo.sshpecials.gameObjects.Wall;
 
 import org.academiadecodigo.sshpecials.gameObjects.Wall.Wall;
+import org.academiadecodigo.sshpecials.testing.Inventory;
 
 /**
  * Wall that will block lower limit of walking area
@@ -11,7 +12,7 @@ public class DownWall extends Wall {
     private static int LEFT_LIMIT_X = -30;
     private static int RIGHT_LIMIT_X = 920;
     private static int UP_LIMIT_Y = 215;
-    private static int DOWN_LIMIT_Y = 275;
+    private static int DOWN_LIMIT_Y = 285;
 
     public DownWall(){
 
@@ -19,7 +20,7 @@ public class DownWall extends Wall {
     }
 
     @Override
-    public void changeState() {
-        super.changeState();
+    public void changeState(Inventory inventory) {
+
     }
 }

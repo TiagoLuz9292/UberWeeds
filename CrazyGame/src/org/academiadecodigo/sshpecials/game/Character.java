@@ -47,7 +47,7 @@ public class Character {
 
     public void interact(GameObject gameObject) {
         interactable = false;
-        gameObject.changeState();
+        gameObject.changeState(inventory);
 
     }
 

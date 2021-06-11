@@ -17,10 +17,10 @@ public class Main {
 
         Scenery[] sceneries = {new Basement()};
         Character character = new Character(colisionDetector);
-        Controls controls = new Controls(character);
-        controls.init();
 
         Game game = new Game(colisionDetector,character, sceneries);
+        Controls controls = new Controls(character, game);
+        controls.init();
         game.init();
 
 

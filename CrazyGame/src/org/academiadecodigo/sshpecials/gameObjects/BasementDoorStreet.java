@@ -1,5 +1,7 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
+import org.academiadecodigo.sshpecials.testing.Inventory;
+
 public class BasementDoorStreet extends GameObject {
 
 
@@ -13,7 +15,7 @@ public class BasementDoorStreet extends GameObject {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y);
     }
 
-    public void changeState(){
+    public void changeState(Inventory inventory){
 
     }
     public int getNextSceneryIndex() {

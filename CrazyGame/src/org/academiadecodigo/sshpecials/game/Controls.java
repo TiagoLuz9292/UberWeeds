@@ -6,6 +6,10 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.sshpecials.testing.Game;
+import org.academiadecodigo.sshpecials.testing.UserInterface;
+
+import java.security.Key;
 
 /**
  * This class will be our "game" class, with game logic, and also the responsability of listening to Keyboard key pressing
@@ -16,12 +20,14 @@ public class Controls implements KeyboardHandler {
 
     private Keyboard keyboard;
     private Character character;
+    private Game game;
 
 
 
-    public Controls(Character character) {
+    public Controls(Character character, Game game) {
 
         this.character = character;
+        this.game = game;
 
     }
 
@@ -32,6 +38,7 @@ public class Controls implements KeyboardHandler {
         /**
          * Here we create a KeyboardEvent type variable for each key we want be waiting for presses on.
          */
+        KeyboardEvent showInventory = new KeyboardEvent();
         KeyboardEvent pressUp = new KeyboardEvent();
         KeyboardEvent pressDown = new KeyboardEvent();
         KeyboardEvent pressRight = new KeyboardEvent();
@@ -47,6 +54,7 @@ public class Controls implements KeyboardHandler {
          * Here we set the keys for each of our KeyboardEvents created
          */
 
+        showInventory.setKey(KeyboardEvent.KEY_I);
         pressUp.setKey(KeyboardEvent.KEY_W);
         pressLeft.setKey(KeyboardEvent.KEY_A);
         pressDown.setKey(KeyboardEvent.KEY_S);
@@ -60,6 +68,7 @@ public class Controls implements KeyboardHandler {
         /**
         * Here we set the type of Event we want to wait for (if pressed or released, in our case we will only use Press.)
         */
+        showInventory.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressRight.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -96,6 +105,9 @@ public class Controls implements KeyboardHandler {
 
         switch (keyboardEvent.getKey()) {
 
+            case KeyboardEvent.KEY_I:
+                game.showInventory();
+                break;
             case KeyboardEvent.KEY_F:
                 character.setInteractable();
                 break;

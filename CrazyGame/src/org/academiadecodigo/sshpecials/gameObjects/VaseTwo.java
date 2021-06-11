@@ -1,5 +1,6 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
+import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.Vase;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseTwoStateType;
 
@@ -21,7 +22,7 @@ public class VaseTwo extends Vase {
      * the vase is ready to plant again.
      */
     @Override
-    public void changeState() {
+    public void changeState(Inventory inventory) {
         switch(vaseState) {
             case  NO_VASE:
                 vaseState = VaseTwoStateType.EMPTY_VASE;

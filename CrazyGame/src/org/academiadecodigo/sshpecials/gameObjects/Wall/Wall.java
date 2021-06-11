@@ -1,6 +1,7 @@
 package org.academiadecodigo.sshpecials.gameObjects.Wall;
 
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.testing.Inventory;
 
 public class Wall extends GameObject {
 
@@ -10,7 +11,7 @@ public class Wall extends GameObject {
     }
 
     @Override
-    public void changeState() {
+    public void changeState(Inventory inventory) {
 
     }
 }

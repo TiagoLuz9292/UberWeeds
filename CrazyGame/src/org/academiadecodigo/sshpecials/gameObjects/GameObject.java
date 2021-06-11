@@ -1,6 +1,7 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.sshpecials.testing.Inventory;
 
 public abstract class GameObject{
 
@@ -82,7 +83,7 @@ public abstract class GameObject{
     }
 
 
-    public abstract void changeState();
+    public abstract void changeState(Inventory inventory);
 
     public String toString() {
         return "Im an object";

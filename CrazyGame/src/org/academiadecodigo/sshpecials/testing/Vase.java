@@ -20,7 +20,7 @@ public class Vase extends GameObject {
      * the vase is ready to plant again.
      */
     @Override
-    public void changeState() {
+    public void changeState(Inventory inventory) {
 
     }
 

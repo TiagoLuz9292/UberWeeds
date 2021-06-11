@@ -9,7 +9,7 @@ import org.academiadecodigo.sshpecials.scenery.Scenery;
 
 public class Game {
 
-
+    private boolean inventoryVisible;
     private Character character;
 
     private Scenery activeScenery;
@@ -18,6 +18,7 @@ public class Game {
     private ColisionDetector colisionDetector;
 
     public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
+        this.inventoryVisible = false;
         this.colisionDetector = colisionDetector;
         this.character = character;
         this.sceneries = sceneries;
@@ -39,6 +40,10 @@ public class Game {
     }
     public void start() {
         while(true) {
+            if(inventoryVisible) {
+                userInterface.update();
+            }
+            character.showPicture();
             if(character.isInteractable() && character.checkInRangeWithObject()) {
                 GameObject gameObject = character.getObjectInRange();
                 if(gameObject instanceof BasementDoorStreet) {
@@ -46,12 +51,12 @@ public class Game {
                 }
                 if(gameObject instanceof Vase) {
                     System.out.println("im near vaseOne!");
-
                     character.interact(gameObject);
                     }
-                }
+            }
+
             character.setInteractable(false);
-            updatePlacementsAfterMovement();
+            //updatePlacementsAfterMovement();
             character.move();
             try{
                 Thread.sleep(5);
@@ -94,24 +99,7 @@ public class Game {
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
 
     }
-    /* for(GameObject gameObject : activeScenery.getGameObjects()) {
-
-            if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
-                    charPicture.getX() < gameObject.getRightLimitX()) {
-                System.out.println("Player em cima");
-                gameObject.getPicture().delete();
-                gameObject.getPicture().draw();
-                return;
-            }
-            if (charPicture.getY() > gameObject.getDownLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
-                    charPicture.getX() < gameObject.getRightLimitX()) {
-
-                System.out.println("Player em baixo");
-                charPicture.delete();
-                charPicture.draw();
-                return;
-
-            }
-            System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
-        }*/
+    public void showInventory() {
+        inventoryVisible = !inventoryVisible;
+    }
 }

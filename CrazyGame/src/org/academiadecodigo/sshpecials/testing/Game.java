@@ -3,7 +3,8 @@ package org.academiadecodigo.sshpecials.testing;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.BasementDoorStreet;
+import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
+import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 
@@ -25,7 +26,7 @@ public class Game {
 /**
  * Primeiro cenario
  */
-        activeScenery = sceneries[0];
+        activeScenery = sceneries[1];
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
     }
 
@@ -48,8 +49,9 @@ public class Game {
             character.showPicture();
             if(character.isInteractable() && character.checkInRangeWithObject()) {
                 GameObject gameObject = character.getObjectInRange();
-                if(gameObject instanceof BasementDoorStreet) {
-                    setActiveScenery(((BasementDoorStreet) gameObject).getNextSceneryIndex());
+                if(gameObject instanceof Door) {
+                    System.out.println(" entrei");
+                    setActiveScenery(1);
                 }
                 if(gameObject instanceof Vase) {
                     System.out.println("im near vaseOne!");

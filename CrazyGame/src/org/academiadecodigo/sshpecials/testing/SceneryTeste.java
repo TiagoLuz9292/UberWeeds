@@ -1,9 +1,5 @@
 package org.academiadecodigo.sshpecials.testing;
 
-import org.academiadecodigo.sshpecials.gameObjects.BasementDoorStreet;
-import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-
 /*public class SceneryTeste extends Scenery {
 
 

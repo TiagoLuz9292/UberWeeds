@@ -38,6 +38,9 @@ public class Controls implements KeyboardHandler {
         /**
          * Here we create a KeyboardEvent type variable for each key we want be waiting for presses on.
          */
+        KeyboardEvent chooseMainMenuOption = new KeyboardEvent();
+        KeyboardEvent menuUp = new KeyboardEvent();
+        KeyboardEvent menuDown = new KeyboardEvent();
         KeyboardEvent showInventory = new KeyboardEvent();
         KeyboardEvent pressUp = new KeyboardEvent();
         KeyboardEvent pressDown = new KeyboardEvent();
@@ -49,11 +52,15 @@ public class Controls implements KeyboardHandler {
         KeyboardEvent realeaseRight = new KeyboardEvent();
         KeyboardEvent realeaseLeft = new KeyboardEvent();
         KeyboardEvent realeaseInteract = new KeyboardEvent();
+        KeyboardEvent mainMenuBack = new KeyboardEvent();
 
         /**
          * Here we set the keys for each of our KeyboardEvents created
          */
 
+        chooseMainMenuOption.setKey(KeyboardEvent.KEY_ENTER);
+        menuUp.setKey(KeyboardEvent.KEY_UP);
+        menuDown.setKey(KeyboardEvent.KEY_DOWN);
         showInventory.setKey(KeyboardEvent.KEY_I);
         pressUp.setKey(KeyboardEvent.KEY_W);
         pressLeft.setKey(KeyboardEvent.KEY_A);
@@ -65,9 +72,15 @@ public class Controls implements KeyboardHandler {
         realeaseDown.setKey(KeyboardEvent.KEY_S);
         realeaseRight.setKey(KeyboardEvent.KEY_D);
         realeaseInteract.setKey(KeyboardEvent.KEY_F);
+        mainMenuBack.setKey(KeyboardEvent.KEY_ESC);
+
         /**
         * Here we set the type of Event we want to wait for (if pressed or released, in our case we will only use Press.)
         */
+
+        chooseMainMenuOption.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        menuUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        menuDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         showInventory.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressRight.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         pressLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -79,10 +92,15 @@ public class Controls implements KeyboardHandler {
         realeaseDown.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         realeaseUp.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         realeaseInteract.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        mainMenuBack.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
          */
+
+        keyboard.addEventListener(chooseMainMenuOption);
+        keyboard.addEventListener(menuUp);
+        keyboard.addEventListener(menuDown);
         keyboard.addEventListener(showInventory);
         keyboard.addEventListener(pressRight);
         keyboard.addEventListener(pressLeft);
@@ -94,6 +112,7 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(realeaseDown);
         keyboard.addEventListener(realeaseUp);
         keyboard.addEventListener(realeaseInteract);
+        keyboard.addEventListener(mainMenuBack);
 
     }
 
@@ -105,7 +124,18 @@ public class Controls implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
         switch (keyboardEvent.getKey()) {
-
+            case KeyboardEvent.KEY_ESC:
+                game.mainMenuBack();
+                break;
+            case KeyboardEvent.KEY_ENTER:
+                game.chooseMainMenuOption();
+                break;
+            case KeyboardEvent.KEY_UP:
+                game.menuInteraction();
+                break;
+            case KeyboardEvent.KEY_DOWN:
+                game.menuInteraction();
+                break;
             case KeyboardEvent.KEY_I:
                 game.showInventory();
                 break;

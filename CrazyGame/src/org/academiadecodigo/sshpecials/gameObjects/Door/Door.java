@@ -11,6 +11,8 @@ public class Door extends GameObject {
 
         super(leftLimitX,rightLimitX,upLimitY,downLimitY);
 
+        this.nextSceneryIndex = nextSceneryIndex;
+
     }
 
     public int getNextSceneryIndex() {

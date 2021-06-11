@@ -29,7 +29,7 @@ public class Inventory {
 
     public void init() {
 
-        add(VASE,  1 );
+        add(VASE,  5 );
         add(WATER_CAN,  1);
         add(SHOVEL, 1);
         add(SCISSORS, 1);

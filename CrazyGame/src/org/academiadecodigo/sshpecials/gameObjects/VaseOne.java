@@ -9,21 +9,17 @@ import java.util.Date;
 public class VaseOne extends Vase {
 
     private static VaseOneStateType vaseState = VaseOneStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
-    private static int LEFT_LIMIT_X = 501;
-    private static int RIGHT_LIMIT_X = 686;
-    private static int UP_LIMIT_Y = 210;
-    private static int DOWN_LIMIT_Y = 188;
+    private static int LEFT_LIMIT_X = 343;
+    private static int RIGHT_LIMIT_X = 431;
+    private static int UP_LIMIT_Y = 0;
+    private static int DOWN_LIMIT_Y = 205;
 
-    private int startingTime;
-    private int finishingTime;
 
-    private boolean threadCreated;
-    private Thread t1;
     private Picture picture;
     public VaseOne() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, vaseState.x, vaseState.y, vaseState.picturePath);
         vaseState = VaseOneStateType.NO_VASE;
-        threadCreated = false;
+
         this.picture = super.getPicture();
     }
 

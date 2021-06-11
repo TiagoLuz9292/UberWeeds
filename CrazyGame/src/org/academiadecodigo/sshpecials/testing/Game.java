@@ -3,15 +3,17 @@ package org.academiadecodigo.sshpecials.testing;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
+import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 
 public class Game {
 
     private boolean inventoryVisible;
     private Character character;
+
+    private boolean gameStarted = false;
 
     private Scenery activeScenery;
     private Scenery[] sceneries;
@@ -26,21 +28,22 @@ public class Game {
 /**
  * Primeiro cenario
  */
-        activeScenery = sceneries[1];
-        colisionDetector.setGameObjects(activeScenery.getGameObjects());
+
     }
 
     public void init() {
-
-        colisionDetector.setGameObjects(activeScenery.getGameObjects()); //Setting the inicial Scenery GameObject array
+        setActiveScenery(0);
         activeScenery.show();
 
-        character.showPicture();
         userInterface = new UserInterface(character.getInventory());
+        //character.showPicture();
         start();
     }
     public void start() {
         while(true) {
+            while(!gameStarted) {
+                System.out.println("waiting for gme to start");
+            }
             if(!inventoryVisible && userInterface.isVisible()) {
                 userInterface.hideInventoryInterface();
             } else if(inventoryVisible && !userInterface.isVisible()){
@@ -50,19 +53,22 @@ public class Game {
             if(character.isInteractable() && character.checkInRangeWithObject()) {
                 GameObject gameObject = character.getObjectInRange();
                 if(gameObject instanceof Door) {
-                    System.out.println(" entrei");
-                    setActiveScenery(1);
+
+                    setActiveScenery(((Door) gameObject).getNextSceneryIndex());
+
+
                 }
                 if(gameObject instanceof Vase) {
-                    System.out.println("im near vaseOne!");
+
                     character.interact(gameObject);
                     }
             }
-
+            userInterface.update();
             character.setInteractable(false);
             character.move();
+            updatePlacementsAfterMovement();
             try{
-                Thread.sleep(20);
+                Thread.sleep(5);
             }catch(Exception e) {
                 System.out.println(e);
             }
@@ -75,7 +81,7 @@ public class Game {
 
             if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
                     charPicture.getX() < gameObject.getRightLimitX()) {
-                System.out.println("Player em cima");
+                //System.out.println("Player em cima");
                 gameObject.getPicture().delete();
                 gameObject.getPicture().draw();
                 return;
@@ -83,29 +89,58 @@ public class Game {
             if (charPicture.getY() > gameObject.getDownLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
                     charPicture.getX() < gameObject.getRightLimitX()) {
 
-                System.out.println("Player em baixo");
+                //System.out.println("Player em baixo");
                 charPicture.delete();
                 charPicture.draw();
                 return;
 
             }
-            System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
+            //System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
         }
     }
     public void setActiveScenery(int sceneryIndex) {
 
-        activeScenery.hide();
+        if (activeScenery != null) {
+            activeScenery.hide();
+        }
         activeScenery = sceneries[sceneryIndex];
-        activeScenery.show();
+        if(!(activeScenery instanceof WalkableScenery)) {
+            activeScenery.show();
+            return;
+        }
 
-        character.showPicture();
-        userInterface.update();
+        WalkableScenery scenery = (WalkableScenery) activeScenery;
+        character.setInitialPosition(scenery.getCharacterInitialX(), scenery.getCharacterInitialY(), scenery.getPicturePath());
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
+        scenery.show();
 
+    }
+    public void mainMenuBack() {
+        if(activeScenery == sceneries[2]) {
+            setActiveScenery(0);
+        }
+    }
+    public void chooseMainMenuOption() {
+        if(activeScenery == sceneries[0]) {
+
+            activeScenery.hide();
+            activeScenery.getPicture().grow(-500, -500);
+            setActiveScenery(3);
+            gameStarted = true;
+        } else if(activeScenery == sceneries[1]) {
+            setActiveScenery(2);
+        }
+    }
+    public void menuInteraction() {
+        if(activeScenery == sceneries[0]) {
+            setActiveScenery(1);
+        } else if(activeScenery == sceneries[1]) {
+            setActiveScenery(0);
+        }
     }
     public void showInventory() {
        inventoryVisible = !inventoryVisible;
-        System.out.println("Visible is " + inventoryVisible);
+        //System.out.println("Visible is " + inventoryVisible);
 
     }
 }

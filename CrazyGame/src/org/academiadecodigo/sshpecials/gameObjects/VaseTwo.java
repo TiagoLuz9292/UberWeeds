@@ -1,15 +1,17 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
+import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
+import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseTwoStateType;
 
 public class VaseTwo extends Vase {
     private static VaseTwoStateType vaseState = VaseTwoStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
-    private static int LEFT_LIMIT_X = 135;
-    private static int RIGHT_LIMIT_X = 315;
-    private static int UP_LIMIT_Y = 210;
-    private static int DOWN_LIMIT_Y = 260;
+    private static int LEFT_LIMIT_X = 515;
+    private static int RIGHT_LIMIT_X = 572;
+    private static int UP_LIMIT_Y = 0;
+    private static int DOWN_LIMIT_Y = 205;
 
     public VaseTwo() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, vaseState.x, vaseState.y, vaseState.picturePath);
@@ -25,28 +27,42 @@ public class VaseTwo extends Vase {
     public void changeState(Inventory inventory) {
         switch(vaseState) {
             case  NO_VASE:
-                vaseState = VaseTwoStateType.EMPTY_VASE;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(inventory.hasItem(ItemType.VASE)) {
+                    inventory.remove(ItemType.VASE, 1);
+                    vaseState = VaseTwoStateType.EMPTY_VASE;
+                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                }
                 break;
             case EMPTY_VASE:
-                vaseState = VaseTwoStateType.VASE_READY_FOR_SEEDS;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(inventory.hasItem(ItemType.SHOVEL)) {
+                    vaseState = VaseTwoStateType.VASE_READY_FOR_SEEDS;
+                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                }
                 break;
             case VASE_READY_FOR_SEEDS:
-                vaseState = VaseTwoStateType.VASE_HAS_SEEDS;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(inventory.keyCount(ItemType.WEED_SEEDS) >= 10) {
+                    inventory.remove(ItemType.WEED_SEEDS, 10);
+                    vaseState = VaseTwoStateType.VASE_HAS_SEEDS;
+                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                }
                 break;
             case VASE_HAS_SEEDS:
-                vaseState = VaseTwoStateType.VASE_HAS_WATER;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(inventory.hasItem(ItemType.WATER_CAN)) {
+                    vaseState = VaseTwoStateType.VASE_HAS_WATER;
+                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                }
                 break;
             case VASE_HAS_WATER:
                 vaseState = VaseTwoStateType.VASE_IS_COLLECTABLE;
                 super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
                 break;
             default:
-                vaseState = VaseTwoStateType.EMPTY_VASE;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(inventory.hasItem(ItemType.SCISSORS)) {
+                    inventory.add(ItemType.WEED_BAGS, 50);
+                    vaseState = VaseTwoStateType.EMPTY_VASE;
+                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                }
+
                 break;
         }
     }

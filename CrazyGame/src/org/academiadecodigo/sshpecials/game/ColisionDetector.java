@@ -7,7 +7,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.Wall;
 public class ColisionDetector {
 
 
-    private static int INTERACTION_HIT_BOX = 5; //this variable defines the outside "bubble" range  inside which the player can interact with an object
+    private static int INTERACTION_HIT_BOX = 10; //this variable defines the outside "bubble" range  inside which the player can interact with an object
     private GameObject[] gameObjects;
 
     public ColisionDetector() {

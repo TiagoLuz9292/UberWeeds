@@ -6,7 +6,7 @@ import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 
 public class UserInterface {
 
-    public static int TEXT_X = 920;
+    public static int TEXT_X = 900;
     public static int GROW_X = 15;
     public static int GROW_Y = 3;
 

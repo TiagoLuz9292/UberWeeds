@@ -1,6 +1,7 @@
 <component name="libraryTable">
-  <library name="simple-graphics">
+  <library name="libs">
     <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/google-collections-1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/simple-graphics.jar!/" />
     </CLASSES>
     <JAVADOC />

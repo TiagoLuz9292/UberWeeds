@@ -2,6 +2,7 @@ package org.academiadecodigo.sshpecials.scenery;
 
 import org.academiadecodigo.sshpecials.gameObjects.Door.AlleyDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.gameObjects.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.AlleyDown;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.AlleyLeft;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.AlleyRight;
@@ -14,7 +15,7 @@ public class AlleyWay extends WalkableScenery {
     private static int CHARACTER_INITIAL_Y = 371;
     private static String PICTURE = "Resources/Alley.PNG";                   //Picture path for Basement Background
     private static GameObject[] gameobjects = {new AlleyDoorStreet(), new AlleyRight(),new AlleyUp(),
-            new AlleyDown(), new AlleyLeft()}; //Array of objects that can colide with character in this scenery
+            new AlleyDown(), new AlleyLeft(), new SeedVendor()}; //Array of objects that can colide with character in this scenery
 
 
     public AlleyWay() {

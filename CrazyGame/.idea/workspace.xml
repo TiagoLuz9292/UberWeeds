@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214b2dc3-e39c-4e37-8b85-e0115d7f8664" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Door/UberDoorStreet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendorState/SeedVendorState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/StreetUber.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/StreetUber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetUber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetUber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/AlleyWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/AlleyWay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -40,6 +41,11 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.academiadecodigo.sshpecials.gameObjects" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
@@ -100,5 +106,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CrazyGame$Main.ic" NAME="Main Coverage Results" MODIFIED="1623351844592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.academiadecodigo.sshpecials.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="214b2dc3-e39c-4e37-8b85-e0115d7f8664" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" afterDir="false" />
+    <list default="true" id="837c615f-0b71-4d86-9799-0eaf20c35a22" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrazyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CrazyGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/EmptyVase.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/EmptyVase.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/VaseHasSeeds.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/VaseHasSeeds.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/VaseHasWater.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/VaseHasWater.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/VaseIsCollectable.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/VaseIsCollectable.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/VaseReadyForSeeds.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/VaseReadyForSeeds.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/vasoSlot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/vasoSlot2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/vasoSlot2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/VaseTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseOneStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseOneStateType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseThreeStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseThreeStateType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseTwoStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/vaseState/VaseTwoStateType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="Enum" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1tnKdgYtt3nqyHTW35aj4nvfjM3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,33 +38,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/simple-graphics.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.academiadecodigo.sshpecials.gameObjects" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.sshpecials.Main" />
       <module name="CrazyGame" />
@@ -79,33 +66,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="214b2dc3-e39c-4e37-8b85-e0115d7f8664" name="Default Changelist" comment="" />
-      <created>1623399504474</created>
+      <changelist id="837c615f-0b71-4d86-9799-0eaf20c35a22" name="Default Changelist" comment="" />
+      <created>1623532225851</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623399504474</updated>
-      <workItem from="1623399506197" duration="3520000" />
+      <updated>1623532225851</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CrazyGame$Main.ic" NAME="Main Coverage Results" MODIFIED="1623351844592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.academiadecodigo.sshpecials.*</FILTER>
-    </SUITE>
   </component>
 </project>

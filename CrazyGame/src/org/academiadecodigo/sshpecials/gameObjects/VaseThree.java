@@ -3,6 +3,7 @@ package org.academiadecodigo.sshpecials.gameObjects;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseThreeStateType;
+import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseTwoStateType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
@@ -99,6 +100,15 @@ public class VaseThree extends Vase {
                 }
                 break;
             case VASE_HAS_WATER:
+                if(checkTimeUntilChange()) {
+                    VASESTATE = VaseThreeStateType.VASE_IS_GROWING;
+                    super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                    vaseStartTime = 0;
+                    return true;
+                }
+                break;
+
+            case VASE_IS_GROWING:
                 if(checkTimeUntilChange()) {
                     VASESTATE = VaseThreeStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);

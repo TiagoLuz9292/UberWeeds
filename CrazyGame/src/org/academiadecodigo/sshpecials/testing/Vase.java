@@ -2,6 +2,7 @@ package org.academiadecodigo.sshpecials.testing;
 
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
+import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 
 public class Vase extends GameObject implements Interactable {
 
@@ -35,7 +36,7 @@ public class Vase extends GameObject implements Interactable {
         return false;
     }
     @Override
-    public boolean changeState(Inventory inventory) {
+    public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
         return false;
     }
 

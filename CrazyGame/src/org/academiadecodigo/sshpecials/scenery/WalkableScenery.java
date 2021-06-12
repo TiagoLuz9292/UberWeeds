@@ -43,7 +43,7 @@ public class WalkableScenery extends Scenery{
 
         super.show();
         for(GameObject gameObject : gameObjects) {
-            System.out.println("showiing gameObject image");
+
             gameObject.hide();
             gameObject.show();
         }

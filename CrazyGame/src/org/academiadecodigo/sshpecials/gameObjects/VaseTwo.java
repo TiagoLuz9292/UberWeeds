@@ -1,6 +1,7 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
+import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
@@ -38,7 +39,7 @@ public class VaseTwo extends Vase {
      * the vase is ready to plant again.
      */
     @Override
-    public boolean changeState(Inventory inventory) {
+    public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
         System.out.println(vaseStartTime);
         if(vaseStartTime == 0) {
             active = true;

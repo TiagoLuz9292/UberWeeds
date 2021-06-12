@@ -4,7 +4,7 @@ import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 
-public class Door extends GameObject implements Interactable {
+public class Door extends GameObject {
 
     private int nextSceneryIndex;
 
@@ -20,9 +20,5 @@ public class Door extends GameObject implements Interactable {
         return nextSceneryIndex;
     }
 
-    @Override
-    public boolean changeState(Inventory inventory) {
-        return false;
-    }
 
 }

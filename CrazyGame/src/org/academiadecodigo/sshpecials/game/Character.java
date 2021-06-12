@@ -4,6 +4,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
+import org.academiadecodigo.sshpecials.scenery.Scenery;
+import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
@@ -24,6 +26,7 @@ public class Character {
 
     private DirectionType direction;
 
+    private WalkableScenery activeScenery;
     private Inventory inventory;
     private Picture picture;                  // Character model on the screen
     private ColisionDetector colisionDetector;// Character uses colisionDetector to check colision with scenery objects
@@ -47,7 +50,7 @@ public class Character {
 
     public boolean interact(Interactable interactableObject) {
         interactable = false;
-        return interactableObject.changeState(inventory);
+        return interactableObject.changeState(inventory, activeScenery);
 
     }
 
@@ -160,6 +163,7 @@ public class Character {
         return picture;
     }
     public void setInitialPosition(int x, int y, String picturePath) {
+
         if(picture != null) {
             picture.delete();
         }

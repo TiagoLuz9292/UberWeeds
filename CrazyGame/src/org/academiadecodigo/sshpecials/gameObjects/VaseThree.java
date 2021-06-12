@@ -3,6 +3,7 @@ package org.academiadecodigo.sshpecials.gameObjects;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseThreeStateType;
+import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
@@ -50,7 +51,7 @@ public class VaseThree extends Vase {
     }
 
     @Override
-    public boolean changeState(Inventory inventory) {
+    public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
         if(vaseStartTime == 0) {
             super.active();
             vaseStartTime = System.currentTimeMillis();

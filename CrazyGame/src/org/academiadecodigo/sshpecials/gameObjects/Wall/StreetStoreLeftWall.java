@@ -8,8 +8,8 @@ import org.academiadecodigo.sshpecials.testing.Inventory;
 
 public class StreetStoreLeftWall extends Wall {
 
-    private static int LEFT_LIMIT_X = 19;
-    private static int RIGHT_LIMIT_X = -3;
+    private static int LEFT_LIMIT_X = -3;
+    private static int RIGHT_LIMIT_X = 19;
     private static int UP_LIMIT_Y = 2;
     private static int DOWN_LIMIT_Y = 362;
 

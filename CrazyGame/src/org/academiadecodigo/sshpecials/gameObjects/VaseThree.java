@@ -8,20 +8,20 @@ import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
 
 public class VaseThree extends Vase {
-    private static VaseThreeStateType vaseState = VaseThreeStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
+    private static VaseThreeStateType VASESTATE = VaseThreeStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
     private static int LEFT_LIMIT_X = 649;
     private static int RIGHT_LIMIT_X = 706;
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 205;
 
 
-
+    private boolean active;
     private long vaseStartTime;
 
     private Picture picture;
     public VaseThree() {
-        super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, vaseState.x, vaseState.y, vaseState.picturePath);
-        vaseState = VaseThreeStateType.NO_VASE;
+        super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+        VASESTATE = VaseThreeStateType.NO_VASE;
 
         this.picture = super.getPicture();
     }
@@ -32,15 +32,16 @@ public class VaseThree extends Vase {
      * the vase is ready to plant again.
      */
 
-    /*public void createThread() {
-
-        t1 = new Thread(new VaseOne ());
-        t1.start();
-    }
     @Override
-    public void run() {
-        changeState();
-    }*/
+    public boolean checkTimeUntilChange() {
+
+        System.out.println((System.currentTimeMillis() - vaseStartTime) + " > " + VASESTATE.timerForChange);
+        if(((System.currentTimeMillis() - vaseStartTime) / 1000) >= VASESTATE.timerForChange) {
+            active = false;
+            return true;
+        }
+        return false;
+    }
     @Override
     public void changePicture(int x, int y, String picturePath) {
 
@@ -50,42 +51,70 @@ public class VaseThree extends Vase {
 
     @Override
     public boolean changeState(Inventory inventory) {
-        switch(vaseState) {
+        if(vaseStartTime == 0) {
+            super.active();
+            vaseStartTime = System.currentTimeMillis();
+        }
+        switch(VASESTATE) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
-                    inventory.remove(ItemType.VASE, 1);
-                    vaseState = VaseThreeStateType.EMPTY_VASE;
-                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                    if(checkTimeUntilChange()) {
+                        inventory.remove(ItemType.VASE, 1);
+                        VASESTATE = VaseThreeStateType.EMPTY_VASE;
+                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                        vaseStartTime = 0;
+                        return true;
+                    }
                 }
                 break;
             case EMPTY_VASE:
                 if(inventory.hasItem(ItemType.SHOVEL)) {
-                    vaseState = VaseThreeStateType.VASE_READY_FOR_SEEDS;
-                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                    if(checkTimeUntilChange()) {
+                        VASESTATE = VaseThreeStateType.VASE_READY_FOR_SEEDS;
+                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                        vaseStartTime = 0;
+                        return true;
+                    }
                 }
                 break;
             case VASE_READY_FOR_SEEDS:
                 if(inventory.keyCount(ItemType.WEED_SEEDS) >= 10) {
-                    inventory.remove(ItemType.WEED_SEEDS, 10);
-                    vaseState = VaseThreeStateType.VASE_HAS_SEEDS;
-                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                    if(checkTimeUntilChange()) {
+                        inventory.remove(ItemType.WEED_SEEDS, 10);
+                        VASESTATE = VaseThreeStateType.VASE_HAS_SEEDS;
+                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                        vaseStartTime = 0;
+                        return true;
+                    }
                 }
                 break;
             case VASE_HAS_SEEDS:
                 if(inventory.hasItem(ItemType.WATER_CAN)) {
-                    vaseState = VaseThreeStateType.VASE_HAS_WATER;
-                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                    if(checkTimeUntilChange()) {
+                        VASESTATE = VaseThreeStateType.VASE_HAS_WATER;
+                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                        vaseStartTime = 0;
+                        return true;
+                    }
                 }
                 break;
             case VASE_HAS_WATER:
-                vaseState = VaseThreeStateType.VASE_IS_COLLECTABLE;
-                super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                if(checkTimeUntilChange()) {
+                    VASESTATE = VaseThreeStateType.VASE_IS_COLLECTABLE;
+                    super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                    vaseStartTime = 0;
+                    return true;
+                }
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
-                    inventory.add(ItemType.WEED_BAGS, 50);
-                    vaseState = VaseThreeStateType.EMPTY_VASE;
-                    super.changePicture(vaseState.x, vaseState.y, vaseState.picturePath);
+                    if(checkTimeUntilChange()) {
+                        inventory.add(ItemType.WEED_BAGS, 50);
+                        VASESTATE = VaseThreeStateType.EMPTY_VASE;
+                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                        vaseStartTime = 0;
+                        return true;
+                    }
                 }
 
                 break;

@@ -150,7 +150,7 @@ public class Character {
         return colisionDetector.getObjectInRange(picture);
     }
     public void showPicture() {
-
+        picture.delete();
         picture.draw();
     }
     public void setDirection(DirectionType direction) {

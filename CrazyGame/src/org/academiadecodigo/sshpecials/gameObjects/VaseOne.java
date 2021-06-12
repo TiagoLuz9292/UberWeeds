@@ -121,9 +121,7 @@ public class VaseOne extends Vase implements Interactable{
         return false;
     }
 
-    public void setThread(Thread thread) {
-       // this.thread = thread;
-    }
+
     @Override
     public String toString() {
         return "IM A VASE!";

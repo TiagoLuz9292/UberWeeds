@@ -3,6 +3,7 @@ package org.academiadecodigo.sshpecials.testing;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
+import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
@@ -103,7 +104,6 @@ public class Game {
             }catch(Exception e) {
                 System.out.println(e);
             }
-            //userInterface.update();
         }
     }
     public void updatePlacementsAfterMovement() {
@@ -132,6 +132,7 @@ public class Game {
     public void setActiveScenery(int sceneryIndex) {
 
         if (activeScenery != null) {
+
             activeScenery.hide();
         }
         activeScenery = sceneries[sceneryIndex];

@@ -22,9 +22,19 @@ public class SeedVendor extends GameObject implements Interactable {
         SEEDVENDORSTATE = SeedVendorState.SEED_VENDOR_STATE_ONE;
     }
 
-
+    //inventory?
     @Override
     public boolean changeState(Inventory inventory) {
+
+        switch(SEEDVENDORSTATE) {
+            case  SEED_VENDOR_STATE_ONE:
+
+                SEEDVENDORSTATE = SeedVendorState.SEED_VENDOR_STATE_TWO;
+
+             return true;
+
+        }
+
         return false;
     }
 }

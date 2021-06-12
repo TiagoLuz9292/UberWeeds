@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="214b2dc3-e39c-4e37-8b85-e0115d7f8664" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Alley.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Alley.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateOne.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SeedVendorStateOne.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendorState/SeedVendorState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/SeedVendorState/SeedVendorState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

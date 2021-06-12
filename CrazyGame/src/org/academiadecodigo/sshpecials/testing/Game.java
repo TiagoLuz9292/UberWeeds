@@ -44,7 +44,7 @@ public class Game {
     }
 
     public void init() {
-        setActiveScenery(5);
+        setActiveScenery(0);
         activeScenery.show();
 
         userInterface = new UserInterface(character.getInventory());

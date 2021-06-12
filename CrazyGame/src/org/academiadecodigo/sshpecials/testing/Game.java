@@ -5,8 +5,12 @@ import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.gameObjects.Interactable;
+import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
+
+import java.util.LinkedHashSet;
 
 public class Game {
 
@@ -20,11 +24,18 @@ public class Game {
     private UserInterface userInterface;
     private ColisionDetector colisionDetector;
 
-    public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries) {
+    private Timer timer;
+
+    private LinkedHashSet<Vase> vases;
+
+    public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries, Timer timer) {
+        vases = new LinkedHashSet();
+        this.timer = timer;
         this.inventoryVisible = true;
         this.colisionDetector = colisionDetector;
         this.character = character;
         this.sceneries = sceneries;
+
 /**
  * Primeiro cenario
  */
@@ -39,11 +50,29 @@ public class Game {
         //character.showPicture();
         start();
     }
+    public void checkVases() {
+
+        for(Vase vase : vases) {
+            if(vase.isActive()) {
+                if (vase.checkTimeUntilChange()) {
+                    System.out.println("before interact in game loop");
+                    if(character.interact(vase)) {
+                        vase.notActive();
+                    }
+                }
+            }
+        }
+    }
     public void start() {
         while(true) {
             while(!gameStarted) {
                 System.out.println("waiting for gme to start");
             }
+
+            if(!vases.isEmpty()) {
+                checkVases();
+            }
+
             if(!inventoryVisible && userInterface.isVisible()) {
                 userInterface.hideInventoryInterface();
             } else if(inventoryVisible && !userInterface.isVisible()){
@@ -56,12 +85,14 @@ public class Game {
 
                     setActiveScenery(((Door) gameObject).getNextSceneryIndex());
 
-
                 }
                 if(gameObject instanceof Vase) {
-
-                    character.interact(gameObject);
+                    Vase vase = (Vase) gameObject;
+                    if (!vases.contains(vase)) {
+                        vases.add(vase);
                     }
+                    character.interact((Interactable) gameObject);
+                }
             }
             userInterface.update();
             character.setInteractable(false);

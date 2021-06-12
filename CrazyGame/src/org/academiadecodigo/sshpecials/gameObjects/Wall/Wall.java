@@ -10,8 +10,5 @@ public class Wall extends GameObject {
         super(leftLimitX,rightLimitX,upLimitY,downLimitY);
     }
 
-    @Override
-    public void changeState(Inventory inventory) {
 
-    }
 }

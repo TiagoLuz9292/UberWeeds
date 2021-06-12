@@ -26,7 +26,9 @@ public class UserInterface {
     private Text[] counters;
 
 
+
     public UserInterface(Inventory inventory) {
+
         this.inventory = inventory;
         itemsCounter = new Text[ItemType.values().length];
         this.counters = new Text[6];

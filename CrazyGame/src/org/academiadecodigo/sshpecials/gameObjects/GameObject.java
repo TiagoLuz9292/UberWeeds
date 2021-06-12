@@ -83,8 +83,6 @@ public abstract class GameObject{
     }
 
 
-    public abstract void changeState(Inventory inventory);
-
     public String toString() {
         return "Im an object";
     }

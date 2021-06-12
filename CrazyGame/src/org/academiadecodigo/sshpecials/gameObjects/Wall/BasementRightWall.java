@@ -18,9 +18,7 @@ public class BasementRightWall extends Wall {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y);
     }
 
-    public void changeState(){
 
-    }
     @Override
     public String toString() {
         return "IM RIGHT WALL";

@@ -16,8 +16,8 @@ public class BasementDoorStreet extends Door {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, 4);
     }
 
-    public void changeState(Inventory inventory){
-
+    public boolean changeState(Inventory inventory) {
+        return false;
     }
 
     @Override

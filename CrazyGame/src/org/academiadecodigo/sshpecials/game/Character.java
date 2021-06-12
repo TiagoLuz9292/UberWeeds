@@ -2,6 +2,7 @@ package org.academiadecodigo.sshpecials.game;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
@@ -44,9 +45,9 @@ public class Character {
      * Each direction has its method
      */
 
-    public void interact(GameObject gameObject) {
+    public boolean interact(Interactable interactableObject) {
         interactable = false;
-        gameObject.changeState(inventory);
+        return interactableObject.changeState(inventory);
 
     }
 

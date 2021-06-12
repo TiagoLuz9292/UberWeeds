@@ -16,6 +16,7 @@ public class VaseThree extends Vase {
 
 
 
+    private long vaseStartTime;
 
     private Picture picture;
     public VaseThree() {
@@ -48,7 +49,7 @@ public class VaseThree extends Vase {
     }
 
     @Override
-    public void changeState(Inventory inventory) {
+    public boolean changeState(Inventory inventory) {
         switch(vaseState) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
@@ -89,6 +90,7 @@ public class VaseThree extends Vase {
 
                 break;
         }
+        return false;
     }
 
     public void setThread(Thread thread) {

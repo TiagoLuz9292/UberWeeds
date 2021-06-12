@@ -5,6 +5,7 @@ import org.academiadecodigo.sshpecials.game.ColisionDetector;
 import org.academiadecodigo.sshpecials.game.Controls;
 import org.academiadecodigo.sshpecials.scenery.*;
 import org.academiadecodigo.sshpecials.testing.Game;
+import org.academiadecodigo.sshpecials.testing.Timer;
 
 
 public class Main {
@@ -16,8 +17,8 @@ public class Main {
 
         Scenery[] sceneries = {new MainMenuStartOption(), new MainMenuInstructionsOption(), new MainMenuInstructions(), new Basement(),new StreetStore()};
         Character character = new Character(colisionDetector);
-
-        Game game = new Game(colisionDetector,character, sceneries);
+        Timer timer = new Timer();
+        Game game = new Game(colisionDetector,character, sceneries, timer);
         Controls controls = new Controls(character, game);
         controls.init();
         game.init();

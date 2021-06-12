@@ -19,9 +19,7 @@ public class BasementUpWall extends GameObject {
 
     }
 
-    public void changeState(Inventory inventory){
 
-    }
     @Override
     public String toString() {
         return "IM UP WALL";

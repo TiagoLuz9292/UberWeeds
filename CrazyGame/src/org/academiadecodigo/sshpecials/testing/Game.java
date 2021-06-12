@@ -24,7 +24,7 @@ public class Game {
 /**
  * Primeiro cenario
  */
-        activeScenery = sceneries[4];
+        activeScenery = sceneries[3];
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
     }
 

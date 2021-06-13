@@ -90,6 +90,15 @@ public class VaseTwo extends Vase {
                 break;
             case VASE_HAS_WATER:
                 if(checkTimeUntilChange()) {
+                    VASESTATE = VaseTwoStateType.VASE_IS_GROWING;
+                    super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                    vaseStartTime = 0;
+                    return true;
+                }
+                break;
+
+            case VASE_IS_GROWING:
+                if(checkTimeUntilChange()) {
                     VASESTATE = VaseTwoStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;

@@ -37,7 +37,7 @@ public class Game {
     public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries, Timer timer) {
         vases = new LinkedHashSet();
         this.timer = timer;
-        this.inventoryVisible = true;
+        this.inventoryVisible = false;
         this.colisionDetector = colisionDetector;
         this.character = character;
         this.sceneries = sceneries;
@@ -50,7 +50,7 @@ public class Game {
 
     public void init() {
         setActiveScenery(0);
-        activeScenery.show();
+
 
         userInterface = new UserInterface(character.getInventory());
         //character.showPicture();
@@ -88,6 +88,7 @@ public class Game {
     }
 
     public void start() {
+        activeScenery.show();
         while(true) {
             while(!gameStarted) {
                 System.out.println("waiting for gme to start");
@@ -185,7 +186,7 @@ public class Game {
     public void chooseMainMenuOption() {
         if(activeScenery == sceneries[0]) {
 
-            activeScenery.hide();
+
             activeScenery.getPicture().grow(-500, -500);
             setActiveScenery(3);
             gameStarted = true;

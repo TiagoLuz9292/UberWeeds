@@ -11,8 +11,9 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.*;
 public class StreetStore extends WalkableScenery {
 
     private static String PICTURE = "Resources/streetStore.PNG";                   //Picture path for Basement Background
-    private static GameObject[] gameobjects = { new StreetStoreUpWall(), new StreetDoorStore(), new StoreStreedDoorBasement(), new StreetStoreDownWall(), new StreetStoreRightWall(),
-                                                new StreetDoorUberStreet(), new StreetStoreLeftWall(), new StreetDoorAlley()};
+    private static GameObject[] gameobjects = {new StreetDoorAlley(), new StreetDoorStore(), new StreetDoorUberStreet(), new StreetStoreUpWall(),
+                                                new StoreStreedDoorBasement(), new StreetStoreDownWall(),
+                                                new StreetStoreRightWall(), new StreetStoreLeftWall()};
 
     private static String CHARACTER_PICTURE_PATH = "Resources/girlpackStreet.PNG";
     private static int CHARACTER_INITIAL_X = 213;

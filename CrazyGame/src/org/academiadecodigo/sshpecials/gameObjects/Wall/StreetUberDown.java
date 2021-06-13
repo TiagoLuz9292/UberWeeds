@@ -8,7 +8,7 @@ public class StreetUberDown extends Wall {
 
     private static int LEFT_LIMIT_X = -9;
     private static int RIGHT_LIMIT_X = 1000;
-    private static int UP_LIMIT_Y = 411;
+    private static int UP_LIMIT_Y = 397;
     private static int DOWN_LIMIT_Y = 500;
 
     public StreetUberDown(){

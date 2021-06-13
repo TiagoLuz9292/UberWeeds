@@ -40,7 +40,6 @@ public class WalkableScenery extends Scenery{
 
     @Override
     public void show() {
-
         super.show();
         for(GameObject gameObject : gameObjects) {
 

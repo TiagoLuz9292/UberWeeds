@@ -157,6 +157,9 @@ public class Controls implements KeyboardHandler {
                 game.smoke();
                 break;
 
+            case KeyboardEvent.KEY_1:
+                game.buyItem(1);
+                break;
             case KeyboardEvent.KEY_2:
                 game.buyItem(2);
                 break;

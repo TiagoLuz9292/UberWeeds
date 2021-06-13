@@ -9,7 +9,7 @@ public class AlleyUp extends Wall {
     private static int LEFT_LIMIT_X = -50;
     private static int RIGHT_LIMIT_X = 1000;
     private static int UP_LIMIT_Y = -9;
-    private static int DOWN_LIMIT_Y = 360;
+    private static int DOWN_LIMIT_Y = 210;
 
     public AlleyUp(){
 

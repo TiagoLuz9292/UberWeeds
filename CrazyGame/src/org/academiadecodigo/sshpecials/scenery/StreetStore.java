@@ -14,7 +14,7 @@ public class StreetStore extends WalkableScenery {
     private static GameObject[] gameobjects = { new StreetStoreUpWall(), new StreetDoorStore(), new StoreStreedDoorBasement(), new StreetStoreDownWall(), new StreetStoreRightWall(),
                                                 new StreetDoorUberStreet(), new StreetStoreLeftWall(), new StreetDoorAlley()};
 
-    private static String CHARACTER_PICTURE_PATH = "Resources/catiaStreetStore.PNG";
+    private static String CHARACTER_PICTURE_PATH = "Resources/girlpackStreet.PNG";
     private static int CHARACTER_INITIAL_X = 213;
     private static int CHARACTER_INITIAL_Y = 294;
 

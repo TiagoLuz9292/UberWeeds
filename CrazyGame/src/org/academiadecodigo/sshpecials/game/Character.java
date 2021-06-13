@@ -5,8 +5,10 @@ import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
+import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
+import org.academiadecodigo.sshpecials.scenery.Store;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
@@ -54,6 +56,10 @@ public class Character {
 
         if(person instanceof SeedVendor) {
             ((SeedVendor) person).sell(inventory);
+        }
+
+        if (person instanceof StoreVendor) {
+            ((StoreVendor) person).sell(inventory, option);
         }
 
 

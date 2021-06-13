@@ -10,8 +10,8 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.AlleyUp;
 
 public class AlleyWay extends WalkableScenery {
 
-    private static String CHARACTER_PICTURE_PATH = "Resources/catiaBasement.PNG";
-    private static int CHARACTER_INITIAL_X = 35;
+    private static String CHARACTER_PICTURE_PATH = "Resources/catiaAlley.PNG";
+    private static int CHARACTER_INITIAL_X = 50;
     private static int CHARACTER_INITIAL_Y = 371;
     private static String PICTURE = "Resources/Alley.PNG";                   //Picture path for Basement Background
     private static GameObject[] gameobjects = {new AlleyDoorStreet(), new AlleyRight(),new AlleyUp(),

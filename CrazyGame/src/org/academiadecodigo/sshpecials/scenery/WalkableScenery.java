@@ -48,6 +48,14 @@ public class WalkableScenery extends Scenery{
             gameObject.show();
         }
     }
+    @Override
+    public void hide() {
+        super.hide();
+        for(GameObject gameObject : gameObjects) {
+            System.out.println(gameObject);
+            gameObject.hide();
+        }
+    }
 
     public int getCharacterInitialX() {
         return characterInitialX;

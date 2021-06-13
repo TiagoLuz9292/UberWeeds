@@ -12,8 +12,9 @@ public abstract class Scenery {
     }
 
     public void show() {
-        System.out.println("Drowing scene image");
+
         picture.draw();
+
     }
 
     public void hide() {

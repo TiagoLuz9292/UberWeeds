@@ -3,6 +3,8 @@ package org.academiadecodigo.sshpecials.game;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
+import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
+import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
@@ -24,8 +26,8 @@ public class Character {
 
     private boolean interactable;
 
-    private DirectionType direction;
 
+    private DirectionType direction;
     private WalkableScenery activeScenery;
     private Inventory inventory;
     private Picture picture;                  // Character model on the screen
@@ -47,6 +49,16 @@ public class Character {
      *Checks all the path, if there is a colision in the middle, character will stop close to it
      * Each direction has its method
      */
+
+    public void buyItem(Person person, int option) {
+
+        if(person instanceof SeedVendor) {
+            ((SeedVendor) person).sell(inventory);
+        }
+
+
+    }
+
 
     public boolean interact(Interactable interactableObject) {
         interactable = false;

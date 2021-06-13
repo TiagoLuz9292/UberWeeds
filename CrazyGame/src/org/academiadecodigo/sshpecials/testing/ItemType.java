@@ -8,6 +8,7 @@ public enum ItemType {
     SCISSORS,
     WEED_SEEDS,
     WEED_BAGS,
-    WEED_FOR_SMOKE
+    WEED_FOR_SMOKE,
+    MONEY
 
 }

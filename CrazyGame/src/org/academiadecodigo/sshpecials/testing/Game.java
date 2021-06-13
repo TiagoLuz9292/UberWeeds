@@ -7,7 +7,9 @@ import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
+import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
+import org.academiadecodigo.sshpecials.scenery.AlleyWay;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 
@@ -133,7 +135,12 @@ public class Game {
     public void setActiveScenery(int sceneryIndex) {
 
         if (activeScenery != null) {
-
+            if(activeScenery.equals(sceneries[5])) {
+                AlleyWay alleyWay = (AlleyWay) activeScenery;
+                SeedVendor seedVendor = alleyWay.getSeedVendor();
+                seedVendor.deActivate();
+                seedVendor.setSeedVendorDefaultState();
+            }
             activeScenery.hide();
         }
         activeScenery = sceneries[sceneryIndex];
@@ -174,6 +181,18 @@ public class Game {
     public void showInventory() {
        inventoryVisible = !inventoryVisible;
         //System.out.println("Visible is " + inventoryVisible);
+
+    }
+
+    public void buyItem(int option) {
+
+        if(activeScenery.equals(sceneries[5])) {
+            AlleyWay alleyWay = (AlleyWay) activeScenery;
+            SeedVendor seedVendor = alleyWay.getSeedVendor();
+            if(seedVendor.isActive()) {
+                character.buyItem(seedVendor, option);
+            }
+        }
 
     }
 }

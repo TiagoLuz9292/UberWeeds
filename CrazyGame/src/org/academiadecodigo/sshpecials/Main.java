@@ -17,6 +17,7 @@ public class Main {
 
         Scenery[] sceneries = {new MainMenuStartOption(), new MainMenuInstructionsOption(), new MainMenuInstructions(),
                 new Basement(),new StreetStore(), new AlleyWay(), new Store(), new StreetUber()};
+
         Character character = new Character(colisionDetector);
         Timer timer = new Timer();
         Game game = new Game(colisionDetector,character, sceneries, timer);

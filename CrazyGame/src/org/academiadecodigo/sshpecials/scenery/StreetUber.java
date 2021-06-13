@@ -11,8 +11,10 @@ public class StreetUber extends WalkableScenery {
     private static int CHARACTER_INITIAL_X = 100;
     private static int CHARACTER_INITIAL_Y = 405;
     private static String PICTURE = "Resources/streetUber.PNG";                   //Picture path for Basement Background
+
+
     private static GameObject[] gameobjects = {new UberDoorStreet(), new StreetUberUp(), new StreetUberUpUpWall(), new StreetDoorUberStreet(), new StreetUberDown(), new StreetUberLeft(), new StreetUberRight(),
-            new StreetUberLeft(), new StreetUberRight()}; //Array of objects that can colide with character in this scenery
+            new StreetUberLeft(), new StreetUberRight(), }; //Array of objects that can colide with character in this scenery
 
 
     public StreetUber() {

@@ -11,6 +11,8 @@ public abstract class Scenery {
         this.picture = new Picture(10, 10, picturePath);
     }
 
+
+
     public void show() {
 
         picture.draw();

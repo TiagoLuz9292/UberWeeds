@@ -6,7 +6,7 @@ import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 
 public class UserInterface {
 
-    public static int TEXT_X = 900;
+    public static int TEXT_X = 20;
     public static int GROW_X = 15;
     public static int GROW_Y = 3;
 
@@ -16,6 +16,7 @@ public class UserInterface {
     private Inventory inventory;
     private Text[] itemsCounter;
 
+    private Text moneyCounter;
     private Text vaseCounter;
     private Text waterCanCounter;
     private Text shovelCounter;
@@ -31,7 +32,7 @@ public class UserInterface {
 
         this.inventory = inventory;
         itemsCounter = new Text[ItemType.values().length];
-        this.counters = new Text[6];
+        this.counters = new Text[7];
 
         init();
     }
@@ -44,6 +45,7 @@ public class UserInterface {
         counters[3] = scissorsCounter;
         counters[4] = weedSeedsCounter;
         counters[5] = weedBagsCounter;
+        counters[6] = moneyCounter;
 
         for(int i = 0; i < counters.length; i++) {
             counters[i].setColor(Color.WHITE);
@@ -52,6 +54,12 @@ public class UserInterface {
         //showInventoryInterface();
 
     }
+    public void createMoneyCounter() {
+
+        moneyCounter = new Text(100, 20, "Money x " + inventory.keyCount(MONEY));
+
+    }
+
     public void createVaseCounter() {
 
         vaseCounter = new Text(TEXT_X, 20, "Vase x " + inventory.keyCount(VASE));
@@ -114,6 +122,7 @@ public class UserInterface {
         createScissorsCounter();
         createWeedSeedsCounter();
         createWeedBagsCounter();
+        createMoneyCounter();
 
     }
     public void update() {
@@ -123,6 +132,7 @@ public class UserInterface {
        scissorsCounter.setText("Scissors x " + inventory.keyCount(SCISSORS));
        weedSeedsCounter.setText("Weed Seeds x " + inventory.keyCount(WEED_SEEDS));
        weedBagsCounter.setText("Weed Bags x " + inventory.keyCount(WEED_BAGS));
+       moneyCounter.setText("Money x " + inventory.keyCount(MONEY));
 
     }
     public boolean isVisible() {

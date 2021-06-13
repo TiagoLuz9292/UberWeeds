@@ -87,10 +87,10 @@ public class Game {
                     setActiveScenery(((Door) gameObject).getNextSceneryIndex());
 
                 }
-                if(gameObject instanceof Vase) {
-                    Vase vase = (Vase) gameObject;
-                    if (!vases.contains(vase)) {
-                        vases.add(vase);
+                if(gameObject instanceof Interactable) {
+                    Interactable interactable = (Interactable) gameObject;
+                    if (gameObject instanceof Vase && !vases.contains(interactable)) {
+                        vases.add((Vase)interactable);
                     }
                     character.interact((Interactable) gameObject);
                 }

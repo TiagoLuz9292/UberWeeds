@@ -1,5 +1,6 @@
 package org.academiadecodigo.sshpecials.gameObjects.Person;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
 import org.academiadecodigo.sshpecials.gameObjects.SeedVendorState.SeedVendorState;
@@ -16,6 +17,7 @@ public class SeedVendor extends Person implements Interactable {
     private static int DOWN_LIMIT_Y = 400;
     private static int SEEDS_PRICE = 50;
 
+    private static Picture seedMenu = new Picture(100, 100, "Resources/SeedsMenu.png");
     private static String name = "Marco";
 
 
@@ -50,10 +52,10 @@ public class SeedVendor extends Person implements Interactable {
             case SEED_VENDOR_STATE_TWO:
                 if(isActive()) {
                     super.deActivate();
-                    //hide menu;
+                    seedMenu.delete();
                 }else {
                     super.activate();
-                    //show menu;
+                    seedMenu.draw();
                 }
         }
 

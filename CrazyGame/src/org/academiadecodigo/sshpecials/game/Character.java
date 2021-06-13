@@ -49,6 +49,10 @@ public class Character {
      *Checks all the path, if there is a colision in the middle, character will stop close to it
      * Each direction has its method
      */
+    public void smoke(){
+
+
+    }
 
     public void buyItem(Person person, int option) {
 

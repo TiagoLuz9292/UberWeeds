@@ -54,6 +54,7 @@ public class Character {
      * Each direction has its method
      */
 
+
     public void buyItem(Person person, int option) {
 
         if(person instanceof SeedVendor) {

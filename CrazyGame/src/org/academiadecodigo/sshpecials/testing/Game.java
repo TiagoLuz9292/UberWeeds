@@ -37,7 +37,7 @@ public class Game {
     public Game(ColisionDetector colisionDetector, Character character, Scenery[] sceneries, Timer timer) {
         vases = new LinkedHashSet();
         this.timer = timer;
-        this.inventoryVisible = false;
+        this.inventoryVisible = true;
         this.colisionDetector = colisionDetector;
         this.character = character;
         this.sceneries = sceneries;

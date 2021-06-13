@@ -12,7 +12,7 @@ public class VaseTwo extends Vase {
     private static int LEFT_LIMIT_X = 515;
     private static int RIGHT_LIMIT_X = 572;
     private static int UP_LIMIT_Y = 0;
-    private static int DOWN_LIMIT_Y = 205;
+    private static int DOWN_LIMIT_Y = 172;
 
     private boolean active;
     private long vaseStartTime;
@@ -40,15 +40,14 @@ public class VaseTwo extends Vase {
      */
     @Override
     public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
-        System.out.println(vaseStartTime);
         if(vaseStartTime == 0) {
-            active = true;
+            super.active();
             vaseStartTime = System.currentTimeMillis();
         }
         switch(VASESTATE) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
-                    if(checkTimeUntilChange()   ) {
+                    if(checkTimeUntilChange()) {
                         inventory.remove(ItemType.VASE, 1);
                         VASESTATE = VaseTwoStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -59,7 +58,7 @@ public class VaseTwo extends Vase {
                 break;
             case EMPTY_VASE:
                 if(inventory.hasItem(ItemType.SHOVEL)) {
-                    if(checkTimeUntilChange() ) {
+                    if(checkTimeUntilChange()) {
                         VASESTATE = VaseTwoStateType.VASE_READY_FOR_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
@@ -107,16 +106,15 @@ public class VaseTwo extends Vase {
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
-                    if(checkTimeUntilChange()) {
+                    if (checkTimeUntilChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
                         VASESTATE = VaseTwoStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
                     }
+                    break;
                 }
-
-                break;
         }
         return false;
     }

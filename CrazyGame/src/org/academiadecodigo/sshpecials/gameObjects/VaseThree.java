@@ -14,7 +14,7 @@ public class VaseThree extends Vase {
     private static int LEFT_LIMIT_X = 649;
     private static int RIGHT_LIMIT_X = 706;
     private static int UP_LIMIT_Y = 0;
-    private static int DOWN_LIMIT_Y = 205;
+    private static int DOWN_LIMIT_Y = 172;
 
 
     private boolean active;
@@ -119,20 +119,18 @@ public class VaseThree extends Vase {
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
-                    if(checkTimeUntilChange()) {
+                    if (checkTimeUntilChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
                         VASESTATE = VaseThreeStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
                     }
+                    break;
                 }
-
-                break;
         }
         return false;
     }
-
     public void setThread(Thread thread) {
         // this.thread = thread;
     }

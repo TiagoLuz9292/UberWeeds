@@ -26,6 +26,7 @@ public class Character {
 
     private boolean interactable;
 
+    private boolean stoned;
 
     private DirectionType direction;
     private WalkableScenery activeScenery;
@@ -38,6 +39,7 @@ public class Character {
      * Character receives a new colision detector in constructor
      */
     public Character(ColisionDetector colisionDetector) {
+        stoned = false;
         interactable = false;
         direction = NONE;
         inventory = new Inventory();
@@ -148,15 +150,11 @@ public class Character {
     /**
      *Checks if this character is in range of interacting with some object using F key.
      */
-
-    public void addToInventory(ItemType key, int value) {
-        inventory.add(key, value);
+    public void smoke() {
+        stoned = true;
     }
-    public void removeFromInventory(ItemType key, int value) {
-        inventory.remove(key, value);
-    }
-    public int countItem(ItemType key) {
-        return inventory.keyCount(key);
+    public void stopSmoking() {
+        stoned = false;
     }
     public boolean checkInRangeWithObject(){
         return colisionDetector.checkColision(picture);
@@ -173,6 +171,10 @@ public class Character {
     }
     public Picture getPicture() {
         return picture;
+    }
+    public void setPicture(String picturePath) {
+        picture.delete();
+        picture.load(picturePath);
     }
     public void setInitialPosition(int x, int y, String picturePath) {
 

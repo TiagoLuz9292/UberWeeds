@@ -54,6 +54,9 @@ public class Controls implements KeyboardHandler {
         KeyboardEvent realeaseInteract = new KeyboardEvent();
         KeyboardEvent mainMenuBack = new KeyboardEvent();
         KeyboardEvent buyOptionOne = new KeyboardEvent();
+        KeyboardEvent smoke = new KeyboardEvent();
+        KeyboardEvent stopSmoke = new KeyboardEvent();
+
 
         /**
          * Here we set the keys for each of our KeyboardEvents created
@@ -75,6 +78,8 @@ public class Controls implements KeyboardHandler {
         realeaseInteract.setKey(KeyboardEvent.KEY_F);
         mainMenuBack.setKey(KeyboardEvent.KEY_ESC);
         buyOptionOne.setKey(KeyboardEvent.KEY_1);
+        smoke.setKey(KeyboardEvent.KEY_R);
+        stopSmoke.setKey(KeyboardEvent.KEY_T);
 
         /**
         * Here we set the type of Event we want to wait for (if pressed or released, in our case we will only use Press.)
@@ -96,6 +101,8 @@ public class Controls implements KeyboardHandler {
         realeaseInteract.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         mainMenuBack.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         buyOptionOne.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        smoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        stopSmoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
 
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
@@ -117,7 +124,8 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(realeaseInteract);
         keyboard.addEventListener(mainMenuBack);
         keyboard.addEventListener(buyOptionOne);
-
+        keyboard.addEventListener(smoke);
+        keyboard.addEventListener(stopSmoke);
     }
 
     /**
@@ -128,10 +136,16 @@ public class Controls implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
         switch (keyboardEvent.getKey()) {
+            case KeyboardEvent.KEY_T:
+                game.stopSmoking();
+                break;
+            case KeyboardEvent.KEY_R:
+                game.smoke();
+                break;
             case KeyboardEvent.KEY_1: {
                 game.buyItem(1);
+                break;
             }
-
             case KeyboardEvent.KEY_ESC:
                 game.mainMenuBack();
                 break;

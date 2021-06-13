@@ -2,6 +2,7 @@ package org.academiadecodigo.sshpecials.testing;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StonerFactory;
 
 import static org.academiadecodigo.sshpecials.testing.ItemType.*;
@@ -18,6 +19,9 @@ public class UserInterface {
     private Inventory inventory;
     private UberWeeds uberWeeds = StonerFactory.uberWeeds;
     //private Text[] itemsCounter;
+
+    private Picture inventoryBackground;
+
 
     private Text moneyCounter;
     private Text vaseCounter;

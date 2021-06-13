@@ -17,8 +17,8 @@ public class Basement extends WalkableScenery {
     private static int CHARACTER_INITIAL_Y = 211;
 
     private static String PICTURE = "Resources/basementFinal.PNG";                   //Picture path for Basement Background
-    private static GameObject[] gameobjects = {new BasementLeftWall(), new BasementUpWall(),
-            new BasementDownWall(), new BasementDoorStreet(), new VaseOne(), new VaseTwo(), new VaseThree()}; //Array of objects that can colide with character in this scenery
+    private static GameObject[] gameobjects = {new VaseOne(), new VaseTwo(), new VaseThree(), new BasementLeftWall(), new BasementUpWall(),
+            new BasementDownWall(), new BasementDoorStreet()}; //Array of objects that can colide with character in this scenery
 
 
     public Basement() {

@@ -12,7 +12,7 @@ public class BasementUpWall extends GameObject {
     private static int LEFT_LIMIT_X = -30;
     private static int RIGHT_LIMIT_X = 920;
     private static int UP_LIMIT_Y = 0;
-    private static int DOWN_LIMIT_Y = 195;
+    private static int DOWN_LIMIT_Y = 175;
 
     public BasementUpWall(){
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y);

@@ -56,7 +56,11 @@ public class WalkableScenery extends Scenery{
             gameObject.hide();
         }
     }
-
+    public void setPicture(String picturePath) {
+        getPicture().load(picturePath);
+        hide();
+        show();
+    }
     public int getCharacterInitialX() {
         return characterInitialX;
     }

@@ -214,4 +214,14 @@ public class Game {
         }
 
     }
+    public void smoke() {
+        character.smoke();
+        WalkableScenery basement = (WalkableScenery) activeScenery;
+        basement.setPicture("Resources/basementHigh.png");
+    }
+    public void stopSmoking() {
+        character.stopSmoking();
+        WalkableScenery basement = (WalkableScenery) activeScenery;
+        basement.setPicture("Resources/basementFinal.PNG");
+    }
 }

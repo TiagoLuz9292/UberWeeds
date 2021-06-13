@@ -14,7 +14,10 @@ public class SeedVendor extends Person implements Interactable {
     private static int RIGHT_LIMIT_X = 1000;
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 400;
+
     private static int SEEDS_PRICE = 50;
+
+
 
     private static String name = "Marco";
 

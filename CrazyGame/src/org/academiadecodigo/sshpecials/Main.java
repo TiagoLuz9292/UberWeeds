@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
 
+
         ColisionDetector colisionDetector = new ColisionDetector();
 
         Scenery[] sceneries = {new MainMenuStartOption(), new MainMenuInstructionsOption(), new MainMenuInstructions(),

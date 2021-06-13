@@ -34,7 +34,7 @@ public class Inventory {
         add(SHOVEL, 1);
         add(SCISSORS, 1);
         add(WEED_SEEDS, 0);
-        add(WEED_BAGS, 0);
+        add(WEED_BAGS, 1000);
         add(WEED_FOR_SMOKE, 0);
         add(MONEY, 500);
     }

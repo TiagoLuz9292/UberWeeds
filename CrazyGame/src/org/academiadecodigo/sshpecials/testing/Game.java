@@ -8,6 +8,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
+import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.AlleyWay;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
@@ -66,6 +67,23 @@ public class Game {
             }
         }
     }
+
+    public void checkStonerRequests() {
+
+        Stoner stoner = getStoner();
+        stoner.makeRequestToUber();
+
+    }
+    public Stoner getStoner() {
+
+        for(GameObject gameObject : sceneries[7].getGameObjects()) {
+            if(gameObject instanceof Stoner) {
+                return (Stoner) gameObject;
+            }
+        }
+        return null;
+    }
+
     public void start() {
         while(true) {
             while(!gameStarted) {
@@ -75,6 +93,7 @@ public class Game {
             if(!vases.isEmpty()) {
                 checkVases();
             }
+            checkStonerRequests();
 
             if(!inventoryVisible && userInterface.isVisible()) {
                 userInterface.hideInventoryInterface();

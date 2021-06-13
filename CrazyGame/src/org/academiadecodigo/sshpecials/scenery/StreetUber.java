@@ -3,6 +3,9 @@ package org.academiadecodigo.sshpecials.scenery;
 import org.academiadecodigo.sshpecials.gameObjects.Door.StreetDoorUberStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.UberDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
+import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
+import org.academiadecodigo.sshpecials.gameObjects.Person.StonerFactory;
+import org.academiadecodigo.sshpecials.gameObjects.Person.StonerInfo;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.*;
 
 public class StreetUber extends WalkableScenery {
@@ -14,7 +17,7 @@ public class StreetUber extends WalkableScenery {
 
 
     private static GameObject[] gameobjects = {new UberDoorStreet(), new StreetUberUp(), new StreetUberUpUpWall(), new StreetDoorUberStreet(), new StreetUberDown(), new StreetUberLeft(), new StreetUberRight(),
-            new StreetUberLeft(), new StreetUberRight(), }; //Array of objects that can colide with character in this scenery
+            new StreetUberLeft(), new StreetUberRight(), StonerFactory.createStoner()};
 
 
     public StreetUber() {

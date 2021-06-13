@@ -2,6 +2,8 @@ package org.academiadecodigo.sshpecials.testing;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.sshpecials.gameObjects.Person.StonerFactory;
+
 import static org.academiadecodigo.sshpecials.testing.ItemType.*;
 
 public class UserInterface {
@@ -14,7 +16,8 @@ public class UserInterface {
     private boolean visible = false;
 
     private Inventory inventory;
-    private Text[] itemsCounter;
+    private UberWeeds uberWeeds = StonerFactory.uberWeeds;
+    //private Text[] itemsCounter;
 
     private Text moneyCounter;
     private Text vaseCounter;
@@ -24,6 +27,8 @@ public class UserInterface {
     private Text weedSeedsCounter;
     private Text weedBagsCounter;
 
+    private Text uberRequest;
+
     private Text[] counters;
 
 
@@ -31,7 +36,7 @@ public class UserInterface {
     public UserInterface(Inventory inventory) {
 
         this.inventory = inventory;
-        itemsCounter = new Text[ItemType.values().length];
+
         this.counters = new Text[7];
 
         init();
@@ -52,6 +57,12 @@ public class UserInterface {
             counters[i].grow(15, GROW_Y);
         }
         //showInventoryInterface();
+
+    }
+    public void createUberRequest() {
+
+        uberRequest = new Text(TEXT_X, 200, "");
+        uberRequest.setColor(Color.WHITE);
 
     }
     public void createMoneyCounter() {
@@ -92,7 +103,7 @@ public class UserInterface {
     }
 
     public void hideInventoryInterface() {
-
+        uberRequest.delete();
         for(int i = 0; i < counters.length; i++) {
             if(counters[i] != null) {
                 counters[i].delete();
@@ -102,7 +113,7 @@ public class UserInterface {
         visible = false;
     }
     public void showInventoryInterface() {
-
+        uberRequest.draw();
         for(int i = 0; i < counters.length; i++) {
             System.out.println("teste, a pintar texto do inv ANTES DO IF");
             if(counters[i] != null) {
@@ -123,6 +134,7 @@ public class UserInterface {
         createWeedSeedsCounter();
         createWeedBagsCounter();
         createMoneyCounter();
+        createUberRequest();
 
     }
     public void update() {
@@ -133,6 +145,15 @@ public class UserInterface {
        weedSeedsCounter.setText("Weed Seeds x " + inventory.keyCount(WEED_SEEDS));
        weedBagsCounter.setText("Weed Bags x " + inventory.keyCount(WEED_BAGS));
        moneyCounter.setText("Money x " + inventory.keyCount(MONEY));
+
+       if(!uberWeeds.isEmpty()) {
+           uberRequest.setText("Filipe - " + uberWeeds.getClientRequests().count("Filipe") + "Bags");
+           uberRequest.delete();
+           uberRequest.draw();
+       } else{
+           uberRequest.setText("");
+       }
+
 
     }
     public boolean isVisible() {

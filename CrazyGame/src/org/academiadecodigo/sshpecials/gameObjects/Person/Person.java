@@ -30,5 +30,8 @@ public class Person extends GameObject implements Interactable {
     public boolean isActive() {
         return active;
     }
+    public String getName() {
+        return name;
+    }
 
 }

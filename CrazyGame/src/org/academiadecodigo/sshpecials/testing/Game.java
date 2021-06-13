@@ -129,7 +129,7 @@ public class Game {
             }catch(Exception e) {
                 System.out.println(e);
             }
-        activeScenery.show();
+        //activeScenery.show();
         }
     }
     public void updatePlacementsAfterMovement() {

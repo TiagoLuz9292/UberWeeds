@@ -60,7 +60,7 @@ public class UserInterface {
             counters[i].setColor(Color.WHITE);
             counters[i].grow(15, GROW_Y);
         }
-        //showInventoryInterface();
+        showInventoryInterface();
 
     }
     public void createUberRequest() {
@@ -122,7 +122,7 @@ public class UserInterface {
             System.out.println("teste, a pintar texto do inv ANTES DO IF");
             if(counters[i] != null) {
                 System.out.println("teste, a pintar texto do inv");
-
+                counters[i].delete();
                 counters[i].draw();
 
             }

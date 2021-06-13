@@ -54,9 +54,12 @@ public class Controls implements KeyboardHandler {
         KeyboardEvent realeaseInteract = new KeyboardEvent();
         KeyboardEvent mainMenuBack = new KeyboardEvent();
         KeyboardEvent buyOptionOne = new KeyboardEvent();
+        KeyboardEvent buyOptionTwo = new KeyboardEvent();
+        KeyboardEvent buyOptionThree = new KeyboardEvent();
+        KeyboardEvent buyOptionFour = new KeyboardEvent();
+        KeyboardEvent buyOptionFive = new KeyboardEvent();
         KeyboardEvent smoke = new KeyboardEvent();
         KeyboardEvent stopSmoke = new KeyboardEvent();
-
 
         /**
          * Here we set the keys for each of our KeyboardEvents created
@@ -78,6 +81,10 @@ public class Controls implements KeyboardHandler {
         realeaseInteract.setKey(KeyboardEvent.KEY_F);
         mainMenuBack.setKey(KeyboardEvent.KEY_ESC);
         buyOptionOne.setKey(KeyboardEvent.KEY_1);
+        buyOptionTwo.setKey(KeyboardEvent.KEY_2);
+        buyOptionThree.setKey(KeyboardEvent.KEY_3);
+        buyOptionFour.setKey(KeyboardEvent.KEY_4);
+        buyOptionFive.setKey(KeyboardEvent.KEY_5);
         smoke.setKey(KeyboardEvent.KEY_R);
         stopSmoke.setKey(KeyboardEvent.KEY_T);
 
@@ -101,9 +108,12 @@ public class Controls implements KeyboardHandler {
         realeaseInteract.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         mainMenuBack.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         buyOptionOne.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        buyOptionTwo.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        buyOptionThree.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        buyOptionFour.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        buyOptionFive.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         smoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         stopSmoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
          */
@@ -124,6 +134,10 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(realeaseInteract);
         keyboard.addEventListener(mainMenuBack);
         keyboard.addEventListener(buyOptionOne);
+        keyboard.addEventListener(buyOptionTwo);
+        keyboard.addEventListener(buyOptionThree);
+        keyboard.addEventListener(buyOptionFour);
+        keyboard.addEventListener(buyOptionFive);
         keyboard.addEventListener(smoke);
         keyboard.addEventListener(stopSmoke);
     }
@@ -142,10 +156,22 @@ public class Controls implements KeyboardHandler {
             case KeyboardEvent.KEY_R:
                 game.smoke();
                 break;
-            case KeyboardEvent.KEY_1: {
-                game.buyItem(1);
+
+            case KeyboardEvent.KEY_2:
+                game.buyItem(2);
                 break;
-            }
+
+            case KeyboardEvent.KEY_3:
+                game.buyItem(3);
+                break;
+
+            case KeyboardEvent.KEY_4:
+                game.buyItem(4);
+                break;
+            case KeyboardEvent.KEY_5:
+                game.buyItem(5);
+                break;
+
             case KeyboardEvent.KEY_ESC:
                 game.mainMenuBack();
                 break;

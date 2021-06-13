@@ -9,9 +9,11 @@ import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
+import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
 import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.AlleyWay;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
+import org.academiadecodigo.sshpecials.scenery.Store;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 
 import java.util.LinkedHashSet;
@@ -61,7 +63,8 @@ public class Game {
                 if (vase.checkTimeUntilChange()) {
                     System.out.println("before interact in game loop");
                     if(character.interact(vase)) {
-                        vase.notActive();
+                        vase.setReadyToChange(false);
+                        vase.deActive();
                     }
                 }
             }
@@ -210,6 +213,14 @@ public class Game {
             SeedVendor seedVendor = alleyWay.getSeedVendor();
             if(seedVendor.isActive()) {
                 character.buyItem(seedVendor, option);
+            }
+        }
+
+        if(activeScenery.equals(sceneries[6])){
+            Store store = (Store) activeScenery;
+            StoreVendor storeVendor = store.getStoreVendor();
+            if(storeVendor.isActive()){
+                character.buyItem(storeVendor, option);
             }
         }
 

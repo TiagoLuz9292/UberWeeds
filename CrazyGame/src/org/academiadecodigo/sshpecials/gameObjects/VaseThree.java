@@ -39,7 +39,8 @@ public class VaseThree extends Vase {
 
         System.out.println((System.currentTimeMillis() - vaseStartTime) + " > " + VASESTATE.timerForChange);
         if(((System.currentTimeMillis() - vaseStartTime) / 1000) >= VASESTATE.timerForChange) {
-            active = false;
+            deActive();
+            setReadyToChange(true);
             return true;
         }
         return false;
@@ -53,14 +54,15 @@ public class VaseThree extends Vase {
 
     @Override
     public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
-        if(vaseStartTime == 0) {
-            super.active();
-            vaseStartTime = System.currentTimeMillis();
-        }
+
         switch(VASESTATE) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
-                    if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
+                    if(isReadyToChange()) {
                         inventory.remove(ItemType.VASE, 1);
                         VASESTATE = VaseThreeStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -71,6 +73,10 @@ public class VaseThree extends Vase {
                 break;
             case EMPTY_VASE:
                 if(inventory.hasItem(ItemType.SHOVEL)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseThreeStateType.VASE_READY_FOR_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -81,6 +87,10 @@ public class VaseThree extends Vase {
                 break;
             case VASE_READY_FOR_SEEDS:
                 if(inventory.keyCount(ItemType.WEED_SEEDS) >= 10) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         inventory.remove(ItemType.WEED_SEEDS, 10);
                         VASESTATE = VaseThreeStateType.VASE_HAS_SEEDS;
@@ -92,6 +102,10 @@ public class VaseThree extends Vase {
                 break;
             case VASE_HAS_SEEDS:
                 if(inventory.hasItem(ItemType.WATER_CAN)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseThreeStateType.VASE_HAS_WATER;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -102,6 +116,10 @@ public class VaseThree extends Vase {
                 break;
             case VASE_HAS_WATER:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseThreeStateType.VASE_IS_GROWING;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -111,6 +129,10 @@ public class VaseThree extends Vase {
 
             case VASE_IS_GROWING:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseThreeStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -119,6 +141,10 @@ public class VaseThree extends Vase {
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if (checkTimeUntilChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
                         VASESTATE = VaseThreeStateType.EMPTY_VASE;
@@ -126,8 +152,8 @@ public class VaseThree extends Vase {
                         vaseStartTime = 0;
                         return true;
                     }
-                    break;
                 }
+                break;
         }
         return false;
     }

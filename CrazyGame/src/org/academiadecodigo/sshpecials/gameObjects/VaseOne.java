@@ -16,14 +16,12 @@ public class VaseOne extends Vase implements Interactable{
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 172;
 
-    private boolean active;
     private long vaseStartTime;
 
     private Picture picture;
     public VaseOne() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
         VASESTATE = VaseOneStateType.NO_VASE;
-
         this.picture = super.getPicture();
     }
 
@@ -37,7 +35,8 @@ public class VaseOne extends Vase implements Interactable{
 
         System.out.println((System.currentTimeMillis() - vaseStartTime) + " > " + VASESTATE.timerForChange);
         if(((System.currentTimeMillis() - vaseStartTime) / 1000) >= VASESTATE.timerForChange) {
-            active = false;
+            deActive();
+            setReadyToChange(true);
             return true;
         }
         return false;
@@ -52,14 +51,15 @@ public class VaseOne extends Vase implements Interactable{
 
     @Override
     public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
-        if(vaseStartTime == 0) {
-            super.active();
-            vaseStartTime = System.currentTimeMillis();
-        }
+
         switch(VASESTATE) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
-                    if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
+                    if(isReadyToChange()) {
                         inventory.remove(ItemType.VASE, 1);
                         VASESTATE = VaseOneStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -70,6 +70,10 @@ public class VaseOne extends Vase implements Interactable{
                 break;
             case EMPTY_VASE:
                 if(inventory.hasItem(ItemType.SHOVEL)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseOneStateType.VASE_READY_FOR_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -80,6 +84,10 @@ public class VaseOne extends Vase implements Interactable{
                 break;
             case VASE_READY_FOR_SEEDS:
                 if(inventory.keyCount(ItemType.WEED_SEEDS) >= 10) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         inventory.remove(ItemType.WEED_SEEDS, 10);
                         VASESTATE = VaseOneStateType.VASE_HAS_SEEDS;
@@ -91,6 +99,10 @@ public class VaseOne extends Vase implements Interactable{
                 break;
             case VASE_HAS_SEEDS:
                 if(inventory.hasItem(ItemType.WATER_CAN)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseOneStateType.VASE_HAS_WATER;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -101,6 +113,10 @@ public class VaseOne extends Vase implements Interactable{
                 break;
             case VASE_HAS_WATER:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseOneStateType.VASE_IS_GROWING;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -110,6 +126,10 @@ public class VaseOne extends Vase implements Interactable{
 
             case VASE_IS_GROWING:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseOneStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -118,6 +138,10 @@ public class VaseOne extends Vase implements Interactable{
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if (checkTimeUntilChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
                         VASESTATE = VaseOneStateType.EMPTY_VASE;
@@ -125,8 +149,8 @@ public class VaseOne extends Vase implements Interactable{
                         vaseStartTime = 0;
                         return true;
                     }
-                    break;
                 }
+                break;
         }
         return false;
     }
@@ -136,6 +160,7 @@ public class VaseOne extends Vase implements Interactable{
     public String toString() {
         return "IM A VASE!";
     }
+
     public VaseOneStateType getState() {
         return VASESTATE;
     }

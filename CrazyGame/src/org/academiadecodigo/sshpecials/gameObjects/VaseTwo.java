@@ -1,5 +1,6 @@
 package org.academiadecodigo.sshpecials.gameObjects;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
@@ -7,6 +8,11 @@ import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
 import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseTwoStateType;
 
+/*private static int LEFT_LIMIT_X = 515;
+private static int RIGHT_LIMIT_X = 572;
+private static int UP_LIMIT_Y = 0;
+private static int DOWN_LIMIT_Y = 172;
+*/
 public class VaseTwo extends Vase {
     private static VaseTwoStateType VASESTATE = VaseTwoStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
     private static int LEFT_LIMIT_X = 515;
@@ -14,23 +20,13 @@ public class VaseTwo extends Vase {
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 172;
 
-    private boolean active;
     private long vaseStartTime;
 
+    private Picture picture;
     public VaseTwo() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
         VASESTATE = VaseTwoStateType.NO_VASE;
-    }
-
-    @Override
-    public boolean checkTimeUntilChange() {
-
-        System.out.println((System.currentTimeMillis() - vaseStartTime) + " > " + VASESTATE.timerForChange);
-        if(((System.currentTimeMillis() - vaseStartTime) / 1000) >= VASESTATE.timerForChange) {
-            active = false;
-            return true;
-        }
-        return false;
+        this.picture = super.getPicture();
     }
 
     /**
@@ -39,15 +35,35 @@ public class VaseTwo extends Vase {
      * the vase is ready to plant again.
      */
     @Override
-    public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
-        if(vaseStartTime == 0) {
-            super.active();
-            vaseStartTime = System.currentTimeMillis();
+    public boolean checkTimeUntilChange() {
+
+        System.out.println((System.currentTimeMillis() - vaseStartTime) + " > " + VASESTATE.timerForChange);
+        if(((System.currentTimeMillis() - vaseStartTime) / 1000) >= VASESTATE.timerForChange) {
+            deActive();
+            setReadyToChange(true);
+            return true;
         }
+        return false;
+    }
+
+    @Override
+    public void changePicture(int x, int y, String picturePath) {
+
+        System.out.println("changing pic of Vasee!");
+
+    }
+
+    @Override
+    public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
+
         switch(VASESTATE) {
             case  NO_VASE:
                 if(inventory.hasItem(ItemType.VASE)) {
-                    if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
+                    if(isReadyToChange()) {
                         inventory.remove(ItemType.VASE, 1);
                         VASESTATE = VaseTwoStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -58,6 +74,10 @@ public class VaseTwo extends Vase {
                 break;
             case EMPTY_VASE:
                 if(inventory.hasItem(ItemType.SHOVEL)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseTwoStateType.VASE_READY_FOR_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -68,6 +88,10 @@ public class VaseTwo extends Vase {
                 break;
             case VASE_READY_FOR_SEEDS:
                 if(inventory.keyCount(ItemType.WEED_SEEDS) >= 10) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         inventory.remove(ItemType.WEED_SEEDS, 10);
                         VASESTATE = VaseTwoStateType.VASE_HAS_SEEDS;
@@ -79,6 +103,10 @@ public class VaseTwo extends Vase {
                 break;
             case VASE_HAS_SEEDS:
                 if(inventory.hasItem(ItemType.WATER_CAN)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if(checkTimeUntilChange()) {
                         VASESTATE = VaseTwoStateType.VASE_HAS_WATER;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
@@ -89,6 +117,10 @@ public class VaseTwo extends Vase {
                 break;
             case VASE_HAS_WATER:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseTwoStateType.VASE_IS_GROWING;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -98,6 +130,10 @@ public class VaseTwo extends Vase {
 
             case VASE_IS_GROWING:
                 if(checkTimeUntilChange()) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     VASESTATE = VaseTwoStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
@@ -106,6 +142,10 @@ public class VaseTwo extends Vase {
                 break;
             default:
                 if(inventory.hasItem(ItemType.SCISSORS)) {
+                    if(vaseStartTime == 0) {
+                        super.active();
+                        vaseStartTime = System.currentTimeMillis();
+                    }
                     if (checkTimeUntilChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
                         VASESTATE = VaseTwoStateType.EMPTY_VASE;
@@ -113,17 +153,21 @@ public class VaseTwo extends Vase {
                         vaseStartTime = 0;
                         return true;
                     }
-                    break;
                 }
+                break;
         }
         return false;
     }
-    public boolean isActive() {
-        return active;
-    }
+
+
     @Override
     public String toString() {
         return "IM A VASE!";
     }
-}
 
+    public VaseTwoStateType getState() {
+        return VASESTATE;
+    }
+
+
+}

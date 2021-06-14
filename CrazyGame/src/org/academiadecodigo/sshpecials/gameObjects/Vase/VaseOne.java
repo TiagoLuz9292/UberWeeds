@@ -1,31 +1,27 @@
-package org.academiadecodigo.sshpecials.gameObjects;
+package org.academiadecodigo.sshpecials.gameObjects.Vase;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseOneStateType;
+import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
 import org.academiadecodigo.sshpecials.testing.Vase;
-import org.academiadecodigo.sshpecials.gameObjects.vaseState.VaseTwoStateType;
+import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseOneStateType;
 
-/*private static int LEFT_LIMIT_X = 515;
-private static int RIGHT_LIMIT_X = 572;
-private static int UP_LIMIT_Y = 0;
-private static int DOWN_LIMIT_Y = 172;
-*/
-public class VaseTwo extends Vase {
-    private static VaseTwoStateType VASESTATE = VaseTwoStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
-    private static int LEFT_LIMIT_X = 515;
-    private static int RIGHT_LIMIT_X = 572;
+public class VaseOne extends Vase implements Interactable {
+
+    private static VaseOneStateType VASESTATE = VaseOneStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)
+    private static int LEFT_LIMIT_X = 343;
+    private static int RIGHT_LIMIT_X = 431;
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 172;
 
     private long vaseStartTime;
 
     private Picture picture;
-    public VaseTwo() {
+    public VaseOne() {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
-        VASESTATE = VaseTwoStateType.NO_VASE;
+        VASESTATE = VaseOneStateType.NO_VASE;
         this.picture = super.getPicture();
     }
 
@@ -46,7 +42,7 @@ public class VaseTwo extends Vase {
         return false;
     }
 
-    @Override
+     @Override
     public void changePicture(int x, int y, String picturePath) {
 
         System.out.println("changing pic of Vasee!");
@@ -65,7 +61,7 @@ public class VaseTwo extends Vase {
                     }
                     if(isReadyToChange()) {
                         inventory.remove(ItemType.VASE, 1);
-                        VASESTATE = VaseTwoStateType.EMPTY_VASE;
+                        VASESTATE = VaseOneStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
@@ -78,8 +74,8 @@ public class VaseTwo extends Vase {
                         super.active();
                         vaseStartTime = System.currentTimeMillis();
                     }
-                    if(checkTimeUntilChange()) {
-                        VASESTATE = VaseTwoStateType.VASE_READY_FOR_SEEDS;
+                    if(isReadyToChange()) {
+                        VASESTATE = VaseOneStateType.VASE_READY_FOR_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
@@ -92,9 +88,9 @@ public class VaseTwo extends Vase {
                         super.active();
                         vaseStartTime = System.currentTimeMillis();
                     }
-                    if(checkTimeUntilChange()) {
+                    if(isReadyToChange()) {
                         inventory.remove(ItemType.WEED_SEEDS, 10);
-                        VASESTATE = VaseTwoStateType.VASE_HAS_SEEDS;
+                        VASESTATE = VaseOneStateType.VASE_HAS_SEEDS;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
@@ -107,8 +103,8 @@ public class VaseTwo extends Vase {
                         super.active();
                         vaseStartTime = System.currentTimeMillis();
                     }
-                    if(checkTimeUntilChange()) {
-                        VASESTATE = VaseTwoStateType.VASE_HAS_WATER;
+                    if(isReadyToChange()) {
+                        VASESTATE = VaseOneStateType.VASE_HAS_WATER;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
@@ -116,12 +112,13 @@ public class VaseTwo extends Vase {
                 }
                 break;
             case VASE_HAS_WATER:
-                if(checkTimeUntilChange()) {
-                    if(vaseStartTime == 0) {
-                        super.active();
-                        vaseStartTime = System.currentTimeMillis();
-                    }
-                    VASESTATE = VaseTwoStateType.VASE_IS_GROWING;
+                if(vaseStartTime == 0) {
+                    super.active();
+                    vaseStartTime = System.currentTimeMillis();
+                }
+                if(isReadyToChange()) {
+
+                    VASESTATE = VaseOneStateType.VASE_IS_GROWING;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
                     return true;
@@ -129,26 +126,29 @@ public class VaseTwo extends Vase {
                 break;
 
             case VASE_IS_GROWING:
-                if(checkTimeUntilChange()) {
-                    if(vaseStartTime == 0) {
-                        super.active();
-                        vaseStartTime = System.currentTimeMillis();
-                    }
-                    VASESTATE = VaseTwoStateType.VASE_IS_COLLECTABLE;
+                if(vaseStartTime == 0) {
+                    super.active();
+                    vaseStartTime = System.currentTimeMillis();
+                }
+                if(isReadyToChange()) {
+
+                    VASESTATE = VaseOneStateType.VASE_IS_COLLECTABLE;
                     super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                     vaseStartTime = 0;
                     return true;
                 }
                 break;
-            default:
+            case VASE_IS_COLLECTABLE:
+                System.out.println("entering in collectable");
                 if(inventory.hasItem(ItemType.SCISSORS)) {
+                    System.out.println("We have scissors!");
                     if(vaseStartTime == 0) {
                         super.active();
                         vaseStartTime = System.currentTimeMillis();
                     }
-                    if (checkTimeUntilChange()) {
+                    if (isReadyToChange()) {
                         inventory.add(ItemType.WEED_BAGS, 50);
-                        VASESTATE = VaseTwoStateType.EMPTY_VASE;
+                        VASESTATE = VaseOneStateType.EMPTY_VASE;
                         super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                         vaseStartTime = 0;
                         return true;
@@ -165,7 +165,7 @@ public class VaseTwo extends Vase {
         return "IM A VASE!";
     }
 
-    public VaseTwoStateType getState() {
+    public VaseOneStateType getState() {
         return VASESTATE;
     }
 

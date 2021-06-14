@@ -3,9 +3,9 @@ package org.academiadecodigo.sshpecials.scenery;
 
 import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.gameObjects.VaseThree;
-import org.academiadecodigo.sshpecials.gameObjects.VaseTwo;
+import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseOne;
+import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseThree;
+import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseTwo;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.BasementDownWall;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.BasementLeftWall;
 import org.academiadecodigo.sshpecials.gameObjects.Wall.BasementUpWall;

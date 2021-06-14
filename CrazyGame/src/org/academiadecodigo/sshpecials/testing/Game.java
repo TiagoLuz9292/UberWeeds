@@ -3,14 +3,12 @@ package org.academiadecodigo.sshpecials.testing;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
 import org.academiadecodigo.sshpecials.scenery.AlleyWay;
 import org.academiadecodigo.sshpecials.scenery.Scenery;
 import org.academiadecodigo.sshpecials.scenery.Store;
@@ -56,6 +54,13 @@ public class Game {
         //character.showPicture();
         start();
     }
+    public void refresh() {
+        character.getPicture().delete();
+        character.getPicture().draw();
+        userInterface.update();
+        userInterface.hideInventoryInterface();
+        userInterface.showInventoryInterface();
+    }
     public void checkVases() {
 
         for(Vase vase : vases) {
@@ -63,6 +68,9 @@ public class Game {
                 if (vase.checkTimeUntilChange()) {
                     System.out.println("before interact in game loop");
                     if(character.interact(vase)) {
+                        activeScenery.show();
+                        refresh();
+
                         vase.setReadyToChange(false);
                         vase.deActive();
                     }
@@ -118,9 +126,11 @@ public class Game {
                         vases.add((Vase)interactable);
                     }
                     character.interact((Interactable) gameObject);
+                    //activeScenery.show();
+                    refresh();
                 }
             }
-            userInterface.update();
+
             character.setInteractable(false);
             character.move();
             updatePlacementsAfterMovement();
@@ -129,7 +139,7 @@ public class Game {
             }catch(Exception e) {
                 System.out.println(e);
             }
-        activeScenery.show();
+
         }
     }
     public void updatePlacementsAfterMovement() {
@@ -177,6 +187,8 @@ public class Game {
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
         scenery.show();
 
+        userInterface.hideInventoryInterface();
+        userInterface.showInventoryInterface();
     }
     public void mainMenuBack() {
         if(activeScenery == sceneries[2]) {

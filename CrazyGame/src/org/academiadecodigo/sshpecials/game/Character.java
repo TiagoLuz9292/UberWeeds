@@ -6,13 +6,9 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.scenery.Store;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
-import org.academiadecodigo.sshpecials.testing.ItemType;
 
 import static org.academiadecodigo.sshpecials.testing.DirectionType.*;
 

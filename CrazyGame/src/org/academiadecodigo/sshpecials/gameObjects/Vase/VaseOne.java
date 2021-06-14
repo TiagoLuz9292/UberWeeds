@@ -54,6 +54,7 @@ public class VaseOne extends Vase implements Interactable {
 
         switch(VASESTATE) {
             case  NO_VASE:
+
                 if(inventory.hasItem(ItemType.VASE)) {
                     if(vaseStartTime == 0) {
                         super.active();

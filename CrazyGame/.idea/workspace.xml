@@ -7,21 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9491eb4e-8fc7-4cd9-9927-c52744b31494" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/CrazyGame_jar/CrazyGame.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CrazyGame_jar/CrazyGame.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/Resources/InventoryMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/Resources/InventoryMenu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/InventoryMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/InventoryMenu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/Stoner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/Stoner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Wall/StreetStoreDownWall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Wall/StreetStoreDownWall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Projeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Projeto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Vase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/Vase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrazyGame2/CrazyGame2.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />

@@ -16,7 +16,7 @@ public class Stoner extends Person{
 
     }
 
-    public void makeRequestToUber() {
+   /* public void makeRequestToUber() {
         if(isActive()) {
             return;
         }
@@ -28,7 +28,7 @@ public class Stoner extends Person{
         uberWeeds.makeRequest(getName(), (int)(Math.random() * 10) + 10);
         activate();
     }
-
+*/
     @Override
     public boolean changeState(Inventory inventory, WalkableScenery activeScenery) {
 

@@ -81,8 +81,8 @@ public class UserInterface {
         visible = false;
     }
     public void showInventoryInterface() {
-        uberRequest.delete();
-        uberRequest.draw();
+        //uberRequest.delete();
+        //uberRequest.draw();
         inventoryBackground.draw();
         for(int i = 0; i < counters.length; i++) {
             System.out.println("teste, a pintar texto do inv ANTES DO IF");

@@ -5,8 +5,6 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
-import org.academiadecodigo.sshpecials.testing.Vase;
-import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseOneStateType;
 
 public class VaseOne extends Vase implements Interactable {
 
@@ -156,7 +154,6 @@ public class VaseOne extends Vase implements Interactable {
                             vaseStartTime = 0;
                             return true;
                         }
-
                     }
                 }
                 break;

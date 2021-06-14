@@ -50,7 +50,7 @@ public class UserInterface {
         init();
     }
     public void init() {
-        inventoryBackground = new Picture(10,10,"Resources/inventoryMenu.png");
+        inventoryBackground = new Picture(10,10,"Resources/InventoryMenu.png");
         createCounters();
         counters[0] = vaseCounter;
         counters[1] = waterCanCounter;

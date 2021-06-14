@@ -9,6 +9,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
+import org.academiadecodigo.sshpecials.gameObjects.Vase.Vase;
 import org.academiadecodigo.sshpecials.scenery.*;
 
 import java.util.LinkedHashSet;

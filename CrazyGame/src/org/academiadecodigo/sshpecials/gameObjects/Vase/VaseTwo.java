@@ -4,8 +4,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
-import org.academiadecodigo.sshpecials.testing.Vase;
-import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseTwoStateType;
 
 /*private static int LEFT_LIMIT_X = 515;
 private static int RIGHT_LIMIT_X = 572;

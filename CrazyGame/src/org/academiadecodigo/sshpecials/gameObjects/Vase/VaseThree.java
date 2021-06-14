@@ -1,11 +1,9 @@
 package org.academiadecodigo.sshpecials.gameObjects.Vase;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-import org.academiadecodigo.sshpecials.gameObjects.Vase.VaseThreeStateType;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
-import org.academiadecodigo.sshpecials.testing.Vase;
 
 public class VaseThree extends Vase {
     private static VaseThreeStateType VASESTATE = VaseThreeStateType.NO_VASE; //It has a type from VaseSatateType Enum, starts with the inicial state (with a slot where u can place vase)

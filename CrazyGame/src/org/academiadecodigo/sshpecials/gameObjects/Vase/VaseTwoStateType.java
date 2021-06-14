@@ -1,4 +1,4 @@
-package org.academiadecodigo.sshpecials.gameObjects.vaseState;
+package org.academiadecodigo.sshpecials.gameObjects.Vase;
 
 public enum VaseTwoStateType {
 

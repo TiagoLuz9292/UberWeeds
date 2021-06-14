@@ -6,13 +6,9 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.scenery.Store;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
-import org.academiadecodigo.sshpecials.testing.ItemType;
 
 import static org.academiadecodigo.sshpecials.testing.DirectionType.*;
 
@@ -53,6 +49,7 @@ public class Character {
      *Checks all the path, if there is a colision in the middle, character will stop close to it
      * Each direction has its method
      */
+
 
     public void buyItem(Person person, int option) {
 

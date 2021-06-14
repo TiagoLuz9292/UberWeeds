@@ -240,7 +240,7 @@ public class Game {
         }
         character.smoke();
         WalkableScenery basement = (WalkableScenery) activeScenery;
-        basement.setPicture("Resources/basementHigh.png");
+        basement.setPicture("basementHigh.png");
         refresh();
     }
     public void stopSmoking() {
@@ -249,7 +249,7 @@ public class Game {
         }
         character.stopSmoking();
         WalkableScenery basement = (WalkableScenery) activeScenery;
-        basement.setPicture("Resources/basementFinal.PNG");
+        basement.setPicture("RbasementFinal.PNG");
         refresh();
     }
 }

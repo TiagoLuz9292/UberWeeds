@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="UberWeedsFinal">
+    <output-path>$PROJECT_DIR$/out/artifacts/UberWeedsFinal</output-path>
+    <root id="archive" name="CrazyGame.jar">
+      <element id="module-output" name="CrazyGame" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/google-collections-1.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/simple-graphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

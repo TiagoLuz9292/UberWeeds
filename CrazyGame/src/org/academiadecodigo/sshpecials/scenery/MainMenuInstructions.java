@@ -4,7 +4,7 @@ package org.academiadecodigo.sshpecials.scenery;
 
 public class MainMenuInstructions extends Scenery {
 
-    private static String PICTURE = "Resources/InstructionsMenu.png";
+    private static String PICTURE = "InstructionsMenu.png";
 
     public MainMenuInstructions() {
         super(PICTURE);

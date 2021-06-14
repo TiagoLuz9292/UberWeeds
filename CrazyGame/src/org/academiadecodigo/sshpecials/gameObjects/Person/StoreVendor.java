@@ -23,7 +23,7 @@ public class StoreVendor extends Person{
 
     public StoreVendor(){
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, 250, 320, "" , name);
-        menuPicture = new Picture(500, 100, "Resources/StoreMenu.png");
+        menuPicture = new Picture(500, 100, "StoreMenu.png");
     }
 
 

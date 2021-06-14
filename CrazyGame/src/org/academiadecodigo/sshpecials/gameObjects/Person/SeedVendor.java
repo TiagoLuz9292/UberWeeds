@@ -14,7 +14,6 @@ public class SeedVendor extends Person implements Interactable {
     private static int UP_LIMIT_Y = 0;
     private static int DOWN_LIMIT_Y = 400;
 
-    private static int SEEDS_PRICE = 50;
 
     private static Picture seedMenu = new Picture(100, 100, "Resources/SeedsMenu.png");
     private static String name = "Marco";
@@ -31,8 +30,8 @@ public class SeedVendor extends Person implements Interactable {
 
     public void sell(Inventory inventory) {
 
-        if(inventory.keyCount(ItemType.MONEY) >= SeedVendor.SEEDS_PRICE) {
-            inventory.remove(ItemType.MONEY, SeedVendor.SEEDS_PRICE);
+        if(inventory.keyCount(ItemType.MONEY) >= ItemType.WEED_SEEDS.price) {
+            inventory.remove(ItemType.MONEY, ItemType.WEED_SEEDS.price);
             inventory.add(ItemType.WEED_SEEDS, 10);
 
             System.out.println(inventory.keyCount(ItemType.MONEY));

@@ -10,7 +10,7 @@ public class StreetStoreDownWall extends Wall {
 
     private static int LEFT_LIMIT_X = -12;
     private static int RIGHT_LIMIT_X = 847;
-    private static int UP_LIMIT_Y = 900;
+    private static int UP_LIMIT_Y = 318;
     private static int DOWN_LIMIT_Y = 362;
 
     public StreetStoreDownWall(){

@@ -5,7 +5,6 @@
       <element id="module-output" name="CrazyGame" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/simple-graphics.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/libs/google-collections-1.0.jar" path-in-jar="/" />
-      <element id="library" level="project" name="libs" />
     </root>
   </artifact>
 </component>

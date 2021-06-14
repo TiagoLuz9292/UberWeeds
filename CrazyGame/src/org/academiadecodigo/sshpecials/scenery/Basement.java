@@ -15,12 +15,12 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.BasementUpWall;
  */
 public class Basement extends WalkableScenery {
 
-    private static String CHARACTER_PICTURE_PATH = "Resources/girl.PNG";
+    private static String CHARACTER_PICTURE_PATH = "Resources/girl.png";
     private static int CHARACTER_INITIAL_X = 157;
     private static int CHARACTER_INITIAL_Y = 181;
     private static int CHARACTER_SPEED = 5;
 
-    private static String PICTURE = "Resources/basementFinal.PNG";                   //Picture path for Basement Background
+    private static String PICTURE = "Resources/basementFinal.png";                   //Picture path for Basement Background
     private static GameObject[] gameobjects = {new BasementDownWall(), new BasementDoorStreet(), new VaseOne(), new VaseTwo(), new VaseThree(), new BasementLeftWall(), new BasementUpWall()}; //Array of objects that can colide with character in this scenery
 
 

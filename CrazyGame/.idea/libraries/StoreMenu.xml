@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="simple-graphics">
+  <library name="StoreMenu">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/simple-graphics.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/Resources/StoreMenu.zip!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

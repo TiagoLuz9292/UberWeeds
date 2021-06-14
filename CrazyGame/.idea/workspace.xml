@@ -6,122 +6,32 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc5cef72-fc58-4789-a8e4-3aeb6369d292" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs__2_.xml" afterDir="false" />
+    <list default="true" id="9491eb4e-8fc7-4cd9-9927-c52744b31494" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/CrazyGame_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/CrazyGame_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/UberWeeds.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/UberWeedsFinal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/google_collections_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/simple_graphics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CrazyGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CrazyGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Alley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/EmptyVase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/InstructionsMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/InstructionsOptionMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/InventoryMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateOne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateOne1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateOne2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateTwo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateTwo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedVendorStateTwo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SeedsMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/StartGameOptionMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/Store2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/StoreMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/StoreMenu.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VaseHasSeeds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VaseHasWater.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VaseIsCollectable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VasePlantGrowing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VaseReadyForSeeds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VasoComSementes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VasoTeste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/VasoTeste2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/basementFinal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/basementHigh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/catiaAlley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/catiaBasement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/catiaStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/catiaStreetStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/catiaUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlbikeOriginal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlbikeStreetUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlhigh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlpackAlley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlpackAlley2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlpackOriginal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlpackStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/girlpackStreet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/streetStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/streetUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/vasoSlot2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/CrazyGame_jar/CrazyGame.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/UberWeeds/CrazyGame.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/UberWeedsFinal/CrazyGame.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/Alley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/EmptyVase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/InstructionsMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/InstructionsOptionMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/InventoryMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateOne.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateOne1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateOne2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateTwo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateTwo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedVendorStateTwo2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/SeedsMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/StartGameOptionMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/Store2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/StoreMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/StoreMenu.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VaseHasSeeds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VaseHasWater.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VaseIsCollectable.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VasePlantGrowing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VaseReadyForSeeds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VasoComSementes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VasoTeste.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/VasoTeste2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/basementFinal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/basementHigh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/catiaAlley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/catiaBasement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/catiaStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/catiaStreetStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/catiaUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girl.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlbikeOriginal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlbikeStreetUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlhigh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlpackAlley.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlpackAlley2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlpackOriginal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlpackStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/girlpackStreet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/AlleyWay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/AlleyWay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/MainMenuStartOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/MainMenuStartOption.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/streetStore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/streetUber.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/vasoSlot2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOneStateType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOneStateType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThreeStateType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThreeStateType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwoStateType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwoStateType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/Basement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/Basement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/StreetStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/scenery/StreetStore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/testing/UserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/SeedVendorState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StoreVendor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StoreVendor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOneStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseOneStateType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThreeStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseThreeStateType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwoStateType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Vase/VaseTwoStateType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/AlleyWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/AlleyWay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/Basement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/Basement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuInstructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuInstructions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuInstructionsOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuInstructionsOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuStartOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/MainMenuStartOption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetUber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/scenery/StreetUber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/testing/UserInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrazyGame2/CrazyGame2.iml" beforeDir="false" />
     </list>
@@ -130,17 +40,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ttLnz8unPFcd26HS07qhnqTwqz" />
+  <component name="ProjectId" id="1twI7GQrl9WsN261ZkCV09Dblhp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -149,8 +52,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/simple-graphics.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -169,10 +71,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrazyGame.jar (1)" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/UberWeeds_jar/CrazyGame.jar" />
-      <method v="2" />
-    </configuration>
     <configuration name="CrazyGame.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/CrazyGame_jar/CrazyGame.jar" />
       <method v="2" />
@@ -181,18 +79,17 @@
       <list>
         <item itemvalue="JAR Application.CrazyGame.jar" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.CrazyGame.jar (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bc5cef72-fc58-4789-a8e4-3aeb6369d292" name="Default Changelist" comment="" />
-      <created>1623583620304</created>
+      <changelist id="9491eb4e-8fc7-4cd9-9927-c52744b31494" name="Default Changelist" comment="" />
+      <created>1623673558785</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623583620304</updated>
+      <updated>1623673558785</updated>
     </task>
     <servers />
   </component>
@@ -206,6 +103,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

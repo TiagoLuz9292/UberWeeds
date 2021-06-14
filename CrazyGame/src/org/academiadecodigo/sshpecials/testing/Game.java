@@ -79,7 +79,7 @@ public class Game {
     public void checkStonerRequests() {
 
         Stoner stoner = getStoner();
-        stoner.makeRequestToUber();
+        stoner.makeRequestToUber(character.getInventory());
 
     }
     public Stoner getStoner() {

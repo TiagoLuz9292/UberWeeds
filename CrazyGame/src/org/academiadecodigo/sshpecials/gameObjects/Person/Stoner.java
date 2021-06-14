@@ -16,17 +16,20 @@ public class Stoner extends Person{
 
     }
 
-    public void makeRequestToUber() {
-        if(isActive()) {
-            return;
-        }
-        double requestProbability = 0.8;
+    public void makeRequestToUber(Inventory inventory) {
+        if(inventory.keyCount(ItemType.WEED_BAGS) >= 50){
+            if(isActive()) {
+                return;
+            }
+            double requestProbability = 0.8;
 
-        if((Math.random() * 100) >= requestProbability) {
-            return;
+            if((Math.random() * 100) >= requestProbability) {
+                return;
+            }
+            uberWeeds.makeRequest(getName(), (int)(Math.random() * 10) + 10);
+            activate();
         }
-        uberWeeds.makeRequest(getName(), (int)(Math.random() * 10) + 10);
-        activate();
+
     }
 
     @Override

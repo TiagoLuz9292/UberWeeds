@@ -13,7 +13,7 @@ public class StonerInfo {
     public static int STONER_ONE_X = 175;
     public static int STONER_ONE_Y = 385;
 
-    public static String STONER_ONE_PICTUREPATH = "catiaUber.png";
+    public static String STONER_ONE_PICTUREPATH = "Resources/catiaUber.png";
 
     public static String STONER_ONE_NAME = "Marco";
 

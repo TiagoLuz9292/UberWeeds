@@ -4,7 +4,7 @@ import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 
 public class MainMenuInstructionsOption extends Scenery {
 
-    private static String PICTURE = "InstructionsOptionMenu.png";
+    private static String PICTURE = "Resources/InstructionsOptionMenu.png";
 
     public MainMenuInstructionsOption() {
         super(PICTURE);

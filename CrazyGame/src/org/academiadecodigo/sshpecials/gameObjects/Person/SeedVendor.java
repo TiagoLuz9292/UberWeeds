@@ -16,7 +16,7 @@ public class SeedVendor extends Person implements Interactable {
 
     private static int SEEDS_PRICE = 50;
 
-    private static Picture seedMenu = new Picture(100, 100, "SeedsMenu.png");
+    private static Picture seedMenu = new Picture(100, 100, "Resources/SeedsMenu.png");
     private static String name = "Marco";
 
 

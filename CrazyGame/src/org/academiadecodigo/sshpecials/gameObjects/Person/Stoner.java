@@ -20,7 +20,7 @@ public class Stoner extends Person{
         if(isActive()) {
             return;
         }
-        double requestProbability = 0.08;
+        double requestProbability = 0.8;
 
         if((Math.random() * 100) >= requestProbability) {
             return;

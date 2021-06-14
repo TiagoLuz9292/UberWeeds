@@ -67,17 +67,8 @@ public class UserInterface {
 
 
     }
-    public void createUberRequest() {
-
-        uberRequest = new Text(TEXT_X, 200, "");
-        uberRequest.setColor(Color.WHITE);
-
-
-    }
-
 
     public void hideInventoryInterface() {
-        uberRequest.delete();
         inventoryBackground.delete();
         for(int i = 0; i < counters.length; i++) {
             if(counters[i] != null) {
@@ -88,6 +79,7 @@ public class UserInterface {
         visible = false;
     }
     public void showInventoryInterface() {
+        uberRequest.delete();
         uberRequest.draw();
         inventoryBackground.draw();
         for(int i = 0; i < counters.length; i++) {
@@ -113,7 +105,7 @@ public class UserInterface {
         weedSeedsCounter = new Text(TEXT_X, 205, " x " + inventory.keyCount(WEED_SEEDS));
 
 
-        uberRequest = new Text(TEXT_X, 300, "");
+        uberRequest = new Text(15, 300, "");
         uberRequest.setColor(Color.WHITE);
 
     }
@@ -126,14 +118,17 @@ public class UserInterface {
        weedBagsCounter.setText(" x " + inventory.keyCount(WEED_BAGS));
        moneyCounter.setText(" x " + inventory.keyCount(MONEY));
 
-       if(!uberWeeds.isEmpty()) {
-           uberRequest.setText("Filipe - " + uberWeeds.getClientRequests().count("Filipe") + "Bags");
-           uberRequest.delete();
-           uberRequest.draw();
-       } else{
-           uberRequest.setText("");
-       }
 
+
+    }
+    public void updateUberRequests () {
+        if(!uberWeeds.isEmpty()) {
+            uberRequest.setText("New request from Filipe - " + uberWeeds.getClientRequests().count("Filipe") + " Bags");
+            uberRequest.delete();
+            uberRequest.draw();
+        } else{
+            uberRequest.setText("");
+        }
     }
     public boolean isVisible() {
         return visible;

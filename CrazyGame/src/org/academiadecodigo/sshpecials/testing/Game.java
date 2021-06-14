@@ -130,7 +130,7 @@ public class Game {
                     refresh();
                 }
             }
-
+            userInterface.updateUberRequests();
             character.setInteractable(false);
             character.move();
             updatePlacementsAfterMovement();
@@ -235,7 +235,7 @@ public class Game {
                 character.buyItem(storeVendor, option);
             }
         }
-
+        refresh();
     }
     public void smoke() {
         character.smoke();

@@ -148,11 +148,15 @@ public class VaseOne extends Vase implements Interactable {
                         vaseStartTime = System.currentTimeMillis();
                     }
                     if (isReadyToChange()) {
-                        inventory.add(ItemType.WEED_BAGS, 50);
-                        VASESTATE = VaseOneStateType.EMPTY_VASE;
-                        super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
-                        vaseStartTime = 0;
-                        return true;
+                        if(inventory.keyCount(ItemType.EMPTY_BAGS) >= 50){
+                            inventory.add(ItemType.WEED_BAGS, 50);
+                            inventory.remove(ItemType.EMPTY_BAGS, 50);
+                            VASESTATE = VaseOneStateType.EMPTY_VASE;
+                            super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
+                            vaseStartTime = 0;
+                            return true;
+                        }
+
                     }
                 }
                 break;

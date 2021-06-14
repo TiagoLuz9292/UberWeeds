@@ -30,6 +30,7 @@ public class UserInterface {
     private Text waterCanCounter;
     private Text shovelCounter;
     private Text scissorsCounter;
+    private Text emptyBagsCounter;
     private Text weedSeedsCounter;
     private Text weedBagsCounter;
 
@@ -44,7 +45,7 @@ public class UserInterface {
 
         this.inventory = inventory;
 
-        this.counters = new Text[7];
+        this.counters = new Text[8];
 
         init();
     }
@@ -58,6 +59,7 @@ public class UserInterface {
         counters[4] = weedSeedsCounter;
         counters[5] = weedBagsCounter;
         counters[6] = moneyCounter;
+        counters[7] = emptyBagsCounter;
 
         for(int i = 0; i < counters.length; i++) {
             counters[i].setColor(Color.BLACK);
@@ -101,8 +103,9 @@ public class UserInterface {
         scissorsCounter = new Text(TEXT_X, 96, " x " + inventory.keyCount(SCISSORS));
         shovelCounter = new Text(TEXT_X, 123, " x " + inventory.keyCount(SHOVEL));
         waterCanCounter = new Text(TEXT_X, 151, " x " + inventory.keyCount(WATER_CAN));
-        weedBagsCounter = new Text(TEXT_X, 179, " x " + inventory.keyCount(WEED_BAGS));
-        weedSeedsCounter = new Text(TEXT_X, 205, " x " + inventory.keyCount(WEED_SEEDS));
+        emptyBagsCounter = new Text(TEXT_X, 179, " x " + inventory.keyCount(EMPTY_BAGS));
+        weedBagsCounter = new Text(TEXT_X, 205, " x " + inventory.keyCount(WEED_BAGS));
+        weedSeedsCounter = new Text(TEXT_X, 230, " x " + inventory.keyCount(WEED_SEEDS));
 
 
         uberRequest = new Text(15, 300, "");
@@ -114,6 +117,7 @@ public class UserInterface {
        shovelCounter.setText(" x " + inventory.keyCount(SHOVEL));
        waterCanCounter.setText(" x " + inventory.keyCount(WATER_CAN));
        scissorsCounter.setText(" x " + inventory.keyCount(SCISSORS));
+       emptyBagsCounter.setText(" x " + inventory.keyCount(EMPTY_BAGS));
        weedSeedsCounter.setText(" x " + inventory.keyCount(WEED_SEEDS));
        weedBagsCounter.setText(" x " + inventory.keyCount(WEED_BAGS));
        moneyCounter.setText(" x " + inventory.keyCount(MONEY));

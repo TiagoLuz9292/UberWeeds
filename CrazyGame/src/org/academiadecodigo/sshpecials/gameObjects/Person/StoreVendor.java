@@ -14,16 +14,11 @@ public class StoreVendor extends Person{
     private static Picture menuPicture;
     private static String name = "Gustavo";
 
-    private static int VASE_PRICE = 10;
-    private static int WATER_CAN_PRICE = 10;
-    private static int SHOVEL_PRICE = 10;
-    private static int SCISSORS_PRICE = 10;
-    private static int BAG_PRICE = 10;
 
 
     public StoreVendor(){
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, 250, 320, "" , name);
-        menuPicture = new Picture(500, 100, "Resources/StoreMenu.png");
+        menuPicture = new Picture(430, 100, "Resources/StoreMenu.png");
     }
 
 
@@ -35,7 +30,7 @@ public class StoreVendor extends Person{
             case 2 -> ItemType.WATER_CAN;
             case 3 -> ItemType.SHOVEL;
             case 4 -> ItemType.SCISSORS;
-            case 5 -> ItemType.WEED_BAGS;
+            case 5 -> ItemType.EMPTY_BAGS;
             default -> ItemType.VASE;
 
         };

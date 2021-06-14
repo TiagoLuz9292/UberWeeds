@@ -18,11 +18,12 @@ public class StreetStore extends WalkableScenery {
     private static String CHARACTER_PICTURE_PATH = "Resources/girlpackStreet.PNG";
     private static int CHARACTER_INITIAL_X = 213;
     private static int CHARACTER_INITIAL_Y = 294;
+    private static int CHARACTER_SPEED = 3;
 
     //Array of objects that can colide with character in this scenery
 
 
     public StreetStore() {
-        super(PICTURE, gameobjects, CHARACTER_INITIAL_X, CHARACTER_INITIAL_Y, CHARACTER_PICTURE_PATH);    //Calling super class constructor with the background pictu
+        super(PICTURE, gameobjects, CHARACTER_INITIAL_X, CHARACTER_INITIAL_Y, CHARACTER_PICTURE_PATH, CHARACTER_SPEED);    //Calling super class constructor with the background pictu
     }
 }

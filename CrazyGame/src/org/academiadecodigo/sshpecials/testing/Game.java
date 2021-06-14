@@ -9,10 +9,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.scenery.AlleyWay;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.scenery.Store;
-import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
+import org.academiadecodigo.sshpecials.scenery.*;
 
 import java.util.LinkedHashSet;
 
@@ -135,7 +132,7 @@ public class Game {
             character.move();
             updatePlacementsAfterMovement();
             try{
-                Thread.sleep(5);
+                Thread.sleep(10);
             }catch(Exception e) {
                 System.out.println(e);
             }
@@ -182,7 +179,7 @@ public class Game {
         }
 
         WalkableScenery scenery = (WalkableScenery) activeScenery;
-        character.setInitialPosition(scenery.getCharacterInitialX(), scenery.getCharacterInitialY(), scenery.getPicturePath());
+        character.setInitialPosition(scenery.getCharacterInitialX(), scenery.getCharacterInitialY(), scenery.getPicturePath(), scenery.getCharacterSpeed());
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
         scenery.show();
 
@@ -238,13 +235,21 @@ public class Game {
         refresh();
     }
     public void smoke() {
+        if(!(activeScenery instanceof Basement)) {
+            return;
+        }
         character.smoke();
         WalkableScenery basement = (WalkableScenery) activeScenery;
         basement.setPicture("Resources/basementHigh.png");
+        refresh();
     }
     public void stopSmoking() {
+        if(!(activeScenery instanceof Basement)) {
+            return;
+        }
         character.stopSmoking();
         WalkableScenery basement = (WalkableScenery) activeScenery;
         basement.setPicture("Resources/basementFinal.PNG");
+        refresh();
     }
 }

@@ -18,6 +18,7 @@ public class BasementStoned extends WalkableScenery {
     private static String CHARACTER_PICTURE_PATH = "Resources/girlhigh";
     private static int CHARACTER_INITIAL_X = 855;
     private static int CHARACTER_INITIAL_Y = 211;
+    private static int CHARACTER_SPEED = 2;
 
     private static String PICTURE = "Resources/basementHigh.PNG";                   //Picture path for Basement Background
 
@@ -25,7 +26,7 @@ public class BasementStoned extends WalkableScenery {
             new BasementDownWall(), new BasementDoorStreet(), new VaseOne(), new VaseTwo(), new VaseThree()};
 
     public BasementStoned() {
-        super(PICTURE,gameobjects, CHARACTER_INITIAL_X, CHARACTER_INITIAL_Y, CHARACTER_PICTURE_PATH);    //Calling super class constructor with the background picture and the gameObjects array
+        super(PICTURE,gameobjects, CHARACTER_INITIAL_X, CHARACTER_INITIAL_Y, CHARACTER_PICTURE_PATH, CHARACTER_SPEED);    //Calling super class constructor with the background picture and the gameObjects array
     }
     @Override
     public String toString() {

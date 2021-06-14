@@ -5,15 +5,15 @@ public class StonerInfo {
     /**
      * STONER ONE CREATION INFO
      */
-    public static int STONER_ONE_LEFT_LIMIT_X = 111;
-    public static int STONER_ONE_RIGHT_LIMIT_X = 201;
+    public static int STONER_ONE_LEFT_LIMIT_X = 546;
+    public static int STONER_ONE_RIGHT_LIMIT_X = 598;
     public static int STONER_ONE_UP_LIMIT_Y = 0;
     public static int STONER_ONE_DOWN_LIMIT_Y = 391;
 
-    public static int STONER_ONE_X = 175;
+    public static int STONER_ONE_X = 600;
     public static int STONER_ONE_Y = 385;
 
-    public static String STONER_ONE_PICTUREPATH = "Resources/catiaUber.png";
+    public static String STONER_ONE_PICTUREPATH = "Resources/stoner1.png";
 
     public static String STONER_ONE_NAME = "Marco";
 

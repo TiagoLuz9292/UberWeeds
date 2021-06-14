@@ -38,7 +38,7 @@ public class Stoner extends Person{
         int quantity = uberWeeds.getRequestQuantity(getName());
         if(inventory.keyCount(ItemType.WEED_BAGS) >= quantity) {
 
-            inventory.add(ItemType.MONEY, 10);
+            inventory.add(ItemType.MONEY, quantity * 10);
             inventory.remove(ItemType.WEED_BAGS, quantity);
             uberWeeds.removeRequest(getName(), quantity);
             deActivate();

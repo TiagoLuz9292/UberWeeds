@@ -7,12 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9491eb4e-8fc7-4cd9-9927-c52744b31494" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Resources/stoner1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/Resources/stoner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CrazyGame/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CrazyGame/stoner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resources/stoner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/sshpecials/gameObjects/Person/StonerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CrazyGame2/CrazyGame2.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

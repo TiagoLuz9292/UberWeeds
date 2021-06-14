@@ -13,7 +13,7 @@ public class StreetUber extends WalkableScenery {
     private static String CHARACTER_PICTURE_PATH = "Resources/girlbikeStreetUber.png";
     private static int CHARACTER_INITIAL_X = 100;
     private static int CHARACTER_INITIAL_Y = 395;
-    private static int CHARACTER_SPEED = 2;
+    private static int CHARACTER_SPEED = 6;
     private static String PICTURE = "Resources/streetUber.png";                   //Picture path for Basement Background
 
 

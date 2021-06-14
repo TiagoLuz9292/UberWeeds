@@ -23,6 +23,7 @@ public class UserInterface {
 
 
     private Picture inventoryBackground;
+    private Picture uberRequestImage;
 
 
     private Text moneyCounter;
@@ -35,6 +36,7 @@ public class UserInterface {
     private Text weedBagsCounter;
 
     private Text uberRequest;
+    private Text uberRequestInfo;
 
     private Text[] counters;
 
@@ -51,6 +53,8 @@ public class UserInterface {
     }
     public void init() {
         inventoryBackground = new Picture(10,10,"Resources/InventoryMenu.png");
+        uberRequestImage = new Picture(0,275, "Resources/UberWeeds.png");
+        uberRequestImage.grow(-15, -10);
         createCounters();
         counters[0] = vaseCounter;
         counters[1] = waterCanCounter;
@@ -81,8 +85,12 @@ public class UserInterface {
         visible = false;
     }
     public void showInventoryInterface() {
+        uberRequestImage.delete();
+        uberRequestImage.draw();
         uberRequest.delete();
         uberRequest.draw();
+        uberRequestInfo.delete();
+        uberRequestInfo.draw();
         inventoryBackground.draw();
         for(int i = 0; i < counters.length; i++) {
             System.out.println("teste, a pintar texto do inv ANTES DO IF");
@@ -108,8 +116,10 @@ public class UserInterface {
         weedSeedsCounter = new Text(TEXT_X, 230, " x " + inventory.keyCount(WEED_SEEDS));
 
 
-        uberRequest = new Text(15, 300, "");
-        uberRequest.setColor(Color.WHITE);
+        uberRequest = new Text(75, 310, "");
+        uberRequest.setColor(Color.BLACK);
+        uberRequestInfo = new Text(75, 320, "");
+        uberRequestInfo.setColor(Color.BLACK);
 
     }
     public void update() {
@@ -121,17 +131,23 @@ public class UserInterface {
        weedSeedsCounter.setText(" x " + inventory.keyCount(WEED_SEEDS));
        weedBagsCounter.setText(" x " + inventory.keyCount(WEED_BAGS));
        moneyCounter.setText(" x " + inventory.keyCount(MONEY));
-
-
-
     }
     public void updateUberRequests () {
         if(!uberWeeds.isEmpty()) {
-            uberRequest.setText("New request from Filipe - " + uberWeeds.getClientRequests().count("Filipe") + " Bags");
+            uberRequestImage.delete();
+            uberRequestImage.draw();
+            uberRequest.setText("New request from: ");
+            uberRequestInfo.setText("Filipe - " + uberWeeds.getClientRequests().count("Filipe") + " Bags");
+            uberRequestInfo.delete();
+            uberRequestInfo.draw();
             uberRequest.delete();
             uberRequest.draw();
         } else{
+            uberRequestImage.delete();
+            uberRequestInfo.setText("");
+            uberRequestInfo.delete();
             uberRequest.setText("");
+            uberRequest.delete();
         }
     }
     public boolean isVisible() {

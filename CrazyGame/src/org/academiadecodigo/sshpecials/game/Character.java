@@ -108,8 +108,6 @@ public class Character {
         //as the pixelCounter(distance) in the asked direction.
         picture.translate(distance, 0);
 
-        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
-
     }
 
     public void moveLeft() {
@@ -123,7 +121,6 @@ public class Character {
         }
         picture.translate(-distance, 0);
 
-        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
     }
 
     public void moveDown() {
@@ -137,7 +134,7 @@ public class Character {
         }
         picture.translate(0 , distance);
 
-        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
+
     }
     public void moveUp() {
         int distance = 0;
@@ -150,16 +147,17 @@ public class Character {
         }
         picture.translate(0, -distance);
 
-        System.out.println("x is: " + picture.getX() + " and y is: " + picture.getY() );
     }
 
     /**
      *Checks if this character is in range of interacting with some object using F key.
      */
     public void smoke() {
+        setPicture("Resources/girlStoned.png");
         stoned = true;
     }
     public void stopSmoking() {
+        setPicture("Resources/girl.png");
         stoned = false;
     }
     public boolean checkInRangeWithObject(){

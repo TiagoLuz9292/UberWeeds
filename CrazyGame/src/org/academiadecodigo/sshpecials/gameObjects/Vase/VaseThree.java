@@ -138,17 +138,15 @@ public class VaseThree extends Vase {
                 }
                 break;
             case VASE_IS_COLLECTABLE:
-                System.out.println("entering in collectable");
                 if(inventory.hasItem(ItemType.SCISSORS)) {
-                    System.out.println("We have scissors!");
                     if(vaseStartTime == 0) {
                         super.active();
                         vaseStartTime = System.currentTimeMillis();
                     }
                     if (isReadyToChange()) {
-                        if(inventory.keyCount(ItemType.EMPTY_BAGS) >= 50){
-                            inventory.add(ItemType.WEED_BAGS, 50);
-                            inventory.remove(ItemType.EMPTY_BAGS, 50);
+                        if(inventory.keyCount(ItemType.EMPTY_BAGS) >= 30){
+                            inventory.add(ItemType.WEED_BAGS, 30);
+                            inventory.remove(ItemType.EMPTY_BAGS, 30);
                             VASESTATE = VaseThreeStateType.EMPTY_VASE;
                             super.changePicture(VASESTATE.x, VASESTATE.y, VASESTATE.picturePath);
                             vaseStartTime = 0;
@@ -160,9 +158,7 @@ public class VaseThree extends Vase {
         }
         return false;
     }
-    public void setThread(Thread thread) {
-        // this.thread = thread;
-    }
+
     @Override
     public String toString() {
         return "IM A VASE!";

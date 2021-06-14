@@ -5,12 +5,7 @@ import org.academiadecodigo.sshpecials.testing.UberWeeds;
 
 public class StonerFactory {
 
-
     public static UberWeeds uberWeeds = new UberWeeds();
-
-    /*public static void createUberWeeds() {
-        uberWeeds = new UberWeeds();
-    }*/
 
     public static GameObject createStoner() {
 
@@ -18,10 +13,7 @@ public class StonerFactory {
                 StonerInfo.STONER_ONE_UP_LIMIT_Y, StonerInfo.STONER_ONE_DOWN_LIMIT_Y,
                 StonerInfo.STONER_ONE_X, StonerInfo.STONER_ONE_Y, StonerInfo.STONER_ONE_PICTUREPATH, "Filipe", uberWeeds);
 
-
         return gameObject;
 
     }
-
-
 }

@@ -80,7 +80,7 @@ public class Game {
     public void checkStonerRequests() {
 
         Stoner stoner = getStoner();
-        stoner.makeRequestToUber();
+        stoner.makeRequestToUber(character.getInventory());
 
     }
     public Stoner getStoner() {
@@ -97,7 +97,7 @@ public class Game {
         activeScenery.show();
         while(true) {
             while(!gameStarted) {
-                System.out.println("waiting for gme to start");
+                System.out.println("waiting for gme to start"); //SOUT DO INFERNO NÃO APAGAR SENÃO PARTE O JOGO
             }
 
             if(!vases.isEmpty()) {
@@ -196,7 +196,7 @@ public class Game {
         if(activeScenery == sceneries[0]) {
 
 
-            activeScenery.getPicture().grow(-500, -500);
+            activeScenery.getPicture().grow(-10, 1);
             setActiveScenery(3);
             gameStarted = true;
         } else if(activeScenery == sceneries[1]) {
@@ -212,8 +212,6 @@ public class Game {
     }
     public void showInventory() {
        inventoryVisible = !inventoryVisible;
-        //System.out.println("Visible is " + inventoryVisible);
-
     }
 
     public void buyItem(int option) {
@@ -250,7 +248,7 @@ public class Game {
         }
         character.stopSmoking();
         WalkableScenery basement = (WalkableScenery) activeScenery;
-        basement.setPicture("Resources/basementFinal.PNG");
+        basement.setPicture("Resources/basementFinal.png");
         refresh();
     }
 }

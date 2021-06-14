@@ -23,10 +23,7 @@ public class SeedVendor extends Person implements Interactable {
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, SEEDVENDORSTATE.x,
                 SEEDVENDORSTATE.y, SEEDVENDORSTATE.picturePath, name);
 
-        //SEEDVENDORSTATE = SeedVendorState.SEED_VENDOR_STATE_ONE;
     }
-
-    //inventory?
 
     public void sell(Inventory inventory) {
 
@@ -36,7 +33,6 @@ public class SeedVendor extends Person implements Interactable {
 
             System.out.println(inventory.keyCount(ItemType.MONEY));
         }
-
     }
 
     @Override
@@ -49,7 +45,7 @@ public class SeedVendor extends Person implements Interactable {
                 return true;
             case SEED_VENDOR_STATE_TWO:
                 if(isActive()) {
-                    System.out.println("TESTEEEEE");
+
                     super.deActivate();
                     seedMenu.delete();
                 }else {
@@ -57,7 +53,6 @@ public class SeedVendor extends Person implements Interactable {
                     seedMenu.draw();
                 }
         }
-
         return false;
     }
     @Override

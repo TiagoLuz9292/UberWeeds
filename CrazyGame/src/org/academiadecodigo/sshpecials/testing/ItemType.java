@@ -6,7 +6,7 @@ public enum ItemType {
     WATER_CAN(30, 1),
     SHOVEL(30, 1),
     SCISSORS(20, 1),
-    WEED_SEEDS(100, 10),
+    WEED_SEEDS(75, 10),
     EMPTY_BAGS(10, 10),
     WEED_BAGS(0, 0),
     WEED_FOR_SMOKE(0, 0),

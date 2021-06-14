@@ -75,7 +75,6 @@ public abstract class GameObject{
         return picture;
     }
     public void show() {
-        //picture.delete();
         picture.draw();
     }
     public void hide() {

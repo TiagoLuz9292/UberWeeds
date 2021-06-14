@@ -195,19 +195,15 @@ public class Controls implements KeyboardHandler {
                 break;
 
             case KeyboardEvent.KEY_D:
-                //crossHair.moveRight();
                 character.setDirection(RIGHT);
                 break;
             case KeyboardEvent.KEY_A:
-                //crossHair.moveLeft();
                 character.setDirection(LEFT);
                 break;
             case KeyboardEvent.KEY_W:
-                //crossHair.moveUp();
                 character.setDirection(UP);
                 break;
             case KeyboardEvent.KEY_S:
-                //crossHair.moveDown();
                 character.setDirection(DOWN);
                 break;
         }
@@ -217,47 +213,17 @@ public class Controls implements KeyboardHandler {
             switch (keyboardEvent.getKey()) {
 
                 case KeyboardEvent.KEY_D:
-                    //crossHair.moveRight();
                     character.setDirection(NONE);
                     break;
                 case KeyboardEvent.KEY_A:
-                    //crossHair.moveLeft();
                     character.setDirection(NONE);
                     break;
                 case KeyboardEvent.KEY_W:
-                    //crossHair.moveUp();
                     character.setDirection(NONE);
                     break;
                 case KeyboardEvent.KEY_S:
-                    //crossHair.moveDown();
                     character.setDirection(NONE);
                     break;
             }
         }
-
-        /**
-         * This for now is our solution to make character apear behind an object if it is on t he other side, but in front
-         * of that same object if the charect is in front of it
-         */
-        /*for(GameObject gameObject : activeScenery.getGameObjects()) {
-
-            if (charPicture.getY() < gameObject.getUpLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
-                    charPicture.getX() < gameObject.getRightLimitX()) {
-                System.out.println("Player em cima");
-                gameObject.getPicture().delete();
-                gameObject.getPicture().draw();
-                return;
-            }
-            if (charPicture.getY() > gameObject.getDownLimitY() && charPicture.getX() > gameObject.getLeftLimitX() &&
-                    charPicture.getX() < gameObject.getRightLimitX()) {
-
-                System.out.println("Player em baixo");
-                charPicture.delete();
-                charPicture.draw();
-                return;
-
-            }
-            System.out.println("Player X: " + charPicture.getX() + "Player Y:" + charPicture.getY());
-        }*/
-
 }

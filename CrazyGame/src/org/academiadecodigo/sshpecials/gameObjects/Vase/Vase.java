@@ -27,7 +27,7 @@ public class Vase extends GameObject implements Interactable {
         readyToChange = b;
     }
     public boolean isActive() {
-        System.out.println("Vase is active : " + active);
+
         return active;
     }
     public void active() {

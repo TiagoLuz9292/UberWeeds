@@ -16,7 +16,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.BasementUpWall;
 public class Basement extends WalkableScenery {
 
     private static String CHARACTER_PICTURE_PATH = "Resources/girl.png";
-    private static int CHARACTER_INITIAL_X = 157;
+    private static int CHARACTER_INITIAL_X = 308;
     private static int CHARACTER_INITIAL_Y = 181;
     private static int CHARACTER_SPEED = 5;
 

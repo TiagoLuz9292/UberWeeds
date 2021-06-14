@@ -8,20 +8,17 @@ import org.academiadecodigo.sshpecials.testing.ItemType;
 
 public class StoreVendor extends Person{
     private static int LEFT_LIMIT_X = 100;
-    private static int RIGHT_LIMIT_X = 300;
+    private static int RIGHT_LIMIT_X = 335;
     private static int UP_LIMIT_Y = 0;
-    private static int DOWN_LIMIT_Y = 237;
+    private static int DOWN_LIMIT_Y = 216;
     private static Picture menuPicture;
     private static String name = "Gustavo";
-
 
 
     public StoreVendor(){
         super(LEFT_LIMIT_X, RIGHT_LIMIT_X, UP_LIMIT_Y, DOWN_LIMIT_Y, 250, 320, "" , name);
         menuPicture = new Picture(430, 100, "Resources/StoreMenu.png");
     }
-
-
 
     public void sell(Inventory inventory, int option) {
 
@@ -39,10 +36,7 @@ public class StoreVendor extends Person{
             inventory.remove(ItemType.MONEY, itemType.price);
             inventory.add(itemType, itemType.quantity);
         }
-
-
     }
-
     @Override
     public boolean changeState(Inventory inventory, WalkableScenery activeScenery){
         if(!isActive()){
@@ -54,7 +48,5 @@ public class StoreVendor extends Person{
             menuPicture.delete();
             return false;
         }
-
     }
-
 }

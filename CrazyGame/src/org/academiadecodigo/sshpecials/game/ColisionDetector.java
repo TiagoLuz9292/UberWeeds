@@ -7,7 +7,7 @@ import org.academiadecodigo.sshpecials.gameObjects.Wall.Wall;
 public class ColisionDetector {
 
 
-    private static int INTERACTION_HIT_BOX = 10; //this variable defines the outside "bubble" range  inside which the player can interact with an object
+    private static int INTERACTION_HIT_BOX = 20; //this variable defines the outside "bubble" range  inside which the player can interact with an object
     private GameObject[] gameObjects;
 
     public ColisionDetector() {
@@ -35,7 +35,7 @@ public class ColisionDetector {
         for (GameObject gameObject : gameObjects) {
             if (picture.getX() >= gameObject.getLeftLimitX() - INTERACTION_HIT_BOX && picture.getX() <= gameObject.getRightLimitX() + INTERACTION_HIT_BOX &&
                     picture.getY() >= gameObject.getUpLimitY() - INTERACTION_HIT_BOX && picture.getY() <= gameObject.getDownLimitY() + INTERACTION_HIT_BOX) {
-                System.out.println("im inside an object!");
+
                 return true;
             }
         }
@@ -45,7 +45,6 @@ public class ColisionDetector {
     public boolean checkColisionUp(Picture picture, int newStepPosition) {
 
         for(GameObject gameObject : gameObjects){
-            System.out.println("object down Y limit: " + gameObject.getDownLimitY());
             if(picture.getX() >= gameObject.getLeftLimitX() && picture.getX() <= gameObject.getRightLimitX() &&
                     picture.getY() - newStepPosition - 1 <=  gameObject.getDownLimitY() && picture.getY() - newStepPosition - 1 >= gameObject.getUpLimitY()) {
                 return true;

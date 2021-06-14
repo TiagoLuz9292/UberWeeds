@@ -7,7 +7,7 @@ import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 public class Vase extends GameObject implements Interactable {
 
     private boolean active;
-
+    private boolean readyToChange;
 
     /**
      * This are the limits related to any vase object from Vase class, to check colision with character, it is passed always to the super constructer
@@ -16,15 +16,22 @@ public class Vase extends GameObject implements Interactable {
     public Vase(int limitLeftX, int limitRightX, int limitUpY, int limitDownY, int x, int y, String picturePath) {
         super(limitLeftX, limitRightX, limitUpY, limitDownY, x, y, picturePath);
         active = false;
+        readyToChange = false;
     }
 
+    public boolean isReadyToChange() {
+        return readyToChange;
+    }
+    public void setReadyToChange(boolean b) {
+        readyToChange = b;
+    }
     public boolean isActive() {
         return active;
     }
     public void active() {
         active = true;
     }
-    public void notActive() {
+    public void deActive() {
         active = false;
     }
     /**

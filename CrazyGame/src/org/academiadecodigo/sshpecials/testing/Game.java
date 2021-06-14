@@ -3,18 +3,13 @@ package org.academiadecodigo.sshpecials.testing;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.game.Character;
 import org.academiadecodigo.sshpecials.game.ColisionDetector;
-import org.academiadecodigo.sshpecials.gameObjects.Door.BasementDoorStreet;
 import org.academiadecodigo.sshpecials.gameObjects.Door.Door;
 import org.academiadecodigo.sshpecials.gameObjects.GameObject;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Stoner;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.scenery.AlleyWay;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.scenery.Store;
-import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
+import org.academiadecodigo.sshpecials.scenery.*;
 
 import java.util.LinkedHashSet;
 
@@ -50,11 +45,18 @@ public class Game {
 
     public void init() {
         setActiveScenery(0);
-        activeScenery.show();
+
 
         userInterface = new UserInterface(character.getInventory());
         //character.showPicture();
         start();
+    }
+    public void refresh() {
+        character.getPicture().delete();
+        character.getPicture().draw();
+        userInterface.update();
+        userInterface.hideInventoryInterface();
+        userInterface.showInventoryInterface();
     }
     public void checkVases() {
 
@@ -63,7 +65,11 @@ public class Game {
                 if (vase.checkTimeUntilChange()) {
                     System.out.println("before interact in game loop");
                     if(character.interact(vase)) {
-                        vase.notActive();
+                        activeScenery.show();
+                        refresh();
+
+                        vase.setReadyToChange(false);
+                        vase.deActive();
                     }
                 }
             }
@@ -87,6 +93,7 @@ public class Game {
     }
 
     public void start() {
+        activeScenery.show();
         while(true) {
             while(!gameStarted) {
                 System.out.println("waiting for gme to start");
@@ -116,18 +123,19 @@ public class Game {
                         vases.add((Vase)interactable);
                     }
                     character.interact((Interactable) gameObject);
+                    //activeScenery.show();
+                    refresh();
                 }
             }
-            userInterface.update();
+            userInterface.updateUberRequests();
             character.setInteractable(false);
             character.move();
             updatePlacementsAfterMovement();
             try{
-                Thread.sleep(5);
+                Thread.sleep(10);
             }catch(Exception e) {
                 System.out.println(e);
             }
-        activeScenery.show();
         }
     }
     public void updatePlacementsAfterMovement() {
@@ -171,10 +179,12 @@ public class Game {
         }
 
         WalkableScenery scenery = (WalkableScenery) activeScenery;
-        character.setInitialPosition(scenery.getCharacterInitialX(), scenery.getCharacterInitialY(), scenery.getPicturePath());
+        character.setInitialPosition(scenery.getCharacterInitialX(), scenery.getCharacterInitialY(), scenery.getPicturePath(), scenery.getCharacterSpeed());
         colisionDetector.setGameObjects(activeScenery.getGameObjects());
         scenery.show();
 
+        userInterface.hideInventoryInterface();
+        userInterface.showInventoryInterface();
     }
     public void mainMenuBack() {
         if(activeScenery == sceneries[2]) {
@@ -184,7 +194,7 @@ public class Game {
     public void chooseMainMenuOption() {
         if(activeScenery == sceneries[0]) {
 
-            activeScenery.hide();
+
             activeScenery.getPicture().grow(-500, -500);
             setActiveScenery(3);
             gameStarted = true;
@@ -222,6 +232,24 @@ public class Game {
                 character.buyItem(storeVendor, option);
             }
         }
-
+        refresh();
+    }
+    public void smoke() {
+        if(!(activeScenery instanceof Basement)) {
+            return;
+        }
+        character.smoke();
+        WalkableScenery basement = (WalkableScenery) activeScenery;
+        basement.setPicture("Resources/basementHigh.png");
+        refresh();
+    }
+    public void stopSmoking() {
+        if(!(activeScenery instanceof Basement)) {
+            return;
+        }
+        character.stopSmoking();
+        WalkableScenery basement = (WalkableScenery) activeScenery;
+        basement.setPicture("Resources/basementFinal.PNG");
+        refresh();
     }
 }

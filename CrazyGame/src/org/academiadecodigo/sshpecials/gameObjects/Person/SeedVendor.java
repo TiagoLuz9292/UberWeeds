@@ -2,8 +2,6 @@ package org.academiadecodigo.sshpecials.gameObjects.Person;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.sshpecials.gameObjects.Interactable;
-import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
-import org.academiadecodigo.sshpecials.gameObjects.SeedVendorState.SeedVendorState;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.Inventory;
 import org.academiadecodigo.sshpecials.testing.ItemType;
@@ -52,6 +50,7 @@ public class SeedVendor extends Person implements Interactable {
                 return true;
             case SEED_VENDOR_STATE_TWO:
                 if(isActive()) {
+                    System.out.println("TESTEEEEE");
                     super.deActivate();
                     seedMenu.delete();
                 }else {

@@ -11,14 +11,17 @@ public class WalkableScenery extends Scenery{
     private String characterPicturePath;
     private int characterInitialX;
     private int characterInitialY;
+    private int characterSpeed;
 
     /**
      *
      * Scenery receives the list of objects in that scenery for check colision with character in the future, and a path for its model on screen
      */
-    public WalkableScenery(String picturePath, GameObject[] gameObjects, int characterInitialX, int characterInitialY, String characterPicturePath) {
+    public WalkableScenery(String picturePath, GameObject[] gameObjects, int characterInitialX,
+                           int characterInitialY, String characterPicturePath, int characterSpeed) {
         super(picturePath);
 
+        this.characterSpeed = characterSpeed;
         this.gameObjects = gameObjects;
         this.characterInitialX = characterInitialX;
         this.characterInitialY = characterInitialY;
@@ -40,7 +43,6 @@ public class WalkableScenery extends Scenery{
 
     @Override
     public void show() {
-
         super.show();
         for(GameObject gameObject : gameObjects) {
 
@@ -56,7 +58,11 @@ public class WalkableScenery extends Scenery{
             gameObject.hide();
         }
     }
-
+    public void setPicture(String picturePath) {
+        getPicture().load(picturePath);
+        hide();
+        show();
+    }
     public int getCharacterInitialX() {
         return characterInitialX;
     }
@@ -69,5 +75,8 @@ public class WalkableScenery extends Scenery{
         return characterPicturePath;
     }
 
+    public int getCharacterSpeed() {
+        return characterSpeed;
+    }
 
 }

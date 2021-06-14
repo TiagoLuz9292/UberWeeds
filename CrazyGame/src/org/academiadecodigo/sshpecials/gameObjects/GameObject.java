@@ -69,6 +69,7 @@ public abstract class GameObject{
 
         picture.delete();
         picture = new Picture(x, y, picturePath);
+        picture.draw();
     }
     public Picture getPicture() {
         return picture;

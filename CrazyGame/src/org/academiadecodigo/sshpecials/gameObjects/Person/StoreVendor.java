@@ -26,12 +26,13 @@ public class StoreVendor extends Person{
     public void sell(Inventory inventory, int option) {
 
         ItemType itemType = switch (option) {
-
+            case 1 -> ItemType.VASE;
             case 2 -> ItemType.WATER_CAN;
             case 3 -> ItemType.SHOVEL;
             case 4 -> ItemType.SCISSORS;
             case 5 -> ItemType.WEED_BAGS;
             default -> ItemType.VASE;
+
         };
 
         if(inventory.keyCount(ItemType.MONEY) >= itemType.price) {

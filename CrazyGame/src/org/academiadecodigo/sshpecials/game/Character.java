@@ -6,13 +6,9 @@ import org.academiadecodigo.sshpecials.gameObjects.Interactable;
 import org.academiadecodigo.sshpecials.gameObjects.Person.Person;
 import org.academiadecodigo.sshpecials.gameObjects.Person.SeedVendor;
 import org.academiadecodigo.sshpecials.gameObjects.Person.StoreVendor;
-import org.academiadecodigo.sshpecials.gameObjects.VaseOne;
-import org.academiadecodigo.sshpecials.scenery.Scenery;
-import org.academiadecodigo.sshpecials.scenery.Store;
 import org.academiadecodigo.sshpecials.scenery.WalkableScenery;
 import org.academiadecodigo.sshpecials.testing.DirectionType;
 import org.academiadecodigo.sshpecials.testing.Inventory;
-import org.academiadecodigo.sshpecials.testing.ItemType;
 
 import static org.academiadecodigo.sshpecials.testing.DirectionType.*;
 
@@ -24,10 +20,13 @@ public class Character {
      */
 
        // Picture inicial Y
-    private static int DISTANCE_PER_STEP = 2; // Character movement speed (how many pixels will change each time the key is pressed)
+    private int speed = 2; // Character movement speed (how many pixels will change each time the key is pressed)
 
     private boolean interactable;
 
+    private boolean onBike;
+
+    private boolean stoned;
 
     private DirectionType direction;
     private WalkableScenery activeScenery;
@@ -40,6 +39,8 @@ public class Character {
      * Character receives a new colision detector in constructor
      */
     public Character(ColisionDetector colisionDetector) {
+        onBike = false;
+        stoned = false;
         interactable = false;
         direction = NONE;
         inventory = new Inventory();
@@ -48,9 +49,10 @@ public class Character {
     }
 
     /**
-     *Checks all the path, if there is a colision in the middle, character will stop close to it
+     * Checks all the path, if there is a colision in the middle, character will stop close to it
      * Each direction has its method
      */
+
 
     public void buyItem(Person person, int option) {
 
@@ -94,7 +96,7 @@ public class Character {
     }
     public void moveRight() {
         int distance = 0;
-        for(int j = 0; j <= DISTANCE_PER_STEP; j++) {
+        for(int j = 0; j <= speed; j++) {
             if(colisionDetector.checkColisionRight(picture, j)) {  //We will check pixel by pixel, from character position until destination pixel, and will count each
                                                                    //pixel with a pixelCounter(distance) until colision or until the DISTANCE_PER_STEP.
                 break;
@@ -112,7 +114,7 @@ public class Character {
 
     public void moveLeft() {
         int distance = 0;
-        for(int j = 1; j <= DISTANCE_PER_STEP; j++) {
+        for(int j = 1; j <= speed; j++) {
             if(colisionDetector.checkColisionLeft(picture, j)) {
                 break;
             }else {
@@ -126,7 +128,7 @@ public class Character {
 
     public void moveDown() {
         int distance = 0;
-        for(int j = 1; j <= DISTANCE_PER_STEP; j++) {
+        for(int j = 1; j <= speed; j++) {
             if(colisionDetector.checkColisionDown(picture, j)) {
                 break;
             }else {
@@ -139,7 +141,7 @@ public class Character {
     }
     public void moveUp() {
         int distance = 0;
-        for(int j = 1; j <= DISTANCE_PER_STEP; j++) {
+        for(int j = 1; j <= speed; j++) {
             if(colisionDetector.checkColisionUp(picture, j)) {
                 break;
             }else {
@@ -154,15 +156,11 @@ public class Character {
     /**
      *Checks if this character is in range of interacting with some object using F key.
      */
-
-    public void addToInventory(ItemType key, int value) {
-        inventory.add(key, value);
+    public void smoke() {
+        stoned = true;
     }
-    public void removeFromInventory(ItemType key, int value) {
-        inventory.remove(key, value);
-    }
-    public int countItem(ItemType key) {
-        return inventory.keyCount(key);
+    public void stopSmoking() {
+        stoned = false;
     }
     public boolean checkInRangeWithObject(){
         return colisionDetector.checkColision(picture);
@@ -180,14 +178,17 @@ public class Character {
     public Picture getPicture() {
         return picture;
     }
-    public void setInitialPosition(int x, int y, String picturePath) {
+    public void setPicture(String picturePath) {
+        picture.delete();
+        picture.load(picturePath);
+    }
+    public void setInitialPosition(int x, int y, String picturePath, int speed) {
 
         if(picture != null) {
             picture.delete();
         }
-
+        this.speed = speed;
         picture = new Picture(x, y, picturePath);
-
         picture.draw();
     }
     public Inventory getInventory() {

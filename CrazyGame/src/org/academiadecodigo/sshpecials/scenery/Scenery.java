@@ -14,7 +14,7 @@ public abstract class Scenery {
 
 
     public void show() {
-
+        picture.delete();
         picture.draw();
 
     }

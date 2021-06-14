@@ -11,7 +11,7 @@ public class BasementDownWall extends Wall {
 
     private static int LEFT_LIMIT_X = -30;
     private static int RIGHT_LIMIT_X = 920;
-    private static int UP_LIMIT_Y = 220;
+    private static int UP_LIMIT_Y = 183;
     private static int DOWN_LIMIT_Y = 300;
 
     public BasementDownWall(){

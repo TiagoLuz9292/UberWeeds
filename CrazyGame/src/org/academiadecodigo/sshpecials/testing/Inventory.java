@@ -29,12 +29,12 @@ public class Inventory {
 
     public void init() {
 
-        add(VASE,  5 );
+        add(VASE,  5);
         add(WATER_CAN,  1);
         add(SHOVEL, 1);
         add(SCISSORS, 1);
-        add(WEED_SEEDS, 0);
-        add(WEED_BAGS, 1000);
+        add(WEED_SEEDS, 1000);
+        add(WEED_BAGS, 0);
         add(WEED_FOR_SMOKE, 0);
         add(MONEY, 500);
     }

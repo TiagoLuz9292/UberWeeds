@@ -58,7 +58,8 @@ public class Controls implements KeyboardHandler {
         KeyboardEvent buyOptionThree = new KeyboardEvent();
         KeyboardEvent buyOptionFour = new KeyboardEvent();
         KeyboardEvent buyOptionFive = new KeyboardEvent();
-
+        KeyboardEvent smoke = new KeyboardEvent();
+        KeyboardEvent stopSmoke = new KeyboardEvent();
 
         /**
          * Here we set the keys for each of our KeyboardEvents created
@@ -84,7 +85,8 @@ public class Controls implements KeyboardHandler {
         buyOptionThree.setKey(KeyboardEvent.KEY_3);
         buyOptionFour.setKey(KeyboardEvent.KEY_4);
         buyOptionFive.setKey(KeyboardEvent.KEY_5);
-
+        smoke.setKey(KeyboardEvent.KEY_R);
+        stopSmoke.setKey(KeyboardEvent.KEY_T);
 
         /**
         * Here we set the type of Event we want to wait for (if pressed or released, in our case we will only use Press.)
@@ -110,7 +112,8 @@ public class Controls implements KeyboardHandler {
         buyOptionThree.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         buyOptionFour.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         buyOptionFive.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-
+        smoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        stopSmoke.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         /**
          * Here we add every Keyboard Event we created, to the Event Listener.
          */
@@ -135,7 +138,8 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(buyOptionThree);
         keyboard.addEventListener(buyOptionFour);
         keyboard.addEventListener(buyOptionFive);
-
+        keyboard.addEventListener(smoke);
+        keyboard.addEventListener(stopSmoke);
     }
 
     /**
@@ -146,26 +150,31 @@ public class Controls implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
         switch (keyboardEvent.getKey()) {
-            case KeyboardEvent.KEY_1: {
+            case KeyboardEvent.KEY_T:
+                game.stopSmoking();
+                break;
+            case KeyboardEvent.KEY_R:
+                game.smoke();
+                break;
+
+            case KeyboardEvent.KEY_1:
                 game.buyItem(1);
                 break;
-            }
-            case KeyboardEvent.KEY_2: {
+            case KeyboardEvent.KEY_2:
                 game.buyItem(2);
                 break;
-            }
-            case KeyboardEvent.KEY_3: {
+
+            case KeyboardEvent.KEY_3:
                 game.buyItem(3);
                 break;
-            }
-            case KeyboardEvent.KEY_4: {
+
+            case KeyboardEvent.KEY_4:
                 game.buyItem(4);
                 break;
-            }
-            case KeyboardEvent.KEY_5: {
+            case KeyboardEvent.KEY_5:
                 game.buyItem(5);
                 break;
-            }
+
             case KeyboardEvent.KEY_ESC:
                 game.mainMenuBack();
                 break;

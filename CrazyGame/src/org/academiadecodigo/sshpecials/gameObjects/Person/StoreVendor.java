@@ -30,7 +30,7 @@ public class StoreVendor extends Person{
             case 2 -> ItemType.WATER_CAN;
             case 3 -> ItemType.SHOVEL;
             case 4 -> ItemType.SCISSORS;
-            case 5 -> ItemType.WEED_BAGS;
+            case 5 -> ItemType.EMPTY_BAGS;
             default -> ItemType.VASE;
 
         };

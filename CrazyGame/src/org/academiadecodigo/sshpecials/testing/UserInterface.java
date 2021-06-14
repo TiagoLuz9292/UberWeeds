@@ -64,15 +64,14 @@ public class UserInterface {
             //counters[i].grow(15, GROW_Y);
         }
         showInventoryInterface();
-<<<<<<< HEAD
+
 
     }
     public void createUberRequest() {
 
         uberRequest = new Text(TEXT_X, 200, "");
         uberRequest.setColor(Color.WHITE);
-=======
->>>>>>> master-catia3
+
 
     }
 
